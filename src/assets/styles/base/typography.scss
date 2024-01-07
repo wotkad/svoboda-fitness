@@ -1,0 +1,172 @@
+.content {
+  h2 {
+    margin-top: 24px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    @include screen(tablet-2x) {
+      margin-top: 40px;
+
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+  h3 {
+    margin-top: 16px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    @include screen(tablet-2x) {
+      margin-top: 24px;
+
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  h4 {
+    margin-top: 14px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    @include screen(tablet-2x) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  p {
+    margin-top: 14px;
+  }
+  hr {
+    margin-top: 16px;
+  }
+  table {
+    margin-top: 16px;
+
+    border: 1px solid $gray-300;
+    tr {
+      th {
+        padding: 8px 16px;
+
+        border: 1px solid $gray-300;
+        border-collapse: separate;
+
+        text-align: left;
+      }
+      td {
+        padding: 8px 16px;
+
+        border: 1px solid $gray-300;
+        border-collapse: separate;
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(2n + 1) {
+          background-color: $blue-100;
+        }
+      }
+    }
+  }
+  blockquote {
+    margin-left: 16px;
+
+    border-left: 1px solid $gray-300;
+
+    font-style: italic;
+  }
+  & > span {
+    display: inline-block;
+    margin-top: 4px;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-500;
+  }
+  ul {
+    margin-top: 16px;
+    margin-left: 16px;
+    list-style: disc;
+    li {
+      margin-top: 8px;
+      &::marker {
+        color: $blue-500;
+      }
+    }
+    @include screen(tablet-2x) {
+      margin-top: 20px;
+    }
+  }
+  ol {
+    margin-top: 16px;
+    margin-left: 16px;
+    list-style: decimal;
+    li {
+      margin-top: 12px;
+      &::marker {
+        color: $blue-500;
+      }
+      span {
+        display: inline-block;
+        margin-top: 0;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $slate-900;
+      }
+      &.bold {
+        span {
+          font-weight: 700;
+        }
+      }
+      ul {
+        margin-top: 12px;
+      }
+    }
+    @include screen(tablet-2x) {
+      margin-top: 20px;
+    }
+  }
+  code,
+  & > code,
+  p code {
+    padding: 4px 8px;
+
+    border-radius: 6px;
+    background-color: $blue-100;
+
+    font-size: 14px;
+    line-height: 28px;
+    @include screen(tablet-2x) {
+      line-height: 20px;
+    }
+  }
+  pre {
+    margin-top: 16px;
+    code {
+      border-radius: 6px;
+      background-color: $slate-800;
+    }
+  }
+  a {
+    padding-bottom: 2px;
+
+    border-bottom: 1px solid transparent;
+
+    color: $blue-500;
+    @include screen(tablet-2x) {
+      transition: border-color $transition-default;
+      &:hover {
+        border-color: $blue-500;
+      }
+    }
+  }
+}
+section {
+  &:last-child {
+    padding-bottom: 40px;
+  }
+}
