@@ -281,5 +281,5 @@
       }
     ]
   },
-  "extends": ["stylelint-config-recommended-scss", "stylelint-config-tailwindcss", "stylelint-scss"]
+  "extends": ["stylelint-config-recommended-scss", "stylelint-scss"]
 }

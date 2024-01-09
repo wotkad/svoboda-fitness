@@ -1,11 +1,4 @@
-// @import "./utils/reset"; // Если "@tailwind base" подключён ниже, то этот импорт не нужен.
-
-/*
-  Tailwind
-*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./utils/reset"; // Если "@tailwind base" подключён ниже, то этот импорт не нужен.
 
 /*
   Базовые стили и утилиты
@@ -24,14 +17,10 @@
 /*
   Миксины
 */
-@import "./mixins/title";
-@import "./mixins/article";
 
 /*
   Компоненты
 */
 @import "./components/header";
 @import "./components/footer";
-@import "./components/hero";
-@import "./components/blog";
 @import "./components/not-found";
