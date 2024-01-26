@@ -11,7 +11,7 @@
   "repository": "git@github.com:wotkad/svoboda-fitness.git",
   "license": "MIT",
   "scripts": {
-    "build": "yarn lint:all && rimraf build && webpack --env mode=production --config ./webpack.config.js --progress && node ./node_scripts/sitemap-update && node ./node_scripts/not-found-page-update && rimraf ./build/404",
+    "build": "rimraf build && webpack --env mode=production --config ./webpack.config.js --progress && node ./node_scripts/sitemap-update && node ./node_scripts/not-found-page-update && rimraf ./build/404",
     "develop": "webpack serve --env mode=development --config ./webpack.config.js --progress",
     "dev": "yarn develop",
     "lint:editorconfig": "yarn editorconfig-checker",
