@@ -1,0 +1,17 @@
+extends ../layouts/master
+
+block title
+  title Свобода фитнес | Запись на занятие
+
+block basicSeo
+  meta(content="Запись на занятие" name="description")
+  meta(content="Запись на занятие" name="keywords")
+
+block manifestBrowserconfigFiles
+  link(href="./manifest.json" rel="manifest" crossorigin)
+  meta(content="./browserconfig.xml" name="msapplication-config")
+
+block content
+  main
+    .barba(data-barba="wrapper")
+      .barba-container(data-barba="container" data-barba-namespace="booking")
