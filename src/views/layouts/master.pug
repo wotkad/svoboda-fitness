@@ -53,6 +53,10 @@ html(lang="ru")
       href="/assets/images/favicons/safari-pinned-tab.svg"
       rel="mask-icon"
     )
+    link(
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    )
 
     block title
       title Свобода фитнес | Страница без названия
@@ -65,11 +69,11 @@ html(lang="ru")
       function autorun() {}
       if (window.addEventListener) window.addEventListener("load", autorun, false);
       else window.onload = autorun;
-    noscript.
-      Похоже у вас отключён Javascript, поэтому вы видете это сообщение.
 
   body
     .render
+
+    include ../mixins/subtitle
 
     include ../components/header
 

@@ -1,0 +1,22 @@
+.slogan {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__text {
+    display: flex;
+    gap: 16px;
+
+    font-size: 80px;
+    line-height: 116px;
+    &-left {
+      span {
+        color: $yellow;
+      }
+    }
+    &-right {
+      justify-content: flex-end;
+    }
+    @include actay-bold;
+  }
+}

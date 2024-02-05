@@ -1,0 +1,99 @@
+.plans {
+  position: relative;
+  &__slider {
+    overflow: visible;
+  }
+  &__title {
+    font-size: 32px;
+    line-height: 46px;
+    span {
+      padding: 8px;
+
+      border-radius: 8px;
+      background-color: $text-black;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: $yellow;
+      @include inter;
+    }
+    @include actay;
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+    min-height: 550px;
+
+    border-radius: 8px;
+    background-color: $neutral-400;
+    &-annual {
+      .plans__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-weight: 700;
+        color: $yellow;
+      }
+    }
+  }
+  &__price {
+    margin-top: 16px;
+
+    font-size: 24px;
+    line-height: 34px;
+    @include actay;
+  }
+  &__footer {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      li {
+        position: relative;
+
+        padding-left: 16px;
+
+        font-size: 16px;
+        line-height: 24px;
+        &:before {
+          content: "";
+
+          position: absolute;
+          top: 8px;
+          left: 0;
+
+          width: 8px;
+          height: 8px;
+
+          border-radius: 50%;
+          background-color: $yellow;
+        }
+      }
+    }
+  }
+  &__button {
+    margin-top: 48px;
+    padding: 16px 24px 16px 24px;
+    width: 100%;
+
+    border: 1px solid $yellow;
+    border-radius: 100px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-transform: uppercase;
+    @include screen(laptop) {
+      transition: color $transition-default;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}

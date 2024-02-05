@@ -1,3 +1,4 @@
+import 'swiper/css';
 import "./assets/styles/app.scss";
 
 if (module.hot) {

@@ -29,3 +29,24 @@
     }
   }
 }
+
+@mixin actay-bold {
+  font-weight: 700;
+  font-family: "Actay", sans-serif;
+}
+
+@mixin actay {
+  font-family: "Actay", sans-serif;
+}
+
+@mixin inter {
+  font-family: "Inter", sans-serif;
+}
+
+@mixin line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}

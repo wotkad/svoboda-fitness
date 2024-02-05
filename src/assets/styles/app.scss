@@ -17,6 +17,8 @@
 /*
   Миксины
 */
+@import "./mixins/subtitle";
+@import "./mixins/breadcrumbs";
 
 /*
   Компоненты
@@ -24,3 +26,23 @@
 @import "./components/header";
 @import "./components/footer";
 @import "./components/not-found";
+
+@import "./components/article.scss";
+@import "./components/blog.scss";
+@import "./components/booking.scss";
+@import "./components/coaches.scss";
+@import "./components/contacts.scss";
+@import "./components/faq.scss";
+@import "./components/footer.scss";
+@import "./components/gallery.scss";
+@import "./components/header.scss";
+@import "./components/hero.scss";
+@import "./components/not-found.scss";
+@import "./components/order.scss";
+@import "./components/plans.scss";
+@import "./components/popup-coach-booking.scss";
+@import "./components/popup-coach.scss";
+@import "./components/reviews.scss";
+@import "./components/schedule.scss";
+@import "./components/services.scss";
+@import "./components/slogan.scss";

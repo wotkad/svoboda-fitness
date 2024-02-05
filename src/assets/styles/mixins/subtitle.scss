@@ -1,0 +1,20 @@
+.subtitle {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 52px;
+
+  text-transform: uppercase;
+  span {
+    margin-bottom: 8px;
+
+    font-size: 24px;
+    line-height: 34px;
+    color: $neutral-200;
+  }
+  p {
+    font-size: 64px;
+    line-height: 64px;
+    @include actay;
+  }
+}

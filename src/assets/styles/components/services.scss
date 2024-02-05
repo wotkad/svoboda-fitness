@@ -1,0 +1,55 @@
+.services {
+  &__sliders {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 128px;
+  }
+  &__slider {
+    grid-column: span 1 / span 1;
+  }
+  &__images {
+    overflow: hidden;
+
+    border-radius: 8px;
+    user-select: none;
+    .swiper {
+      &-slide {
+        transition: opacity 0.4s;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    border-radius: 8px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__texts {
+    .swiper {
+      &-wrapper {
+        flex-direction: column;
+        transform: translate3d(0, 0, 0) !important;
+      }
+      &-slide {
+        padding: 32px 0;
+
+        border-bottom: 1px solid $neutral-200;
+
+        font-size: 32px;
+        line-height: 46px;
+        text-transform: uppercase;
+
+        transition: color $transition-default;
+        cursor: pointer;
+        &-active {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
