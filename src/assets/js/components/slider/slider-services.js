@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { EffectFade, Thumbs } from "swiper/modules"
+import { EffectFade } from "swiper/modules"
 
 export default function sliderServices() {
   var swiper = new Swiper('.services__texts', {

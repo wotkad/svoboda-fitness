@@ -5,11 +5,11 @@ import routingFunctions from "./routing-functions";
 
 barba.use(barbaPrefetch);
 
-// Если header в находится barba-wrapper, то скрипт ниже не нужен.
+// Если header находится в barba-wrapper, то скрипт ниже не нужен.
 barba.hooks.beforeLeave((data) => {
   const nextPath = data.next.url.href;
   const nextItem = $(`a[href="${nextPath}"]`);
-  $(`.${"active"}`).removeClass("active");
+  $(`.header__link.${"active"}, .footer__link.${"active"}`).removeClass("active");
   nextItem.addClass("active");
 });
 
@@ -24,15 +24,13 @@ barba.init({
   transitions: [
     {
       name: "opacity-transition",
-      leave(data) {
-        return gsap.to(data.current.container, .3, {
+      sync: true,
+      beforeLeave(data) {
+        $('body,html').animate({scrollTop: 0}, 0);
+        $(data.current.container).hide();
+        gsap.to(data.current.container, {
           opacity: 0,
-        });
-      },
-      afterLeave(data) {
-        $('body,html').animate({scrollTop: 0}, 200);
-        return gsap.to(data.current.container, 0, {
-          display: 'none',
+          duration: .4
         });
       },
       enter(data) {
@@ -55,8 +53,9 @@ barba.init({
         $('head').find(headTags).remove();
         $newPageHead.find(headTags).appendTo('head');
         routingFunctions();
-        return gsap.from(data.next.container, .3, {
-          opacity: 0
+        return gsap.from(data.next.container, {
+          opacity: 0,
+          duration: .4
         });
       },
     },

@@ -1,4 +1,5 @@
 import 'swiper/css';
+import 'swiper/css/pagination';
 import "./assets/styles/app.scss";
 
 if (module.hot) {
