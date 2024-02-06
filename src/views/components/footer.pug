@@ -1,0 +1,52 @@
+footer.footer
+  .wrapper
+    .footer__wrapper.footer-top
+      .footer__slogan ПОЛУЧИТЬ БОЛЬШЕ <br> ИНФОРМАЦИИ
+      form.footer__form(action="#")
+        label.footer__label
+          input.footer__input(type="text" placeholder="" name="name" required)
+          p ИМЯ
+        label.footer__label
+          input.footer__input(type="tel" placeholder="" name="phone" required)
+          p ТЕЛЕФОН
+        label.footer__label
+          input.footer__input(
+            type="email"
+            placeholder=""
+            name="email"
+            required
+          )
+          p EMAIL
+        label.footer__policy
+          input(type="checkbox" name="policy" required)
+          span Я соглашаюсь с условиями обработки персональных данных
+        button.footer__button(type="submit") ОТПРАВИТЬ
+    .footer__wrapper.footer-bottom
+      nav.footer__nav
+        .footer__links
+          a.footer__link(href="/schedule/") Расписание занятий
+          a.footer__link(href="/contacts/") Контакты
+          a.footer__link(href="/coaches/") Тренеры
+          a.footer__link(href="/blog/") Блог
+        .footer__links
+          a.footer__link(href="/plans/") Абонементы
+          a.footer__link(href="#servises") Услуги
+          a.footer__link(href="#reviews") Отзывы
+          a.footer__link(href="#faq") Частые вопросы
+        .footer__links
+          a.footer__link(
+            href="https://t.me/Alexfitness_Svoboda"
+            target="_blank"
+          ) Telegram
+          a.footer__link(href="#" target="_blank") Instagram
+          a.footer__link(href="#" target="_blank") VK
+        .footer__links
+          a.footer__link(href="tel:+7 912 234-23-43") +7 912 234-23-43
+          a.footer__link(
+            href="https://yandex.ru/maps/-/CDB5AZJK"
+            target="_blank"
+          ) г. Москва, ул. Свободы 44
+    .footer__copy
+      .copyright &copy; <span class="currentYear">2024</span> Свобода Фитнес. Все права защищены.
+      a(href="/policy/") Политика
+      a(href="https://shevelev.agency" target="_blank") Desing & Dev by SHEVELEV

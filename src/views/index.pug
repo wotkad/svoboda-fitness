@@ -17,7 +17,12 @@ block content
       .barba-container(data-barba="container" data-barba-namespace="main")
         include ./components/hero
         include ./components/services
-        include ./components/plans
+        section.plans
+          .wrapper
+            .plans__wrapper
+              +subtitle('02.', 'АБОНЕМЕНТЫ')
+              include ./components/plans
         include ./components/slogan
+        include ./components/gallery
         include ./components/reviews
         include ./components/faq
