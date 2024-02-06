@@ -1,5 +1,7 @@
 .reviews {
   position: relative;
+
+  overflow: hidden;
   &__slider {
     overflow: visible;
   }

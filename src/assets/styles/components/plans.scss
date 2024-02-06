@@ -1,5 +1,7 @@
 .plans {
   position: relative;
+
+  overflow: hidden;
   &__slider {
     overflow: visible;
   }
@@ -7,6 +9,7 @@
     font-size: 32px;
     line-height: 46px;
     span {
+      margin-bottom: 4px;
       padding: 8px;
 
       border-radius: 8px;

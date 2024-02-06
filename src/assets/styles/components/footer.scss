@@ -1,0 +1,181 @@
+.footer {
+  background-color: $neutral-400;
+  &-top {
+    padding: 60px 0 60px;
+  }
+  &-bottom {
+    padding: 60px 0 40px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  &__slogan {
+    font-size: 28px;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  &__label {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    p {
+      position: absolute;
+      left: 0;
+
+      display: inline;
+
+      color: $text-caption;
+
+      transition: transform $transition-default;
+      transform-origin: 0 0;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  &__input {
+    padding: 4px 0;
+    width: 100%;
+
+    border-bottom: 1px solid $neutral-200;
+    border-radius: 0;
+    background-color: transparent;
+
+    text-transform: uppercase;
+    &:active,
+    &:focus {
+      & + p {
+        transform: translateY(-14px) scale(0.7);
+      }
+    }
+  }
+  &__policy {
+    position: relative;
+
+    padding-left: 24px;
+
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-secondary;
+    cursor: pointer;
+    span {
+      &:before {
+        content: "";
+
+        position: absolute;
+        top: 4px;
+        left: 0;
+
+        width: 16px;
+        height: 16px;
+
+        border: 1px solid $icon-gray-2;
+        border-radius: 50%;
+      }
+      &:after {
+        content: "";
+
+        position: absolute;
+        top: 7px;
+        left: 3px;
+
+        width: 10px;
+        height: 10px;
+
+        border-radius: 50%;
+        background-color: $yellow;
+
+        transition: opacity $transition-default;
+        opacity: 0;
+      }
+    }
+    input {
+      position: absolute;
+
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked + {
+        span {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    padding: 16px 80px;
+
+    border-radius: 100px;
+    background-color: $white;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: $text-black;
+    @include screen(laptop) {
+      transition: background-color $transition-default;
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+  }
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-column: span 2 / span 2;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-secondary;
+
+    transition: color $transition-default;
+    &.active {
+      color: $yellow;
+    }
+    @include screen(laptop) {
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+  &__copy {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 32px 0;
+
+    border-top: 1px solid $neutral-200;
+    .copyright {
+      grid-column: span 2 / span 2;
+
+      color: $text-caption;
+    }
+    a {
+      font-size: 16px;
+      line-height: 24px;
+      color: $text-caption;
+      @include screen(laptop) {
+        transition: color $transition-default;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
