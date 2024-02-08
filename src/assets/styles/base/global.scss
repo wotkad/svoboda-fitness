@@ -32,7 +32,7 @@ body {
 }
 
 main {
-  padding-top: 142px;
+  padding-top: 200px;
 }
 
 .render {
@@ -49,23 +49,16 @@ main {
 
 .wrapper {
   margin: 0 auto;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  width: 100%;
-  @include screen(mobile) {
-    max-width: 640px;
-  }
+  padding: 0 #{$container-padding};
+  max-width: calc(#{$mobile-wrapper} + #{$container-padding * 2});
   @include screen(tablet) {
-    max-width: 768px;
-  }
-  @include screen(tablet-2x) {
-    max-width: 1024px;
+    max-width: calc(#{$screen-tablet} + #{$container-padding * 2});
   }
   @include screen(laptop) {
-    max-width: 1280px;
+    max-width: calc(#{$screen-laptop} + #{$container-padding * 2});
   }
   @include screen(desktop) {
-    max-width: 1536px;
+    max-width: calc(#{$screen-desktop} + #{$container-padding * 2});
   }
 }
 
@@ -73,8 +66,21 @@ button {
   user-select: none;
 }
 
-section {
-  padding: 90px 0;
+.pusher {
+  display: flex;
+  flex-direction: column;
+  row-gap: 68px;
+  padding-bottom: 60px;
+  @include screen(tablet) {
+    row-gap: 80px;
+  }
+  @include screen(laptop) {
+    row-gap: 180px;
+    padding-bottom: 100px;
+  }
+  @include screen(desktop) {
+    row-gap: 200px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

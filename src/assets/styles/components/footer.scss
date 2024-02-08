@@ -49,8 +49,22 @@
     background-color: transparent;
 
     text-transform: uppercase;
+
+    transition: color $transition-default, border-color $transition-default;
     &:active,
     &:focus {
+      border-color: $text-secondary;
+      & + p {
+        transform: translateY(-14px) scale(0.7);
+      }
+    }
+    &:hover {
+      border-color: $text-secondary;
+    }
+    &.not-valid {
+      border-color: $error;
+    }
+    &.filled {
       & + p {
         transform: translateY(-14px) scale(0.7);
       }
@@ -78,6 +92,8 @@
 
         border: 1px solid $icon-gray-2;
         border-radius: 50%;
+
+        transition: border-color $transition-default;
       }
       &:after {
         content: "";
@@ -106,6 +122,13 @@
         span {
           &:after {
             opacity: 1;
+          }
+        }
+      }
+      &.not-valid + {
+        span {
+          &:before {
+            border-color: $error;
           }
         }
       }

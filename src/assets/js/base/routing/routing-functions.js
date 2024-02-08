@@ -6,7 +6,9 @@ import sliderPlans from "../../components/slider/slider-plans";
 import sliderReviews from "../../components/slider/slider-reviews";
 import sliderGallery from "../../components/slider/slider-gallery";
 import toggleFaq from "../../components/toggle/toggle-faq";
-import checkFooter from "../../components/check/check-footer";
+import formFooter from "../../components/form/form-footer";
+import animationHero from "../../components/animation/animation-hero";
+import yaMaps from "../../components/map";
 
 export default function routingFunctions() {
   checkCurrentPage();
@@ -17,5 +19,7 @@ export default function routingFunctions() {
   sliderReviews();
   sliderGallery();
   toggleFaq();
-  checkFooter();
+  formFooter();
+  animationHero();
+  yaMaps();
 }

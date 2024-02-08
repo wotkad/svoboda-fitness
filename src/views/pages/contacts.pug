@@ -15,3 +15,9 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="contacts")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Контакты', href: '' } ])
+            +subtitle('01.', 'Контакты')
+          .pusher
+            include ../components/contacts

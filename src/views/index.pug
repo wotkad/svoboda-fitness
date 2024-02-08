@@ -15,14 +15,16 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="main")
-        include ./components/hero
-        include ./components/services
-        section.plans
-          .wrapper
-            .plans__wrapper
-              +subtitle('02.', 'АБОНЕМЕНТЫ')
-              include ./components/plans
-        include ./components/slogan
-        include ./components/gallery
-        include ./components/reviews
-        include ./components/faq
+        .pusher
+          include ./components/hero
+          include ./components/services
+          section.plans
+            .wrapper
+              .plans__wrapper
+                .headline
+                  +subtitle('02.', 'АБОНЕМЕНТЫ')
+                include ./components/plans
+          include ./components/slogan
+          include ./components/gallery
+          include ./components/reviews
+          include ./components/faq

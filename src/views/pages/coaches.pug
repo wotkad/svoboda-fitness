@@ -15,3 +15,9 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="coaches")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Тренеры', href: '' } ])
+            +subtitle('01.', 'Тренеры')
+          .pusher
+            include ../components/coaches

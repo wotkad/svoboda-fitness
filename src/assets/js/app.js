@@ -24,4 +24,8 @@ import "./components/slider/slider-gallery";
 
 import "./components/toggle/toggle-faq";
 
-import "./components/check/check-footer";
+import "./components/form/form-footer";
+
+import "./components/animation/animation-hero";
+
+import "./components/map";

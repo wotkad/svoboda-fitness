@@ -1,6 +1,9 @@
 .reviews {
   position: relative;
 
+  margin-top: -50px;
+  padding-top: 50px;
+
   overflow: hidden;
   &__slider {
     overflow: visible;

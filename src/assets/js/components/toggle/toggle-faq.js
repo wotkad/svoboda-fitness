@@ -8,6 +8,7 @@ export default function toggleFaq() {
       let id = button[i].getAttribute('data-id');
       let block = $('.faq__container[data-id="' + id + '"]');
       button.removeClass('active');
+      $(this).addClass('active');
       gsap.to(container, {opacity: 0, duration: 0.3, onComplete: () => {
         gsap.to(container, {display: 'none', duration: 0});
         gsap.to($(block).attr('data-id', $(this).attr('data-id')), {display: 'block', duration: 0, onComplete: () => {

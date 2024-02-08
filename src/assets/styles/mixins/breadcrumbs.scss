@@ -1,0 +1,31 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding-left: 53px;
+    a,
+    span {
+      display: inline-block;
+
+      font-weight: 500;
+      color: $neutral-100;
+
+      transition: color $transition-default;
+    }
+    a {
+      display: flex;
+      align-items: center;
+
+      @include screen(laptop) {
+        &:hover {
+          color: $yellow;
+          span {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,3 +15,9 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="blog")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Блог', href: '' } ])
+            +subtitle('01.', 'Блог')
+          .pusher
+            include ../components/blog

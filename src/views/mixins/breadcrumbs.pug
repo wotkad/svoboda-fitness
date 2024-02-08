@@ -1,2 +1,12 @@
 mixin breadcrumbs(data)
   .breadcrumbs
+    .breadcrumbs__list
+      a(href="/")
+        span Главная
+      each link in data
+        if link.href == ''
+          span /
+          span= link.title
+        else
+          span /
+          a(href="" + link.href)= link.title

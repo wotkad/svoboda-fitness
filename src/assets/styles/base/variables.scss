@@ -1,4 +1,13 @@
 $transition-default: 0.3s;
+$transition-slow: 0.8s;
+
+$container-padding: 16px;
+
+$screen-desktop: 1536px;
+$screen-laptop: 1224px;
+$screen-tablet: 768px;
+
+$mobile-wrapper: 343px;
 
 $white: #ffffff;
 $white-100: #e6e6e6;
@@ -17,3 +26,5 @@ $text-secondary: #b1b1b1;
 
 $icon-gray: #5c5c5c;
 $icon-gray-2: #a1a1a1;
+
+$error: #a63232;
