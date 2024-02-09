@@ -1,6 +1,6 @@
 import sendMail from "./form-send";
 
-export default function checkFooter() {
+export default function form() {
   let inputs = $('.footer__input')
   let policyInput = $('.footer__policy input')
 
@@ -122,4 +122,4 @@ export default function checkFooter() {
   });
 
 }
-checkFooter();
+form();

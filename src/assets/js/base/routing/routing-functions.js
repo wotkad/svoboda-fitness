@@ -6,7 +6,7 @@ import sliderPlans from "../../components/slider/slider-plans";
 import sliderReviews from "../../components/slider/slider-reviews";
 import sliderGallery from "../../components/slider/slider-gallery";
 import toggleFaq from "../../components/toggle/toggle-faq";
-import formFooter from "../../components/form/form-footer";
+import form from "../../components/form/form";
 import animationHero from "../../components/animation/animation-hero";
 import yaMaps from "../../components/map";
 
@@ -19,7 +19,7 @@ export default function routingFunctions() {
   sliderReviews();
   sliderGallery();
   toggleFaq();
-  formFooter();
+  form();
   animationHero();
   yaMaps();
 }

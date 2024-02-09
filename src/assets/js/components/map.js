@@ -1,4 +1,4 @@
-function yaMaps() {
+export default function yaMaps() {
   let check_if_load = false;
   function init() {
     let myMapTemp = new ymaps.Map('map-yandex', {
@@ -46,7 +46,7 @@ function yaMaps() {
     if (script.readyState){
       script.onreadystatechange = function() {
         if (script.readyState == 'loaded' ||
-          script.readyState == 'complete'){
+          script.readyState == 'complete') {
           script.onreadystatechange = null;
           callback();
         }
@@ -68,7 +68,9 @@ function yaMaps() {
     }
   };
   $(function() {
-    ymap();
+    if ($('.ymap-container').length > 0) {
+      ymap();
+    }
   });
 }
 if ($('.ymap-container').length > 0) {

@@ -24,7 +24,7 @@ import "./components/slider/slider-gallery";
 
 import "./components/toggle/toggle-faq";
 
-import "./components/form/form-footer";
+import "./components/form/form";
 
 import "./components/animation/animation-hero";
 
