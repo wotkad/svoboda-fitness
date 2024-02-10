@@ -1,8 +1,8 @@
 import sendMail from "./form-send";
 
 export default function form() {
-  let inputs = $('.footer__input')
-  let policyInput = $('.footer__policy input')
+  let inputs = $('input')
+  let policyInput = $('input[name="policy"]')
 
   const validateName = (name) => {
     if (name.length >= 2 && name.length < 50) {
@@ -34,6 +34,20 @@ export default function form() {
     }
     if (name == '') {
       $('input[name="name"]').removeClass('not-valid').removeClass('filled');
+    }
+    return false;
+  }
+
+  const validatedSurname = () => {
+    const name = $('input[name="surname"]').val();
+
+    if (validateName(name)) {
+      $('input[name="surname"]').removeClass('not-valid').addClass('filled');
+    } else {
+      $('input[name="surname"]').addClass('not-valid').addClass('filled');
+    }
+    if (name == '') {
+      $('input[name="surname"]').removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
@@ -71,6 +85,7 @@ export default function form() {
   }
 
   $('input[name="name"]').on('input', validatedName);
+  $('input[name="surname"]').on('input', validatedSurname);
   $('input[name="email"]').on('input', validatedEmail);
   $('input[name="phone"]').on('input', validatedPhone);
 
@@ -96,10 +111,11 @@ export default function form() {
       })
     });
     if (form) {
-      form.submit(function(e) {
+      form.on('submit', function(e) {
         e.preventDefault();
         if (
           !$('input[name="name"]').hasClass('not-valid') &&
+          !$('input[name="surname"]').hasClass('not-valid') &&
           !$('input[name="email"]').hasClass('not-valid') &&
           !$('input[name="phone"]').hasClass('not-valid') &&
           !$('input[name="policy"]').hasClass('not-valid')) {

@@ -1,0 +1,86 @@
+section.order
+  .wrapper
+    .order__wrapper
+      .order__actions
+        .order__action.active(data-id="1") Данные владельца
+        .order__action(data-id="2") Абонемент
+        .order__action(data-id="3") Оплата
+      form(action="#").order__steps
+        .order__step.active(data-id="1")
+          h2.order__title ВАШИ ДАННЫЕ
+          .order__text * Поля обязательны для заполнения
+          .order__form
+            label.order__label
+              input.order__input.order__input-required(type="text" name="name" required autocomplete="off")
+              p Имя *
+            label.order__label.order__select
+              input.order__input(type="text" name="sex" autocomplete="off")
+              .order__selected
+                p Пол
+                .order__value
+                span.material-symbols-outlined expand_more
+              .order__list 
+                .order__list__item Мужской
+                .order__list__item Женский
+            label.order__label
+              input.order__input.order__input-required(type="text" name="surname" required autocomplete="off")
+              p Фамилия *
+            label.order__label.order__select
+              input.order__input(type="text" name="experience" autocomplete="off")
+              .order__selected
+                p Опыт в фитнесе
+                .order__value
+                span.material-symbols-outlined expand_more
+              .order__list 
+                .order__list__item Иду впервые
+                .order__list__item До года
+                .order__list__item 1 год
+                .order__list__item 2 года
+                .order__list__item 3 года
+                .order__list__item 4 года +
+            label.order__label
+              input.order__input.order__input-required(type="tel" name="phone" required autocomplete="off")
+              p Телефон *
+            label.order__label.order__calendar
+              input.order__input#datepicker(type="text" name="birthday" autocomplete="off")
+              p Дата рождения
+              span.material-symbols-outlined calendar_month
+            label.order__label
+              input.order__input.order__input-required(type="email" name="email" required autocomplete="off")
+              p Email *
+            button(type="button" data-id="2").order__button ВПЕРЕД
+            .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
+        .order__step(data-id="2")
+          h2.order__title АБОНЕМЕНТ
+          .order__text * Поля обязательны для заполнения
+          .order__form.order__form-wide
+            //- label.order__label.order__calendar
+            //-   input.order__input#datepicker(type="start-date" name="birthday" required autocomplete="off")
+            //-   p Дата начала занятий
+            //-   span.material-symbols-outlined calendar_month
+            label.order__label.order__select
+              input.order__input.order__input-required(type="text" name="plan" required autocomplete="off")
+              .order__selected
+                p Выберите абонемент *
+                .order__value
+                span.material-symbols-outlined expand_more
+              .order__list
+                .order__list__item 1 МЕСЯЦ - 7500 ₽
+                .order__list__item 3 МЕСЯЦЕВ - 13 000 ₽
+                .order__list__item 6 МЕСЯЦЕВ - 16 000 ₽
+                .order__list__item ГОДОВОЙ - 22 000 ₽
+            label.order__label
+              input.order__input(type="text" name="promocode" required autocomplete="off")
+              p Промокод
+            a(href="#" target="_blank" data-id="3").order__button К оплате
+            .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
+        .order__step(data-id="3")
+          .order__spinner
+            img(src="/assets/images/spinner.svg", alt="spinner")
+            h2.order__title Ожидаем оплату
+          .order__alert.order__alert-success
+            .order__subtitle ОПЛАТА ПРОШЛА УСПЕШНО
+            .order__subtext Ждем вас на занятии!
+          .order__alert.order__alert-error
+            .order__subtitle ОШИБКА ОПЛАТЫ
+            .order__subtext Введены неверные данные карты или недостаточно средств

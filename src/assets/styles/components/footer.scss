@@ -169,6 +169,9 @@
     color: $text-secondary;
 
     transition: color $transition-default;
+    &-right {
+      text-align: right;
+    }
     &.active {
       color: $yellow;
     }

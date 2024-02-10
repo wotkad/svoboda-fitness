@@ -15,3 +15,9 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="order")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Абонементы', href: '/plans/' }, { title: 'Купить абонемент', href: ''} ])
+            +subtitle('01.', 'Купить абонемент')
+        .pusher
+          include ../components/order

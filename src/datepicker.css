@@ -1,0 +1,253 @@
+.container.amp-plugin {
+  transform: translateY(28px) translateX(-30px);
+  right: 0;
+  left: auto;
+  border-radius: 10px;
+  width: 311px;
+}
+
+.container.amp-plugin main {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #D0D0D0;
+}
+
+.calendar {
+  padding: 16px 24px 47px;
+  background-color: #FFF;
+}
+
+.calendar>.header {
+  padding: 0;
+}
+
+.calendar>.header .month-name {
+  color: #001B23;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.calendar>.header .month-name--select {
+  background-color: #fff;
+}
+
+.calendar>.header .month-name>span {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.calendar>.header button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.calendar>.days-grid {
+  gap: 2px;
+}
+
+.calendar>.header button:hover {
+  background-color: #f5f5f5;
+}
+
+.calendar>.daynames-row {
+  margin: 12px 0;
+}
+
+.container.amp-plugin .day {
+  padding: 0;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+.calendar>.header button>svg {
+  transform: scale(1);
+}
+
+.calendar>.daynames-row>.dayname {
+  padding: 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  height: 40px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar>.days-grid>.day {
+  color: #001B23;
+  font-family: DM Sans, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 50%;
+  line-height: 28px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.container.amp-plugin .calendars .calendar>.header .month-name select {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+}
+
+.container.amp-plugin .calendars .calendar>.header .month-name select.month-name--dropdown,
+.container.amp-plugin .calendars .calendar>.header .month-name span,
+.container.amp-plugin .calendars .calendar>.header .month-name select {
+  color: #001B23;
+  font-family: DM Sans, sans-serif;
+  outline: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+}
+
+.calendar>.days-grid>.day,
+.calendar>.days-grid>.day:hover {
+  border: none;
+}
+
+.calendar>.days-grid>.day:hover,
+.calendar>.days-grid>.day.selected {
+  background-color: #004155;
+  color: #fff;
+}
+
+.calendar>.days-grid>.day.today {
+  color: #001B23;
+}
+
+.calendar>.days-grid>.day.today:hover {
+  color: #fff;
+}
+
+.container.amp-plugin .calendars .calendar>.header .month-name {
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.calendar>.header button.reset-button {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94px;
+  height: 33px;
+  transition: 0.3s;
+  padding: 6px;
+}
+
+.calendar>.header button.next-button {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  touch-action: manipulation;
+}
+
+.calendar>.header button.previous-button {
+  position: absolute;
+  right: 68px;
+  top: 16px;
+  touch-action: manipulation;
+}
+
+.calendar>.days-grid>.day:hover,
+.container.range-plugin .calendar>.days-grid>.day.end,
+.container.range-plugin .calendar>.days-grid>.day.start {
+  background-color: #004155;
+  color: #fff;
+}
+
+.container.range-plugin .calendar>.days-grid>.day.in-range {
+  background-color: #004155;
+  color: #fff;
+}
+
+.container.range-plugin .calendar>.days-grid>.day,
+.container.range-plugin .calendar>.days-grid>.day.in-range,
+.container.range-plugin .calendar>.days-grid>.day.in-range:last-of-type,
+.container.range-plugin .calendar>.days-grid>.day.start.flipped,
+.container.range-plugin .calendar>.days-grid>.day.start.end,
+.container.range-plugin .calendar>.days-grid>.day.start,
+.container.range-plugin .calendar>.days-grid>.day.end,
+.container.range-plugin .calendar>.days-grid>.day.end.flipped,
+.container.range-plugin .calendar>.days-grid>div:not(.day)+.day.in-range {
+  border-radius: 50%;
+}
+
+.container.range-plugin .calendar>.days-grid>.day.start:after,
+.container.range-plugin .calendar>.days-grid>.day.end:after {
+  display: none;
+}
+
+.container.range-plugin .calendar>.days-grid>div:nth-child(7n+1).in-range,
+.container.range-plugin .calendar>.days-grid>div:nth-child(7n).in-range {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1240px) {
+  .container.amp-plugin {
+    transform: translateY(16px) translateX(-30px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container:not(.inline) {
+    bottom: 0!important;
+    left: 50%!important;
+    position: fixed!important;
+    right: 0!important;
+    top: auto!important;
+    transform: scaleY(1) translateX(-50%) translateY(100%)!important;
+    border-radius: 10px 10px 0 0;
+  }
+  .container:not(.inline).show {
+    transform: scaleY(1) translateX(-50%) translateY(0)!important;
+  }
+  .calendars .calendar>.days-grid>.day {
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    width: 36px;
+    height: 36px;
+  }
+  .calendar {
+    padding-bottom: 58px;
+  }
+  .container.amp-plugin {
+    width: 343px;
+    max-width: 343px;
+    padding: 16px 16px 8px;
+    background-color: #fff;
+  }
+  .container.amp-plugin main {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  .calendar>.header button.previous-button,
+  .calendar>.header button.next-button {
+    top: 32px;
+  }
+  .calendar>.header button.previous-button {
+    right: 85px;
+  }
+  .calendar>.header button.next-button {
+    right: 29px;
+  }
+  .calendar>.header button.reset-button {
+    bottom: 24px;
+  }
+}
