@@ -170,6 +170,56 @@
     font-size: 16px;
     line-height: 24px;
   }
+  &-coach-booking {
+    .popup__title {
+      font-size: 64px;
+      line-height: 64px;
+      @include actay;
+    }
+  }
+  &__date {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  &__time {
+    margin-top: 12px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+  &__button {
+    margin-top: 32px;
+    border: 1px solid $white;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 20px;
+    line-height: 24px;
+    @include screen(laptop) {
+      transition: color $transition-default, border-color $transition-default;
+      &:hover {
+        border-color: $yellow;
+        color: $yellow;
+      }
+    }
+  }
+  .popup__container {
+    grid-template-columns: 454px 1fr;
+  }
+  .popup__item {
+    grid-template-columns: 1fr 462px;
+    gap: 16px;
+    ul {
+      li {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    &:nth-last-child(2) {
+      border-bottom: 1px solid $neutral-300;
+    }
+  }
   @include screen(tablet) {
     display: flex;
     align-items: center;

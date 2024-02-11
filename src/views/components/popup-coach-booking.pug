@@ -1,5 +1,22 @@
 .popup.popup-coach-booking(data-popup="coach-booking")
   .popup__wrapper
     .popup__container
+      .popup__close 
+        span.material-symbols-outlined close
       .popup__image
         img(src="/assets/images/coach.png" alt="coach")
+      .popup__content 
+        .popup__heading
+          .popup__title SUPER SCULPT
+          .popup__date Понедельник, 29 января
+          .popup__time 11:00-12:00
+        .popup__items
+          .popup__item
+            .popup__subtitle Тренер
+            ul 
+              li Александр Паров
+          .popup__item
+            .popup__subtitle О программе
+            ul 
+              li Силовая групповая тренировка включает комплекс упражнений для развития и укрепления основных мышц тела человека с использованием дополнительного оборудования. Рекомендуется для всех уровней подготовленности
+          a(href="/booking/").popup__button Записаться

@@ -1,0 +1,40 @@
+section.order.order-booking
+  .wrapper
+    .order__wrapper
+      .order__header
+        .order__head
+          .order__training SUPER SCULPT
+          .order__coach с Александром Паровым
+        .order__head
+          .order__date Понедельник, 29 января
+          .order__time 11:00-12:00
+        .order__head
+      form(action="#").order__steps
+        .order__step.active(data-id="1")
+          h2.order__title ВАШИ ДАННЫЕ
+          .order__text * Поля обязательные для заполнения
+          .order__form
+            label.order__label
+              input.order__input.order__input-required(type="text" name="name" required autocomplete="off")
+              p Имя *
+            label.order__label
+              input.order__input.order__input-required(type="tel" name="phone" required autocomplete="off")
+              p Телефон *
+            label.order__label
+              input.order__input.order__input-required(type="text" name="surname" required autocomplete="off")
+              p Фамилия *
+            label.order__label
+              input.order__input.order__input-required(type="email" name="email" required autocomplete="off")
+              p Email *
+            button(type="submit" data-id="2").order__button Записаться
+            .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
+        .order__step(data-id="2")
+          .order__spinner
+            img(src="/assets/images/spinner.svg", alt="spinner")
+            h2.order__title Записываем вас на занятие
+          .order__alert.order__alert-success
+            .order__subtitle ЗАПИСЬ ПРОШЛА УСПЕШНО
+            .order__subtext Ждем вас на занятии!
+          .order__alert.order__alert-error
+            .order__subtitle ОШИБКА ЗАПИСИ
+            .order__subtext Введены неверные данные или ошибка соединения.

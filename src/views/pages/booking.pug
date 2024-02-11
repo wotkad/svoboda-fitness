@@ -15,3 +15,9 @@ block content
   main
     .barba(data-barba="wrapper")
       .barba-container(data-barba="container" data-barba-namespace="booking")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Расписание', href: '/ырувгду/' }, { title: 'Запись на занятие', href: ''} ])
+            +subtitle('01.', 'ЗАПИСЬ НА ЗАНЯТИЕ')
+        .pusher
+          include ../components/booking
