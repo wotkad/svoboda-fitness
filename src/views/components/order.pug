@@ -71,9 +71,10 @@ section.order
                 .order__list__item(data-plan-id="1") 3 МЕСЯЦЕВ - 13 000 ₽
                 .order__list__item(data-plan-id="3") 6 МЕСЯЦЕВ - 16 000 ₽
                 .order__list__item(data-plan-id="2") ГОДОВОЙ - 22 000 ₽
-            label.order__label
+            label.order__label.order__promocode
               input.order__input(type="text" name="promocode" required autocomplete="off")
               p Промокод
+              span Промокод не действителен или не существует.
             a(href="#" target="_blank" data-id="3").order__button К оплате
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
         .order__step(data-id="3")

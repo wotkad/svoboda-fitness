@@ -37,9 +37,33 @@
     max-width: 680px
   }
   &__step {
-    display: none;
+    // display: none;
     &.active {
       display: block;
+    }
+  }
+  &__promocode {
+    span { 
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      color: $error;
+      width: 100%;
+      font-size: 12px;
+      left: 0;
+      z-index: -1;
+      bottom: -20px;
+      transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
+    }
+    &.not-valid {
+      .order__input {
+        border-color: $error;
+      }
+      span {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+      }
     }
   }
   &__form {
