@@ -11,10 +11,10 @@ export default function toggleOrderSteps() {
       let block = $('.order__step[data-id="' + id + '"]');
       button.removeClass('active');
       $(this).addClass('active');
-      if (i == 0 && !$('.order__input-required').hasClass('not-valid') && $('.order__input-required').hasClass('filled')) {
+      if (i == 0 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled')) {
         nextStep();
       }
-      if (i == 1 && !$('.order__input-required').hasClass('not-valid') && $('.order__input-required').hasClass('filled') && !$('.order__input-required[name="plan"]').val() == '') {
+      if (i == 1 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled') && !$(this).prevAll().find('.order__input-required[name="plan"]').val() == '') {
         nextStep();
       }
       function nextStep() {

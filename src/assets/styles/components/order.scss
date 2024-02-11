@@ -171,6 +171,7 @@
       color: $neutral-100;
     }
     .order__input {
+      position: absolute;
       cursor: pointer;
       padding: 4px 0;
       width: 100%;
@@ -182,36 +183,16 @@
       text-transform: uppercase;
 
       transition: color $transition-default, border-color $transition-default;
-      // &#datepicker {
-      //   height: auto;
-      //   cursor: pointer;
-      //   opacity: 1;
-      //   position: absolute;
-      //   padding: 0 32px;
-      //   background-color: transparent;
-      //   left: 0;
-      //   width: 230px;
-      //   @include screen(mobile) {
-      //     width: 282px;
-      //   }
-      //   @include screen(tablet) {
-      //     width: 630px;
-      //   }
-      //   @include screen(laptop) {
-      //     height: 33px;
-      //     width: 282px;
-      //   }
-      //   &.selected {
-      //   }
-      // }
       &.active {
-        & + .order__selected {
+        & ~ .order__selected {
           border-color: $text-secondary;
+        }
+      }
+      &.selected,
+      &.active {
+        & ~ .order__selected {
           p {
             transform: translateY(-18px) scale(0.7);
-          }
-          span {
-            transform: rotate(180deg);
           }
         }
       }
@@ -224,7 +205,7 @@
         border-color: $error;
       }
       &.filled {
-        & + .order__selected {
+        & ~ .order__selected {
           p {
             transform: translateY(-18px) scale(0.7);
           }
@@ -240,7 +221,7 @@
       height: 0;
       opacity: 0;
       &.active {
-        & + .order__selected {
+        & ~ .order__selected {
           border-color: $text-secondary;
           p {
             transform: translateY(-18px) scale(0.7);
@@ -259,7 +240,7 @@
         border-color: $error;
       }
       &.filled {
-        & + .order__selected {
+        & ~ .order__selected {
           p {
             transform: translateY(-18px) scale(0.7);
           }

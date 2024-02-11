@@ -58,6 +58,9 @@ barba.init({
           duration: .4
         });
       },
+      afterEnter() {
+
+      }
     },
   ],
 });

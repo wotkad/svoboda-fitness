@@ -84,10 +84,27 @@ export default function form() {
     return false;
   }
 
+  const validatedPromocode = () => {
+    const promocode = $('input[name="promocode"]').val();
+
+    if (promocode.length > 0) {
+      $('input[name="promocode"]').removeClass('not-valid');
+      $('input[name="promocode"]').addClass('filled');
+    } else {
+      $('input[name="promocode"]').addClass('filled');
+      $('input[name="promocode"]').addClass('not-valid');
+    }
+    if (promocode == '') {
+      $('input[name="promocode"]').removeClass('not-valid').removeClass('filled');
+    }
+    return false;
+  }
+
   $('input[name="name"]').on('input', validatedName);
   $('input[name="surname"]').on('input', validatedSurname);
   $('input[name="email"]').on('input', validatedEmail);
   $('input[name="phone"]').on('input', validatedPhone);
+  $('input[name="promocode"]').on('input', validatedPromocode);
 
   policyInput.on('input', function() {
     if ($(this).prop('checked')) {

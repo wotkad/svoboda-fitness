@@ -11,13 +11,32 @@ export default function order() {
   });
   Array.from(labels).forEach(function(item) {
     $(item).on('click', function() {
-      $(this).prev('.order__input').addClass('active');
+      $(this).prevAll('.order__input').addClass('active');
     });
   });
   $(document).on('mouseup', function(e) {
     if (!labels.is(e.target) && labels.has(e.target).length === 0) {
       $('.order__input').removeClass('active');
     }
+    if ($('#birthday-picker').val() == '') {
+      $('#birthday-picker').removeClass('selected');
+    }
+    if ($('#startday-picker').val() == '') {
+      $('#startday-picker').removeClass('selected');
+    }
   });
+  let buttons = $('.plans__button');
+  Array.from(buttons).forEach(function(button) {
+    $(button).on('click', function() {
+      localStorage.planId = $(this).data('plan-id');
+    });
+  });
+  function selectedPlanChecker() {
+    if (localStorage.planId !== undefined) {
+      $(`.order__plans .order__input`).val($(`.order__plans .order__list__item[data-plan-id=${localStorage.planId}]`).text()).addClass('filled');
+      $(`.order__plans .order__value`).text($(`.order__plans .order__list__item[data-plan-id=${localStorage.planId}]`).text());
+    }
+  }
+  selectedPlanChecker();
 }
 order();
