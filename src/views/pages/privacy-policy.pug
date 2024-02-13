@@ -1,0 +1,24 @@
+extends ../layouts/master
+
+block title
+  title Свобода фитнес | Политика конфиденциальности
+
+block basicSeo
+  meta(content="Политика конфиденциальности" name="description")
+  meta(content="Политика конфиденциальности" name="keywords")
+
+block manifestBrowserconfigFiles
+  link(href="../manifest.json" rel="manifest" crossorigin)
+  meta(content="../browserconfig.xml" name="msapplication-config")
+
+block content
+  main
+    .barba(data-barba="wrapper")
+      .barba-container(data-barba="container" data-barba-namespace="policy")
+        .wrapper
+          .headline
+            +breadcrumbs([ { title: 'Политика', href: '' } ])
+            +subtitle('01.', 'Политика')
+        .pusher
+          section.plans
+            include ../components/privacy-policy
