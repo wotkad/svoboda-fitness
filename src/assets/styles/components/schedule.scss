@@ -1,0 +1,101 @@
+.schedule {
+  &-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+  &__filter {
+    border-radius: 100px;
+    padding: 7px 20px;
+    min-width: 184px;
+    border: 1px solid $text-caption;
+    position: relative;
+    &-time {
+      min-width: 208px;
+    }
+    &-type {
+      min-width: 272px;
+    }
+    .schedule__input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &.active {
+        & ~ .schedule__selected {
+          border-color: $text-secondary;
+          span {
+            transform: rotate(180deg);
+          }
+        }
+        & ~ .schedule__list {
+          opacity: 1;
+          visibility: visible;
+          z-index: 2;
+        }
+      }
+      &.not-valid {
+        border-color: $error;
+      }
+    }
+  }
+  &__selected {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    background-color: transparent;
+
+    transition: color $transition-default, border-color $transition-default;
+    position: relative;
+    span.material-symbols-outlined {
+      position: absolute;
+      right: 0;
+      transition: transform $transition-default;
+      color: $neutral-100;
+    }
+  }
+  &__list {
+    position: absolute;
+    top: 50px;
+    background-color: $neutral-400;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
+    &__item {
+      padding: 8px 12px;
+      font-size: 14px;
+      line-height: 20px;
+      color: $text-secondary;
+      cursor: pointer;
+      transition: color $transition-default;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+  &__clear {
+    padding: 8px 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: $neutral-100;
+    transition: color $transition-default;
+      &:hover {
+        color: $white;
+      }
+  }
+}

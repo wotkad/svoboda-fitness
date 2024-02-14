@@ -25,6 +25,7 @@ import "./components/slider/slider-gallery";
 import "./components/toggle/toggle-faq";
 import "./components/toggle/toggle-popup";
 import "./components/toggle/toggle-order-steps";
+import "./components/toggle/toggle-filters";
 
 import "./components/form/form";
 import "./components/form/order";

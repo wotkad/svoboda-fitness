@@ -1,0 +1,38 @@
+section.schedule 
+  .wrapper 
+    .schedule__wrapper 
+      .schedule-filters
+        .schedule-filters__wrapper
+          label.schedule__filter
+            input.schedule__input(type="text" name="coach")
+            .schedule__selected
+              .schedule__value(data-text="Тренер") Тренер
+              span.material-symbols-outlined expand_more
+            .schedule__list 
+              .schedule__list__item Тренер 1
+              .schedule__list__item Тренер 2
+          label.schedule__filter
+            input.schedule__input(type="text" name="training")
+            .schedule__selected
+              .schedule__value(data-text="Занятие") Занятие
+              span.material-symbols-outlined expand_more
+            .schedule__list 
+              .schedule__list__item Занятие 1
+              .schedule__list__item Занятие 2
+          label.schedule__filter.schedule__filter-time
+            input.schedule__input(type="text" name="coach")
+            .schedule__selected
+              .schedule__value(data-text="Время начала") Время начала
+              span.material-symbols-outlined expand_more
+            .schedule__list 
+              .schedule__list__item 10:00 - 11:00
+              .schedule__list__item 11:00 - 12:00
+          label.schedule__filter.schedule__filter-type
+            input.schedule__input(type="text" name="coach")
+            .schedule__selected
+              .schedule__value(data-text="Платные и бесплатные") Платные и бесплатные
+              span.material-symbols-outlined expand_more
+            .schedule__list 
+              .schedule__list__item Платные
+              .schedule__list__item Бесплатные
+        button(type="button").schedule__clear Очистить фильтр

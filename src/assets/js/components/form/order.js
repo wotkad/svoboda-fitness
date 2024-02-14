@@ -11,6 +11,7 @@ export default function order() {
   });
   Array.from(labels).forEach(function(item) {
     $(item).on('click', function() {
+      $('.order__input').removeClass('active');
       $(this).prevAll('.order__input').addClass('active');
     });
   });
