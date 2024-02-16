@@ -30,7 +30,7 @@
       &.active {
         & ~ .schedule__selected {
           border-color: $text-secondary;
-          span {
+          svg {
             transform: rotate(180deg);
           }
         }
@@ -58,7 +58,7 @@
 
     transition: color $transition-default, border-color $transition-default;
     position: relative;
-    span.material-symbols-outlined {
+    svg {
       position: absolute;
       right: 0;
       transition: transform $transition-default;

@@ -55,13 +55,13 @@
     align-items: center;
     padding: 20px 0;
     cursor: pointer;
-    span {
+    svg {
       color: $icon-gray;
 
       transition: transform $transition-default;
     }
     &.active {
-      span {
+      svg {
         transform: rotate(180deg);
       }
     }

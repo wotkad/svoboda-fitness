@@ -162,7 +162,7 @@
     }
   }
   &__subtitle {
-    @include h3-md-inter;
+    @include label-14-12-m-medium;
   }
   &-coach-booking {
     .popup__title {
@@ -182,8 +182,7 @@
     border: 1px solid $white;
     border-radius: 24px;
     padding: 12px 24px;
-    font-size: 20px;
-    line-height: 24px;
+    @include body-2;
     @include screen(laptop) {
       transition: color $transition-default, border-color $transition-default;
       &:hover {

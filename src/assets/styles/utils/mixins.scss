@@ -247,10 +247,25 @@
   }
 }
 
+@mixin label-14-12-m-medium {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+  @include screen(tablet) {
+    font-size: 12px;
+  }
+  @include screen(laptop) {
+    font-size: 16px;
+  }
+}
+
 @mixin label-article-h1-semibold {
   font-size: 18px;
   line-height: 140%;
   font-weight: 600;
+  @include screen(tablet) {
+    font-size: 16px;
+  }
   @include screen(laptop) {
     font-size: 24px;
   }
@@ -260,8 +275,11 @@
   font-size: 16px;
   line-height: 150%;
   font-weight: 600;
+  @include screen(tablet) {
+    font-size: 14px;
+  }
   @include screen(laptop) {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
@@ -269,20 +287,29 @@
   font-size: 14px;
   line-height: 150%;
   font-weight: 600;
+  @include screen(tablet) {
+    font-size: 13px;
+  }
   @include screen(laptop) {
     font-size: 20px;
   }
 }
 
 @mixin label-article-h4-semibold {
-  font-size: 16px;
-  line-height: 150%;
+  font-size: 12px;
   font-weight: 600;
+  line-height: 160%;
+  @include screen(laptop) {
+    font-size: 16px;
+  }
 }
 
 @mixin label-article-body {
   font-size: 14px;
   line-height: 160%;
+  @include screen(tablet) {
+    font-size: 12px;
+  }
   @include screen(laptop) {
     font-size: 16px;
   }
@@ -295,4 +322,33 @@
   @include screen(laptop) {
     font-size: 14px;
   }
+}
+
+@mixin button-bold {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 700;
+  @include screen(tablet) {
+    font-size: 12px;
+  }
+  @include screen(laptop) {
+    font-size: 20px;
+  }
+}
+
+@mixin button-medium {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 14px;
+  }
+  @include screen(laptop) {
+    font-size: 20px;
+  }
+}
+
+@mixin button-socials {
+  font-size: 20px;
+  line-height: 120%;
 }

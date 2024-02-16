@@ -166,15 +166,12 @@
     background-color: $white;
     text-align: center;
 
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 29px;
     text-transform: uppercase;
     color: $text-black;
+    @include button-medium;
     @include screen(laptop) {
       transition: background-color $transition-default;
-      &:hover,
-      &:focus {
+      &:hover {
         background-color: $yellow;
       }
     }
@@ -183,7 +180,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    span.material-symbols-outlined {
+    svg {
       position: absolute;
       right: 0;
       transition: transform $transition-default;
@@ -245,7 +242,7 @@
           p {
             transform: translateY(-18px) scale(0.7);
           }
-          span {
+          svg {
             transform: rotate(180deg);
           }
         }
@@ -280,7 +277,7 @@
 
     transition: color $transition-default, border-color $transition-default;
     position: relative;
-    span.material-symbols-outlined {
+    svg {
       position: absolute;
       right: 0;
       transition: transform $transition-default;
