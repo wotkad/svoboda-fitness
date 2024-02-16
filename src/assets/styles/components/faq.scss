@@ -16,12 +16,11 @@
 
     border-right: 1px solid $text-caption;
 
-    font-size: 28px;
-    line-height: 40px;
     text-transform: uppercase;
     color: $text-caption;
 
     transition: color $transition-default;
+    @include label-footer-h;
     &:hover {
       color: $yellow;
     }
@@ -67,8 +66,7 @@
       }
     }
     h3 {
-      font-size: 24px;
-      line-height: 34px;
+      @include body-2;
     }
   }
   &__body {
@@ -78,8 +76,7 @@
       display: block;
     }
     p {
-      font-size: 16px;
-      line-height: 24px;
+      @include body-1;
     }
   }
 }

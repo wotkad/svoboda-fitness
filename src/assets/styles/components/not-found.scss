@@ -10,14 +10,10 @@
     min-height: 100vh;
   }
   &__title {
-    font-size: 80px;
-    line-height: 112px;
-    @include actay-bold;
+    @include xxl-bold-actay
   }
   &__text {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 34px;
+    @include h3-md-inter;
   }
   &__links {
     display: grid;
@@ -33,9 +29,8 @@
     border: 1px solid $neutral-100;
     border-radius: 24px;
 
-    font-size: 20px;
-    line-height: 24px;
     text-align: center;
+    @include body-2;
     @include screen(laptop) {
       transition: color $transition-default, border-color $transition-default;
       &:hover {

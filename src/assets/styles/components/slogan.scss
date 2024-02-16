@@ -7,8 +7,7 @@
     display: flex;
     gap: 16px;
 
-    font-size: 80px;
-    line-height: 116px;
+    @include xl-bold-actay;
     &-left {
       span {
         color: $yellow;
@@ -17,6 +16,6 @@
     &-right {
       justify-content: flex-end;
     }
-    @include actay-bold;
+    @include actay-wide;
   }
 }

@@ -30,7 +30,7 @@
   }
 }
 
-@mixin actay-bold {
+@mixin actay-wide {
   font-weight: 700;
   font-family: "Actay", sans-serif;
 }
@@ -57,4 +57,233 @@
   -webkit-box-orient: vertical;
 
   overflow: hidden;
+}
+
+@mixin xxl-bold-actay {
+  font-size: 40px;
+  line-height: 140%;
+  font-weight: 700;
+  @include actay-wide;
+  @include screen(tablet) {
+    font-size: 48px;
+  }
+  @include screen(laptop) {
+    font-size: 80px;
+  }
+  @include screen(desktop) {
+    font-size: 108px;
+  }
+}
+
+@mixin xl-bold-actay {
+  font-size: 36px;
+  line-height: 150%;
+  font-weight: 700;
+  @include actay-wide;
+  @include screen(tablet) {
+    font-size: 44px;
+  }
+  @include screen(laptop) {
+    font-size: 80px;
+  }
+  @include screen(desktop) {
+    font-size: 100px;
+  }
+}
+
+@mixin h1-actay {
+  font-size: 36px;
+  line-height: 120%;
+  @include screen(tablet) {
+  }
+  @include screen(laptop) {
+    font-size: 64px;
+  }
+}
+
+@mixin h2-actay {
+  font-size: 20px;
+  line-height: 150%;
+  @include actay;
+  @include screen(tablet) {
+    font-size: 18px;
+  }
+  @include screen(laptop) {
+    font-size: 32px;
+  }
+}
+
+@mixin h2 {
+  font-size: 20px;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 18px;
+  }
+  @include screen(laptop) {
+    font-size: 32px;
+  }
+}
+
+@mixin h2-bold-actay {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 700;
+  @include actay;
+  @include screen(tablet) {
+    font-size: 18px;
+  }
+  @include screen(laptop) {
+    font-size: 32px;
+  }
+}
+
+@mixin h3-md-inter {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 16px;
+  }
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin h3-actay {
+  font-size: 18px;
+  line-height: 150%;
+  @include actay;
+  @include screen(tablet) {
+    font-size: 16px;
+  }
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin body-1 {
+  font-size: 14px;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 16px;
+  }
+}
+
+@mixin body-2 {
+  font-size: 16px;
+  line-height: 150%;
+  @include screen(laptop) {
+    font-size: 20px;
+  }
+}
+
+@mixin body-caption {
+  font-size: 12px;
+  line-height: 150%;
+  @include screen(laptop) {
+    font-size: 14px;
+  }
+}
+
+@mixin label-inter-accent {
+  font-size: 24px;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 20px;
+    line-height: 100%;
+  }
+  @include screen(laptop) {
+    font-size: 40px;
+    line-height: 130%;
+  }
+}
+
+@mixin label-footer-h {
+  font-size: 24px;
+  line-height: 150%;
+  @include screen(laptop) {
+    font-size: 28px;
+  }
+}
+
+@mixin label-name-bold {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 700;
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin label-h-numbering {
+  font-size: 16px;
+  line-height: 150%;
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin label-day-active {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+@mixin label-12-m-medium {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 500;
+  @include screen(laptop) {
+    font-size: 16px;
+  }
+}
+
+@mixin label-article-h1-semibold {
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 600;
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin label-article-h2-semibold {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  @include screen(laptop) {
+    font-size: 20px;
+  }
+}
+
+@mixin label-article-h3-semibold {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 600;
+  @include screen(laptop) {
+    font-size: 20px;
+  }
+}
+
+@mixin label-article-h4-semibold {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+@mixin label-article-body {
+  font-size: 14px;
+  line-height: 160%;
+  @include screen(laptop) {
+    font-size: 16px;
+  }
+}
+
+@mixin label-extra-sm-bold {
+  font-size: 8px;
+  line-height: 150%;
+  font-family: 'Inter';
+  @include screen(laptop) {
+    font-size: 14px;
+  }
 }

@@ -25,10 +25,8 @@
     gap: 48px;
   }
   &__link {
-    font-size: 20px;
-    line-height: 24px;
-
     transition: color $transition-default;
+    @include body-2;
     &.active {
       color: $yellow;
     }

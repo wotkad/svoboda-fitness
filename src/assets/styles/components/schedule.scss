@@ -45,6 +45,9 @@
       }
     }
   }
+  &__value {
+    @include body-1;
+  }
   &__selected {
     width: 100%;
     cursor: pointer;
@@ -78,11 +81,10 @@
     transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
     &__item {
       padding: 8px 12px;
-      font-size: 14px;
-      line-height: 20px;
       color: $text-secondary;
       cursor: pointer;
       transition: color $transition-default;
+      @include body-caption;
       &:hover {
         color: $yellow;
       }
@@ -90,10 +92,9 @@
   }
   &__clear {
     padding: 8px 0;
-    font-size: 16px;
-    line-height: 24px;
     color: $neutral-100;
     transition: color $transition-default;
+    @include body-1;
       &:hover {
         color: $white;
       }

@@ -31,13 +31,11 @@
         }
         h3 {
           display: inline;
-          font-size: 40px;
-          line-height: 52px;
+          @include label-inter-accent;
         }
         h4 {
           margin-top: 24px;
-          font-size: 32px;
-          line-height: 46px;
+          @include h2;
           &:first-child {
             margin-top: 0;
           }
@@ -80,8 +78,7 @@
         &:before {
           content: counters(item, ".") ". ";
           counter-increment: item;
-          font-size: 40px;
-          line-height: 52px;
+          @include label-inter-accent;
         }
       }
     }

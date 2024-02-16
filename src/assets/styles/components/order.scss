@@ -8,11 +8,10 @@
   }
   &__action {
     color: $neutral-200;
-    font-size: 22px;
-    line-height: 28px;
     position: relative;
     transition: color $transition-default;
     pointer-events: none;
+    @include body-2;
     &:first-child {
       &:before {
         display: none;
@@ -49,11 +48,11 @@
       position: absolute;
       color: $error;
       width: 100%;
-      font-size: 12px;
       left: 0;
       z-index: -1;
-      bottom: -20px;
+      bottom: -24px;
       transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
+      @include body-caption;
     }
     &.not-valid {
       .order__input {
@@ -82,16 +81,13 @@
     }
   }
   &__title {
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: 500;
     text-transform: uppercase;
+    @include h3-md-inter;
   }
   &__text {
     margin-top: 8px;
-    font-size: 16px;
-    line-height: 24px;
     color: $neutral-100;
+    @include body-1;
   }
   &__label {
     position: relative;
@@ -159,9 +155,8 @@
     grid-column: span 2 / span 2;
     grid-column-start: 1;
     color: $neutral-100;
-    font-size: 14px;
-    line-height: 20px;
     margin-top: -18px;
+    @include body-caption;
   }
   &__button {
     padding: 16px 80px;
@@ -331,26 +326,23 @@
     transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
     &__item {
       padding: 8px 12px;
-      font-size: 14px;
-      line-height: 20px;
       color: $text-secondary;
       cursor: pointer;
       transition: color $transition-default;
+      @include body-caption;
       &:hover {
         color: $yellow;
       }
     }
   }
   &__subtitle {
-    font-size: 40px;
-    line-height: 52px;
     text-transform: uppercase;
+    @include label-inter-accent;
   }
   &__subtext {
     margin-top: 8px;
-    font-size: 20px;
-    line-height: 28px;
     color: $text-caption;
+    @include body-2;
   }
   &__header {
     display: flex;
@@ -362,8 +354,6 @@
   }
   &__training {
     color: $yellow;
-    font-size: 32px;
-    line-height: 46px;
     position: relative;
     &:before {
       content: '';
@@ -374,23 +364,20 @@
       right: -188px;
       top: 18px;
     }
-    @include actay;
+    @include h2-actay;
   }
   &__coach {
     color: $text-secondary;
-    font-size: 16px;
-    line-height: 24px;
+    @include body-1;
   }
   &__date {
-    font-size: 24px;
-    line-height: 34px;
     color: $yellow;
+    @include label-h-numbering;
   }
   &__time {
     color: $text-secondary;
     margin-top: 12px;
-    font-size: 16px;
-    line-height: 24px;
+    @include body-1;
   }
 }
 

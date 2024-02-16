@@ -38,11 +38,10 @@
     height: 100vh;
   }
   &__title {
-    font-size: 80px;
-    line-height: 112px;
+    @include xxl-bold-actay;
     span {
       color: $yellow;
     }
-    @include actay-bold;
+    @include actay-wide;
   }
 }
