@@ -26,21 +26,17 @@
     background-color: $neutral-400;
   }
   &__title {
-    font-size: 24px;
-    line-height: 24px;
-    @include actay-wide;
+    @include label-name-actay-bold;
   }
   &__text {
     margin-top: 16px;
 
-    font-size: 16px;
-    line-height: 24px;
+    @include body-1;
     @include line-clamp-4;
   }
   &__source {
-    font-size: 14px;
-    line-height: 20px;
     color: $text-caption;
+    @include body-caption;
   }
   &__rating {
     display: flex;
@@ -52,14 +48,10 @@
     span {
       margin-bottom: 2px;
 
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
+      @include label-12-m-medium;
     }
     p {
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 34px;
+      @include label-h-numberin-semibold;
     }
   }
 }

@@ -1,4 +1,9 @@
-mixin subtitle(number, subtitle)
-  h2.subtitle
-    span= number
-    p= subtitle
+mixin subtitle(number, subtitle, type = 'h1')
+  if type == 'h1'
+    h1.subtitle
+      span= number
+      p= subtitle
+  else 
+    h2.subtitle
+      span= number
+      p= subtitle

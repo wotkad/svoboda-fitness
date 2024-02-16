@@ -101,16 +101,13 @@
     }
   }
   &__title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 34px;
+    @include h3-md-inter;
   }
   &__description {
     margin-top: 12px;
 
-    font-size: 16px;
-    line-height: 24px;
     color: $text-caption;
+    @include body-1;
   }
   &__heading {
     width: 100%;
@@ -147,9 +144,8 @@
 
         padding-left: 26px;
 
-        font-size: 16px;
-        line-height: 24px;
         color: $text-secondary;
+        @include body-1;
         &:before {
           content: "";
 
@@ -166,26 +162,20 @@
     }
   }
   &__subtitle {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+    @include h3-md-inter;
   }
   &-coach-booking {
     .popup__title {
-      font-size: 64px;
-      line-height: 64px;
-      @include actay;
+      @include h1-actay;
     }
   }
   &__date {
     margin-top: 20px;
-    font-size: 20px;
-    line-height: 28px;
+    @include body-2;
   }
   &__time {
     margin-top: 12px;
-    font-size: 40px;
-    line-height: 52px;
+    @include label-inter-accent;
   }
   &__button {
     margin-top: 32px;

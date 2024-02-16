@@ -13,6 +13,7 @@
       color: $neutral-100;
 
       transition: color $transition-default;
+      @include body-1;
     }
     a {
       display: flex;

@@ -206,10 +206,10 @@
   }
 }
 
-@mixin label-name-bold {
+@mixin label-name-actay-bold {
   font-size: 20px;
   line-height: 150%;
-  font-weight: 700;
+  @include actay-wide;
   @include screen(laptop) {
     font-size: 24px;
   }
@@ -218,6 +218,15 @@
 @mixin label-h-numbering {
   font-size: 16px;
   line-height: 150%;
+  @include screen(laptop) {
+    font-size: 24px;
+  }
+}
+
+@mixin label-h-numberin-semibold {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
   @include screen(laptop) {
     font-size: 24px;
   }
@@ -282,7 +291,7 @@
 @mixin label-extra-sm-bold {
   font-size: 8px;
   line-height: 150%;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   @include screen(laptop) {
     font-size: 14px;
   }
