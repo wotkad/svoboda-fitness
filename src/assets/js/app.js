@@ -21,6 +21,7 @@ import "./components/slider/slider-services";
 import "./components/slider/slider-plans";
 import "./components/slider/slider-reviews";
 import "./components/slider/slider-gallery";
+import "./components/slider/slider-schedule";
 
 import "./components/toggle/toggle-faq";
 import "./components/toggle/toggle-popup";

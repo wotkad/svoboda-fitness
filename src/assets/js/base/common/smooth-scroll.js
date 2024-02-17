@@ -2,11 +2,11 @@ import SmoothScroll from "smooth-scroll";
 
 function smoothScroll() {
   new SmoothScroll('a[href*="#"]', {
-    speed: 300,
+    speed: 400,
     after: function () {
       $("body").css("overflow", "");
     },
-    offset: 160
+    offset: 100
   });
 }
 smoothScroll();

@@ -1,0 +1,217 @@
+.schedule-table {
+  margin-top: 100px;
+  position: relative;
+  &__times {
+    display: flex;
+    position: absolute;
+    padding-right: 8px;
+    left: 0;
+    top: 0;
+    padding-top: 114px;
+    gap: 8px;
+    background-color: $black;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      width: 9999px;
+      background-color: $black;
+      height: 100%;
+    }
+  }
+  &__time {
+    min-height: 284px;
+    width: 46px;
+    position: relative;
+    text-align: center;
+    &:after {
+      content: '';
+      position: absolute;
+      height: 252px;
+      width: 1px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 32px;
+      background-color: $neutral-300;
+    }
+    time {
+      display: inline-block;
+      @include body-1;
+    }
+  }
+  &__slider {
+    overflow: visible;
+    max-width: calc(100% - 114px);
+    margin-left: 114px;
+    height: 3318px;
+  }
+  &__slide {
+    &-disabled {
+      .schedule-table__day {
+        color: $neutral-300;
+      }
+      .schedule-table__date {
+        color: $neutral-300;
+      }
+      .schedule-table__name,
+      .schedule-table__when,
+      .schedule-table__author,
+      .schedule-table__length,
+      .schedule-table__currency,
+      .schedule-table__avalibility {
+        color: $text-caption;
+      }
+      .schedule-table__inner {
+        pointer-events: none;
+        background-color: rgba($neutral-400, 0.6);
+      }
+    }
+    &-today {
+      .schedule-table__day {
+        color: $yellow;
+      }
+    }
+  }
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 62px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: -8px;
+      height: 100%;
+      width: 1px;
+      background-color: $neutral-300;
+    }
+  }
+  &__day {
+    @include body-2;
+  }
+  &__date {
+    @include body-1;
+  }
+  &__inner {
+    padding: 20px;
+    background-color: $neutral-400;
+    border-radius: 8px;
+    @include screen(laptop) {
+      transition: background-color $transition-default;
+      &:hover {
+        background-color: $neutral-300;
+        .schedule-table__dot {
+          background-color: $neutral-100;
+        }
+      }
+    }
+  }
+  &__button {
+    border: 1px solid $neutral-300;
+    border-radius: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 0;
+    padding: 12px 104px 12px 24px;
+    color: $text-secondary;
+    @include screen(laptop) {
+      transition: color $transition-default;
+      &:hover {
+        color: $white;
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+    span {
+      @include body-1;
+    }
+    svg {
+      position: absolute;
+      right: 24px;
+      path {
+        @include screen(laptop) {
+          transition: stroke $transition-default;
+        }
+      }
+    }
+  }
+  &__training {
+    text-align: left;
+    display: inline-flex;
+    align-items: flex-start;
+    min-height: 286px;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 6000px;
+      height: 1px;
+      left: -3000px;
+      top: 0;
+      background-color: $neutral-300;
+    }
+  }
+  &__when {
+    @include label-inter-accent;
+  }
+  &__body {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    flex-direction: column;
+  }
+  &__name {
+    @include body-2;
+  }
+  &__author {
+    @include body-caption;
+  }
+  &__footer {
+    display: flex;
+    margin-top: 59px;
+    align-items: center;
+    gap: 16px;
+  }
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $neutral-300;
+    @include screen(laptop) {
+      transition: background-color $transition-default;
+    }
+  }
+  &__length {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $text-secondary;
+    position: relative;
+    @include body-1;
+  }
+  &__currency {
+    color: $text-secondary;
+    position: relative;
+    @include body-1;
+  }
+  &__avalibility {
+    color: $text-secondary;
+    @include body-1;
+  }
+}

@@ -24,87 +24,97 @@ export default function form() {
     );
   }
 
-  const validatedName = () => {
-    const name = $('input[name="name"]').val();
+  const validatedName = function() {
+    const name = $(this).val();
 
     if (validateName(name)) {
-      $('input[name="name"]').removeClass('not-valid').addClass('filled');
+      $(this).removeClass('not-valid').addClass('filled');
     } else {
-      $('input[name="name"]').addClass('not-valid').addClass('filled');
+      $(this).addClass('not-valid').addClass('filled');
     }
     if (name == '') {
-      $('input[name="name"]').removeClass('not-valid').removeClass('filled');
+      $(this).removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
 
-  const validatedSurname = () => {
-    const name = $('input[name="surname"]').val();
+  const validatedSurname = function() {
+    const name = $(this).val();
 
     if (validateName(name)) {
-      $('input[name="surname"]').removeClass('not-valid').addClass('filled');
+      $(this).removeClass('not-valid').addClass('filled');
     } else {
-      $('input[name="surname"]').addClass('not-valid').addClass('filled');
+      $(this).addClass('not-valid').addClass('filled');
     }
     if (name == '') {
-      $('input[name="surname"]').removeClass('not-valid').removeClass('filled');
+      $(this).removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
 
-  const validatedEmail = () => {
-    const email = $('input[name="email"]').val();
+  const validatedEmail = function() {
+    const email = $(this).val();
 
     if (validateEmail(email)) {
-      $('input[name="email"]').removeClass('not-valid');
-      $('input[name="email"]').addClass('filled');
+      $(this).removeClass('not-valid');
+      $(this).addClass('filled');
     } else {
-      $('input[name="email"]').addClass('filled');
-      $('input[name="email"]').addClass('not-valid');
+      $(this).addClass('filled');
+      $(this).addClass('not-valid');
     }
     if (email == '') {
-      $('input[name="email"]').removeClass('not-valid').removeClass('filled');
+      $(this).removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
 
-  const validatedPhone = () => {
-    const phone = $('input[name="phone"]').val();
+  const validatedPhone = function() {
+    const phone = $(this).val();
 
     if (validatePhone(phone) && phone.length > 0) {
-      $('input[name="phone"]').removeClass('not-valid');
-      $('input[name="phone"]').addClass('filled');
+      $(this).removeClass('not-valid');
+      $(this).addClass('filled');
     } else {
-      $('input[name="phone"]').addClass('filled');
-      $('input[name="phone"]').addClass('not-valid');
+      $(this).addClass('filled');
+      $(this).addClass('not-valid');
     }
     if (phone == '') {
-      $('input[name="phone"]').removeClass('not-valid').removeClass('filled');
+      $(this).removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
 
-  const validatedPromocode = () => {
-    const promocode = $('input[name="promocode"]').val();
+  const validatedPromocode = function() {
+    const promocode = $(this).val();
 
     if (promocode.length > 0) {
-      $('input[name="promocode"]').removeClass('not-valid');
-      $('input[name="promocode"]').addClass('filled');
+      $(this).removeClass('not-valid');
+      $(this).addClass('filled');
     } else {
-      $('input[name="promocode"]').addClass('filled');
-      $('input[name="promocode"]').addClass('not-valid');
+      $(this).addClass('filled');
+      $(this).addClass('not-valid');
     }
     if (promocode == '') {
-      $('input[name="promocode"]').removeClass('not-valid').removeClass('filled');
+      $(this).removeClass('not-valid').removeClass('filled');
     }
     return false;
   }
 
-  $('input[name="name"]').on('input', validatedName);
-  $('input[name="surname"]').on('input', validatedSurname);
-  $('input[name="email"]').on('input', validatedEmail);
-  $('input[name="phone"]').on('input', validatedPhone);
-  $('input[name="promocode"]').on('input', validatedPromocode);
+  $('input[name="name"]').on('input', function() {
+    validatedName.call(this);
+  });
+  $('input[name="surname"]').on('input', function() {
+    validatedSurname.call(this);
+  });
+  $('input[name="email"]').on('input', function() {
+    validatedEmail.call(this);
+  });
+  $('input[name="phone"]').on('input', function() {
+    validatedPhone.call(this);
+  });
+  $('input[name="promocode"]').on('input', function() {
+    validatedPromocode.call(this);
+  });
 
   policyInput.on('input', function() {
     if ($(this).prop('checked')) {
