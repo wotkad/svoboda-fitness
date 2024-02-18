@@ -13,7 +13,6 @@
   }
   &__filter {
     border-radius: 100px;
-    padding: 7px 20px;
     min-width: 184px;
     border: 1px solid $text-caption;
     position: relative;
@@ -51,6 +50,7 @@
   }
   &__selected {
     width: 100%;
+    padding: 7px 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@
     position: relative;
     svg {
       position: absolute;
-      right: 0;
+      right: 20px;
       transition: transform $transition-default;
       color: $neutral-100;
     }
