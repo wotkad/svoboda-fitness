@@ -57,18 +57,6 @@
       .schedule-table__date {
         color: $neutral-300;
       }
-      .schedule-table__name,
-      .schedule-table__when,
-      .schedule-table__author,
-      .schedule-table__length,
-      .schedule-table__currency,
-      .schedule-table__avalibility {
-        color: $text-caption;
-      }
-      .schedule-table__inner {
-        pointer-events: none;
-        background-color: rgba($neutral-400, 0.6);
-      }
     }
     &-today {
       .schedule-table__day {
@@ -117,6 +105,7 @@
     border-radius: 100px;
     position: absolute;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: space-between;
     left: 0;
@@ -150,12 +139,31 @@
     text-align: left;
     display: inline-flex;
     align-items: flex-start;
+    cursor: default;
     min-height: 286px;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     position: relative;
     padding: 20px 0;
+    &-disabled {
+      pointer-events: none;
+      .schedule-table__name,
+      .schedule-table__when,
+      .schedule-table__author,
+      .schedule-table__length,
+      .schedule-table__currency,
+      .schedule-table__avalibility {
+        color: $text-caption;
+      }
+      .schedule-table__inner {
+        pointer-events: none;
+        background-color: rgba($neutral-400, 0.6);
+      }
+    }
+    &.popup-trigger {
+      cursor: pointer;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -164,6 +172,17 @@
       left: -3000px;
       top: 0;
       background-color: $neutral-300;
+    }
+    &-empty {
+      text-align: left;
+      display: inline-flex;
+      align-items: flex-start;
+      min-height: 286px;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      padding: 20px 0;
     }
   }
   &__when {

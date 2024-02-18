@@ -30,5 +30,17 @@ export default function sliderSchedule() {
     });
     ids = [];
   });
+  button.each(function() {
+    let that = $(this);
+    let buttonIndex = $(this).parent().index();
+    training.each(function() {
+      if (buttonIndex == $(this).index()) {
+        let slideId = $(this).closest('.swiper-slide').index();
+        if (slideId !== 0 && slideId > 0 && slideId < 4) {
+          that.hide();
+        }
+      }
+    });
+  })
 }
 sliderSchedule();
