@@ -13,8 +13,13 @@ export default function toggleFilters() {
   });
   Array.from(labels).forEach(function(item) {
     $(item).on('click', function() {
-      $('.schedule__input').removeClass('active');
-      $(this).prevAll('.schedule__input').addClass('active');
+      let input = $(this).prev();
+      if (input.hasClass('active')) {
+        input.removeClass('active');
+      } else {
+        $('.schedule__input').removeClass('active');
+        input.addClass('active');
+      }
     });
   });
   clear.on('click', function() {

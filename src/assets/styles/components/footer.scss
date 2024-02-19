@@ -161,6 +161,7 @@
     gap: 8px;
   }
   &__link {
+    display: inline-block;
     color: $text-secondary;
 
     transition: color $transition-default;
@@ -189,13 +190,24 @@
       color: $text-caption;
       @include body-2;
     }
-    a {
+    .footer__link {
       color: $text-caption;
+      span {
+        color: $text-caption;
+      }
+      a {
+        @include screen(laptop) {
+          transition: color $transition-default;
+        }
+      }
       @include body-2;
       @include screen(laptop) {
         transition: color $transition-default;
         &:hover {
           color: $yellow;
+          a {
+            color: $yellow;
+          }
         }
       }
     }
