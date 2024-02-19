@@ -1,6 +1,11 @@
 header.header
   .wrapper
     .header__wrapper
+      button(type="button").header__burger
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8.5H21M3 15.5H21" stroke="#F7D90B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        span Меню
       nav.header__menu
         a.header__logo(href="/")
           img(src="/assets/images/logo.svg" alt="logo")

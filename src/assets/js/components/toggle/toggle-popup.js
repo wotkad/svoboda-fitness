@@ -6,7 +6,7 @@ export default function togglePopup() {
   const popupWrappers = $('.popup__wrapper');
 
   $(window).on('resize', function() {
-    if ($(window).outerWidth() > 768) {
+    if ($(window).outerWidth() > 767) {
       gsap.to(popupWrappers, { y: 0, duration: 0});
     } else {
       gsap.to(popupWrappers, { x: 0, duration: 0});
@@ -26,7 +26,7 @@ export default function togglePopup() {
       bg.addClass('active');
 
       if (wrapper.length > 0) {
-        if ($(window).outerWidth() > 768) {
+        if ($(window).outerWidth() > 767) {
           gsap.to(wrapper, { x: 0, duration: 0.4, ease: "power2.out" });
         } else {
           gsap.to(wrapper, { y: 0, duration: 0.4, ease: "power2.out" });
@@ -37,7 +37,7 @@ export default function togglePopup() {
 
       close.off('click');
       close.on('click', function() {
-        if ($(window).outerWidth() > 768) {
+        if ($(window).outerWidth() > 767) {
           gsap.to(wrapper, { x: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');
@@ -54,7 +54,7 @@ export default function togglePopup() {
 
       bg.off('click');
       bg.on('click', function() {
-        if ($(window).outerWidth() > 768) {
+        if ($(window).outerWidth() > 767) {
           gsap.to(wrapper, { x: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');

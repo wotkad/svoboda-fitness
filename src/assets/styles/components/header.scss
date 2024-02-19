@@ -17,6 +17,20 @@
     background-color: rgba($black, 0.8);
     backdrop-filter: blur(4px);
   }
+  &__burger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    span {
+      text-transform: uppercase;
+      margin-bottom: -4px;
+      @include h2-actay;
+    }
+    @include screen(tablet) {
+      display: none;
+    }
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;

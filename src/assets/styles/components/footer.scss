@@ -1,14 +1,27 @@
 .footer {
   background-color: $neutral-400;
   &-top {
-    padding: 60px 0 60px;
+    padding: 32px 0;
+    border-bottom: 1px solid $neutral-200;
+    @include screen(tablet) {
+      padding: 60px 0;
+      border: none;
+    }
   }
   &-bottom {
-    padding: 60px 0 40px;
+    padding: 32px 0;
+    @include screen(tablet) {
+      padding: 60px 0 40px;
+    }
   }
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 22px;
+    @include screen(tablet) {
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
   &__slogan {
     text-transform: uppercase;
@@ -137,10 +150,13 @@
     padding: 12px 36px;
     border-radius: 100px;
     background-color: $white;
-
+    width: 100%;
     text-transform: uppercase;
     color: $text-black;
     @include button-medium;
+    @include screen(tablet) {
+      width: auto;
+    }
     @include screen(laptop) {
       padding: 16px 80px;
       transition: background-color $transition-default;
@@ -151,8 +167,14 @@
   }
   &__nav {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-column: span 2 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 56px;
+    column-gap: 32px;
+    @include screen(tablet) {
+      gap: 0;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
   &__links {
     display: flex;
@@ -165,9 +187,20 @@
     color: $text-secondary;
 
     transition: color $transition-default;
-    @include body-2;
+    @include body-1;
+    @include screen(tablet) {
+      @include body-2;
+    }
+    br {
+      display: block;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
     &-right {
-      text-align: right;
+      @include screen(tablet) {
+        text-align: right;
+      }
     }
     &.active {
       color: $yellow;
@@ -180,15 +213,25 @@
   }
   &__copy {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding: 32px 0;
-
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px 0;
     border-top: 1px solid $neutral-200;
+    @include screen(tablet) {
+      gap: 0;
+      padding: 32px 0;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
     .copyright {
-      grid-column: span 2 / span 2;
-
+      grid-column: span 1 / span 1;
       color: $text-caption;
-      @include body-2;
+      @include body-1;
+      @include screen(tablet) {
+        grid-column: span 2 / span 2;
+        @include screen(tablet) {
+          @include body-2;
+        }
+      }
     }
     .footer__link {
       color: $text-caption;
@@ -198,17 +241,17 @@
       a {
         @include screen(laptop) {
           transition: color $transition-default;
-        }
-      }
-      @include body-2;
-      @include screen(laptop) {
-        transition: color $transition-default;
-        &:hover {
-          color: $yellow;
-          a {
+          &:hover {
             color: $yellow;
           }
         }
+      }
+      @include body-1;
+      @include screen(tablet) {
+        @include body-2;
+      }
+      @include screen(laptop) {
+        transition: color $transition-default;
       }
     }
   }
