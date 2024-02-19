@@ -50,6 +50,7 @@
     text-transform: uppercase;
 
     transition: color $transition-default, border-color $transition-default;
+    @include body-1;
     &:active,
     &:focus {
       border-color: $text-secondary;
@@ -76,7 +77,7 @@
 
     color: $text-secondary;
     cursor: pointer;
-    @include body-1;
+    @include body-2;
     span {
       &:before {
         content: "";
@@ -133,8 +134,7 @@
     }
   }
   &__button {
-    padding: 16px 80px;
-
+    padding: 12px 36px;
     border-radius: 100px;
     background-color: $white;
 
@@ -142,6 +142,7 @@
     color: $text-black;
     @include button-medium;
     @include screen(laptop) {
+      padding: 16px 80px;
       transition: background-color $transition-default;
       &:hover {
         background-color: $yellow;
@@ -163,7 +164,7 @@
     color: $text-secondary;
 
     transition: color $transition-default;
-    @include body-1;
+    @include body-2;
     &-right {
       text-align: right;
     }
@@ -186,10 +187,11 @@
       grid-column: span 2 / span 2;
 
       color: $text-caption;
+      @include body-2;
     }
     a {
       color: $text-caption;
-      @include body-1;
+      @include body-2;
       @include screen(laptop) {
         transition: color $transition-default;
         &:hover {

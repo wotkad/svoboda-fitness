@@ -4,10 +4,13 @@
   left: 0;
   z-index: 100;
 
-  padding: 48px 0;
+  padding: 24px 0;
   width: 100%;
 
   transition: background-color $transition-default, padding $transition-default;
+  @include screen(laptop) {
+    padding: 48px 0;
+  }
   &.active {
     padding: 24px 0;
 
@@ -19,10 +22,19 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__logo {
+    max-width: 30px;
+  }
   &__menu {
-    display: flex;
+    display: none;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
+    @include screen(tablet) {
+      display: flex;
+    }
+    @include screen(laptop) {
+      gap: 48px;
+    }
   }
   &__link {
     transition: color $transition-default;
@@ -37,13 +49,13 @@
     }
   }
   &__button {
-    padding: 11px 24px;
 
     border: 1px solid $yellow;
     border-radius: 24px;
-
+    padding: 8px 16px;
     @include body-1;
     @include screen(laptop) {
+      padding: 11px 24px;
       transition: color $transition-default;
       &:hover {
         color: $yellow;

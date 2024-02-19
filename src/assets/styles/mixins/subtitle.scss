@@ -1,16 +1,21 @@
 .subtitle {
   display: flex;
   align-items: flex-end;
-  gap: 20px;
-
+  gap: 12px;
   text-transform: uppercase;
   span {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 
     color: $neutral-200;
     @include label-h-numbering;
+    @include screen(laptop) {
+      margin-bottom: 8px;
+    }
   }
   p {
     @include h1-actay;
+  }
+  @include screen(laptop) {
+    gap: 20px;
   }
 }

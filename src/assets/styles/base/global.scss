@@ -32,7 +32,10 @@ body {
 }
 
 main {
-  padding-top: 200px;
+  padding-top: 125px;
+  @include screen(laptop) {
+    padding-top: 200px;
+  }
 }
 
 .render {

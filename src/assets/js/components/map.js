@@ -1,15 +1,17 @@
 export default function yaMaps() {
   let check_if_load = false;
   function init() {
-    let myMapTemp = new ymaps.Map('map-yandex', {
-      center: [55.849432, 37.447432],
-      zoom: 16,
-      controls: ['zoomControl'],
-    });
-    let layer = myMapTemp.layers.get(0).get(0);
-    waitForTilesLoad(layer).then(function() {
-    });
-    myMapTemp.behaviors.disable('scrollZoom');
+    if ($('#map-yandex').length > 0) {
+      let myMapTemp = new ymaps.Map('map-yandex', {
+        center: [55.849432, 37.447432],
+        zoom: 16,
+        controls: ['zoomControl'],
+      });
+      let layer = myMapTemp.layers.get(0).get(0);
+      waitForTilesLoad(layer).then(function() {
+      });
+      myMapTemp.behaviors.disable('scrollZoom');
+    }
   }
   function waitForTilesLoad(layer) {
     return new ymaps.vow.Promise(function(resolve) {

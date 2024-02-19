@@ -1,8 +1,12 @@
 .blog {
   &__wrapper {
     display: grid;
-    grid-template-columns: 288px 1fr;
-    gap: 128px;
+    grid-template-columns: 220px 1fr;
+    gap: 64px;
+    @include screen(laptop) {
+      grid-template-columns: 288px 1fr;
+      gap: 128px;
+    }
   }
   &__aside {
     &__links {
@@ -15,10 +19,12 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 20px 36px;
-
+      padding: 12px 30px;
       border: 1px solid $neutral-200;
       border-radius: 100px;
+      @include screen(laptop) {
+        padding: 20px 36px;
+      }
       span {
         text-transform: uppercase;
         @include body-2;
@@ -62,7 +68,7 @@
     justify-content: space-between;
     align-items: flex-start;
     height: 100%;
-    max-height: 550px;
+    max-height: calc(100vh - 170px)
   }
   &__subtitle {
     text-transform: uppercase;
@@ -75,14 +81,14 @@
     margin-top: 20px;
   }
   &__tag {
-    padding: 8px 24px;
-
+    padding: 8px 20px;
     border: 1px solid $neutral-200;
     border-radius: 100px;
 
     text-align: center;
     @include body-1;
     @include screen(laptop) {
+      padding: 8px 24px;
       transition: color $transition-default;
       &:hover {
         color: $yellow;
@@ -91,13 +97,16 @@
   }
   &__articles {
     display: grid;
+    row-gap: 16px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 36px;
-    column-gap: 24px;
+    @include screen(laptop) {
+      row-gap: 36px;
+      column-gap: 24px;
+    }
   }
   &__article {
     overflow: hidden;
-
+    grid-column: span 2 / span 2;
     border-radius: 8px;
     background-color: $neutral-400;
     &__header {
@@ -108,8 +117,12 @@
       padding: 16px 20px;
     }
     &__title {
-      @include label-article-h2-semibold;
+      @include label-article-h1-semibold;
       @include line-clamp-2;
+
+      @include screen(laptop) {
+        @include label-article-h2-semibold;
+      }
     }
     &__text {
       @include body-1;
@@ -119,8 +132,11 @@
       position: relative;
       img {
         width: 100%;
-        height: 337px;
         object-fit: cover;
+        height: 186px;
+        @include screen(laptop) {
+          height: 337px;
+        }
       }
     }
     &__more {
@@ -166,12 +182,18 @@
       grid-column: span 2 / span 2;
       .blog__article__image {
         img {
-          height: 388px;
+          height: 186px;
+          @include screen(laptop) {
+            height: 388px;
+          }
         }
       }
       .blog__article__title {
         @include label-article-h1-semibold;
       }
+    }
+    @include screen(laptop) {
+      grid-column: span 1 / span 1;
     }
   }
 }

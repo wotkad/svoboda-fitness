@@ -4,23 +4,44 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 12px;
+    @include screen(laptop) {
+      gap: 24px;
+    }
     &__wrapper {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
+      @include screen(laptop) {
+        gap: 24px;
+      }
     }
   }
   &__filter {
     border-radius: 100px;
-    min-width: 184px;
     border: 1px solid $text-caption;
     position: relative;
+    min-width: 109px;
+    @include screen(laptop) {
+      min-width: 184px;
+    }
+    &-title {
+      min-width: 115px;
+      @include screen(laptop) {
+        min-width: 184px;
+      }
+    }
     &-time {
-      min-width: 208px;
+      min-width: 149px;
+      @include screen(laptop) {
+        min-width: 208px;
+      }
     }
     &-type {
-      min-width: 272px;
+      min-width: 202px;
+      @include screen(laptop) {
+        min-width: 272px;
+      }
     }
     .schedule__input {
       position: absolute;
@@ -29,7 +50,6 @@
       opacity: 0;
       &.active {
         & ~ .schedule__selected {
-          border-color: $text-secondary;
           svg {
             transform: rotate(180deg);
           }
@@ -37,11 +57,8 @@
         & ~ .schedule__list {
           opacity: 1;
           visibility: visible;
-          z-index: 2;
+          z-index: 20;
         }
-      }
-      &.not-valid {
-        border-color: $error;
       }
     }
   }
@@ -50,25 +67,31 @@
   }
   &__selected {
     width: 100%;
-    padding: 7px 20px;
+    padding: 7px 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
 
     background-color: transparent;
 
-    transition: color $transition-default, border-color $transition-default;
+    transition: color $transition-default;
     position: relative;
     svg {
       position: absolute;
-      right: 20px;
+      right: 8px;
       transition: transform $transition-default;
       color: $neutral-100;
+      @include screen(laptop) {
+        right: 20px;
+      }
+    }
+    @include screen(laptop) {
+      padding: 7px 20px;
     }
   }
   &__list {
     position: absolute;
-    top: 50px;
+    top: 44px;
     background-color: $neutral-400;
     width: 100%;
     border-radius: 12px;
@@ -80,14 +103,20 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
+    @include screen(laptop) {
+      top: 50px;
+    }
     &__item {
-      padding: 8px 12px;
+      padding: 8px 16px;
       color: $text-secondary;
       cursor: pointer;
       transition: color $transition-default;
       @include body-caption;
       &:hover {
         color: $yellow;
+      }
+      @include screen(laptop) {
+        padding: 8px 12px;
       }
     }
   }

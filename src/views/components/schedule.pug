@@ -5,7 +5,7 @@ section.schedule
         .schedule-filters__wrapper
           label.schedule__filter
             input.schedule__input(type="text" name="coach")
-            .schedule__selected
+            .schedule__selected.schedule__filter-coach
               .schedule__value(data-text="Тренер") Тренер
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 9L12 15L18 9" stroke="#5C5C5C" stroke-width="1.5"/>
@@ -13,7 +13,7 @@ section.schedule
             .schedule__list 
               .schedule__list__item Тренер 1
               .schedule__list__item Тренер 2
-          label.schedule__filter
+          label.schedule__filter.schedule__filter-title
             input.schedule__input(type="text" name="training")
             .schedule__selected
               .schedule__value(data-text="Занятие") Занятие

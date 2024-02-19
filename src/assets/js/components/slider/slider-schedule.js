@@ -5,12 +5,17 @@ export default function sliderSchedule() {
   let swiper = new Swiper('.swiper-schedule', {
     modules: [ Mousewheel, FreeMode ],
     speed: 800,
-    slidesPerView: 3.67,
     spaceBetween: 16,
+    slidesPerView: 3.1,
     freeMode: true,
     grabCursor: true,
     mousewheel: {
       forceToAxis: true,
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3.67,
+      }
     }
   });
 

@@ -1,18 +1,24 @@
 .schedule-table {
-  margin-top: 100px;
+  margin-top: 60px;
   position: relative;
+  @include screen(laptop) {
+    margin-top: 100px;
+  }
   &__times {
     display: flex;
     position: absolute;
     padding-right: 8px;
     left: 0;
     top: 0;
-    padding-top: 114px;
+    padding-top: 91px;
     gap: 8px;
     background-color: $black;
     flex-direction: column;
     align-items: flex-start;
     z-index: 2;
+    @include screen(laptop) {
+      padding-top: 114px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -24,19 +30,25 @@
     }
   }
   &__time {
-    min-height: 284px;
     width: 46px;
+    min-height: 216px;
     position: relative;
     text-align: center;
+    @include screen(laptop) {
+      min-height: 284px;
+    }
     &:after {
       content: '';
       position: absolute;
-      height: 252px;
+      min-height: 184px;
       width: 1px;
       left: 50%;
       transform: translateX(-50%);
       top: 32px;
       background-color: $neutral-300;
+      @include screen(laptop) {
+        min-height: 252px;
+      }
     }
     time {
       display: inline-block;
@@ -45,11 +57,27 @@
   }
   &__slider {
     overflow: visible;
-    max-width: calc(100% - 114px);
-    margin-left: 114px;
-    height: 3318px;
+    max-width: calc(100% - 54px);
+    margin-left: 54px;
+    @include screen(laptop) {
+      max-width: calc(100% - 114px);
+      margin-left: 114px;
+    }
+    .swiper-slide {
+      &:last-child {
+        .schedule-table__head {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
   }
   &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     &-disabled {
       .schedule-table__day {
         color: $neutral-300;
@@ -68,9 +96,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 10px;
-    margin-bottom: 62px;
+    margin-bottom: 55px;
     position: relative;
+    @include screen(laptop) {
+      margin-bottom: 62px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -84,13 +116,17 @@
     @include body-2;
   }
   &__date {
+    color: $text-caption;
     @include body-1;
   }
   &__inner {
-    padding: 20px;
     background-color: $neutral-400;
     border-radius: 8px;
+    position: relative;
+    width: 100%;
+    padding: 20px 16px;
     @include screen(laptop) {
+      padding: 20px;
       transition: background-color $transition-default;
       &:hover {
         background-color: $neutral-300;
@@ -105,13 +141,14 @@
     border-radius: 100px;
     position: absolute;
     display: flex;
-    cursor: pointer;
     align-items: center;
     justify-content: space-between;
+    white-space: nowrap;
     left: 0;
-    padding: 12px 104px 12px 24px;
     color: $text-secondary;
+    padding: 10px 68px 10px 24px;
     @include screen(laptop) {
+      padding: 12px 104px 12px 24px;
       transition: color $transition-default;
       &:hover {
         color: $white;
@@ -140,12 +177,15 @@
     display: inline-flex;
     align-items: flex-start;
     cursor: default;
-    min-height: 286px;
+    min-height: 224px;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     position: relative;
     padding: 20px 0;
+    @include screen(laptop) {
+      min-height: 292px;
+    }
     &-disabled {
       pointer-events: none;
       .schedule-table__name,
@@ -177,42 +217,69 @@
       text-align: left;
       display: inline-flex;
       align-items: flex-start;
-      min-height: 286px;
+      cursor: inherit;
+      min-height: 224px;
       justify-content: center;
       flex-direction: column;
       width: 100%;
       position: relative;
       padding: 20px 0;
+      @include screen(laptop) {
+        min-height: 292px;
+      }
     }
   }
   &__when {
     @include label-inter-accent;
   }
   &__body {
-    margin-top: 20px;
+    margin-top: 16px;
+    gap: 8px;
     display: flex;
     align-items: flex-start;
-    gap: 6px;
     flex-direction: column;
+    @include screen(laptop) {
+      gap: 6px;
+      margin-top: 20px;
+    }
   }
   &__name {
-    @include body-2;
+    @include label-class-name;
+    @include screen(laptop) {
+      @include body-2;
+    }
   }
   &__author {
     @include body-caption;
   }
   &__footer {
     display: flex;
-    margin-top: 59px;
+    margin-top: 36px;
+    gap: 8px;
     align-items: center;
-    gap: 16px;
+    @include screen(laptop) {
+      gap: 16px;
+      margin-top: 59px;
+    }
   }
   &__dot {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
+    min-width: 4px;
+    min-height: 4px;
     border-radius: 50%;
     background-color: $neutral-300;
+    &:nth-child(4) {
+      display: none;
+    }
     @include screen(laptop) {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      min-height: 8px;
+      &:nth-child(4) {
+        display: block;
+      }
       transition: background-color $transition-default;
     }
   }
@@ -223,6 +290,14 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
+    svg {
+      width: 20px;
+      height: 20px;
+      @include screen(laptop) {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
   &__currency {
     color: $text-secondary;
@@ -232,5 +307,11 @@
   &__avalibility {
     color: $text-secondary;
     @include body-1;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    @include screen(laptop) {
+      position: static;
+    }
   }
 }

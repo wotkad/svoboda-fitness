@@ -20,9 +20,8 @@ export default function togglePopup() {
       const popup = $(`.popup[data-popup="${popupId}"]`);
       const bg = $('.popup__overlay');
       const wrapper = popup.find('.popup__wrapper');
-      const close = $('.popup__close');
+      const close = $('.popup__close, .popup__button');
       const scrollableElement = document.querySelectorAll('.popup__content')
-
       popup.addClass('active');
       bg.addClass('active');
 

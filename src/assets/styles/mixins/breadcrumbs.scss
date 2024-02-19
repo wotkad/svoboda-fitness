@@ -3,8 +3,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
-    padding-left: 53px;
+    gap: 8px;
+    padding-left: 34px;
+    @include screen(laptop) {
+      padding-left: 53px;
+      gap: 16px;
+    }
     a,
     span {
       display: inline-block;
