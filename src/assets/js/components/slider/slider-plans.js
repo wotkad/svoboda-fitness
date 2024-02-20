@@ -6,10 +6,15 @@ export default function sliderPlans() {
     modules: [ Mousewheel ],
     speed: 800,
     slidesPerView: 3,
-    spaceBetween: 24,
+    spaceBetween: 20,
     grabCursor: true,
     mousewheel: {
       forceToAxis: true,
+    },
+    breakpoints: {
+      1240: {
+        spaceBetween: 24,
+      }
     }
   });
 }
