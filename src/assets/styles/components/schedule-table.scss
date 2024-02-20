@@ -141,12 +141,14 @@
     border-radius: 100px;
     position: absolute;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
     left: 0;
     color: $text-secondary;
     padding: 10px 68px 10px 24px;
+    @include body-1;
     @include screen(laptop) {
       padding: 12px 104px 12px 24px;
       transition: color $transition-default;
@@ -158,9 +160,6 @@
           }
         }
       }
-    }
-    span {
-      @include body-1;
     }
     svg {
       position: absolute;
@@ -176,7 +175,6 @@
     text-align: left;
     display: inline-flex;
     align-items: flex-start;
-    cursor: default;
     min-height: 224px;
     justify-content: center;
     flex-direction: column;

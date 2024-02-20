@@ -4,12 +4,15 @@
   gap: 12px;
   text-transform: uppercase;
   span {
-    margin-bottom: 2px;
-
+    display: none;
     color: $neutral-200;
     @include label-h-numbering;
+    @include screen(tablet) {
+      display: block;
+      margin-bottom: 6px;
+    }
     @include screen(laptop) {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
   }
   p {

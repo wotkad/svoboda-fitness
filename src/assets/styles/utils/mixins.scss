@@ -94,6 +94,7 @@
 @mixin h1-actay {
   font-size: 36px;
   line-height: 120%;
+  @include actay;
   @include screen(tablet) {
   }
   @include screen(laptop) {

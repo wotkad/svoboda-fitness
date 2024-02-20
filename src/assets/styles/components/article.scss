@@ -78,6 +78,10 @@
       margin-top: 32px;
     }
   }
+  &__time {
+    color: $text-caption;
+    @include body-1;
+  }
   &__info {
     display: flex;
     align-items: center;

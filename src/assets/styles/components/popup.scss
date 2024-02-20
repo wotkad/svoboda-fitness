@@ -54,35 +54,36 @@
   &__wrapper {
     position: relative;
     z-index: 1500;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 40px;
     width: 100%;
     background-color: $neutral-400;
     transform: translateY(100%);
+    padding-bottom: 80px;
+    @include screen(tablet) {
+      padding-bottom: 0;
+    }
     @include screen(tablet) {
       right: 0;
-      padding-bottom: 40px;
-      padding: 0 32px;
+      padding: 32px;
       bottom: 0;
 
-      align-items: center;
       height: 100vh;
       transform: translateX(100%) translateY(0);
     }
     @include screen(laptop) {
+      display: flex;
+      align-items: center;
       padding: 0 108px 0 40px;
     }
   }
   &__close {
     position: absolute;
-    top: -60px;
-    right: 32px;
+    bottom: -60px;
+    right: 50%;
+    z-index: 3;
+    transform: translateX(50%);
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     background-color: $white;
     border-radius: 50%;
     display: flex;
@@ -93,11 +94,13 @@
       height: auto;
       background-color: transparent;
       display: block;
+      bottom: auto;
+      transform: translateX(0);
       top: 0;
       right: 0;
     }
     svg {
-      width: 16px;
+      width: 24px;
       path {
         stroke-width: 2px;
         stroke: $text-black;
@@ -117,18 +120,25 @@
   &__container {
     position: relative;
     width: 100%;
-    height: 100vh;
-    max-height: calc(100vh - 87px);
-    @include screen(tablet) {
-      max-height: calc(100vh - 156px);
-    }
   }
   &__inner {
     width: 100%;
-    padding: 16px 16px 0;
+    padding: 16px;
     height: 100vh;
-    max-height: calc(100vh - 87px);
+    max-height: calc(100vh - 167px);
     overflow-y: auto;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      height: 80px;
+      background-color: $neutral-400;
+      width: 100%;
+      left: 0;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
     @include screen(tablet) {
       overflow: hidden;
       padding: 0;
@@ -276,7 +286,16 @@
     border: 1px solid $white;
     border-radius: 24px;
     padding: 10px 24px;
-    @include body-2;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    @include button-medium;
+    @include screen(tablet) {
+      width: auto;
+      text-align: left;
+      text-transform: none;
+      @include body-2;
+    }
     @include screen(laptop) {
       transition: color $transition-default, border-color $transition-default;
       &:hover {
@@ -286,7 +305,6 @@
     }
   }
   .popup__inner {
-    grid-template-columns: 1fr;
     @include screen(tablet) {
       grid-template-columns: 252px 1fr;
     }

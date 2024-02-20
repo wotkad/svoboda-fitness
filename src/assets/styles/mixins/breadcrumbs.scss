@@ -4,7 +4,9 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    padding-left: 34px;
+    @include screen(tablet) {
+      padding-left: 34px;
+    }
     @include screen(laptop) {
       padding-left: 53px;
       gap: 16px;
