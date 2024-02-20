@@ -4,7 +4,10 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
-    gap: 128px;
+    gap: 80px;
+    @include screen(laptop) {
+      gap: 128px;
+    }
   }
   &__slider {
     grid-column: span 1 / span 1;
@@ -30,8 +33,11 @@
     img {
       width: 100%;
       height: 100%;
-      max-height: 324px;
+      max-height: 222px;
       object-fit: cover;
+      @include screen(laptop) {
+        max-height: 324px;
+      }
     }
   }
   &__texts {
@@ -44,12 +50,14 @@
       &-slide {
         position: relative;
 
-        padding: 32px 0;
         text-transform: uppercase;
-
+        padding: 23px 0;
         transition: color $transition-default;
         cursor: pointer;
         @include h2;
+        @include screen(laptop) {
+          padding: 32px 0;
+        }
         &-active {
           color: $yellow;
         }

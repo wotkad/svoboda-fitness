@@ -6,10 +6,15 @@ export default function sliderReviews() {
     modules: [ Mousewheel ],
     speed: 800,
     slidesPerView: 2.5,
-    spaceBetween: 24,
+    spaceBetween: 20,
     grabCursor: true,
     mousewheel: {
       forceToAxis: true,
+    },
+    breakpoints: {
+      1224: {
+        spaceBetween: 24,
+      }
     }
   });
 }

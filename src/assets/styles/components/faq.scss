@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 0 0;
 
     border-right: 1px solid $text-caption;
 
@@ -20,7 +19,10 @@
     color: $text-caption;
 
     transition: color $transition-default;
-    @include label-footer-h;
+    @include actay-faq;
+    @include screen(laptop) {
+      padding: 8px 0 0;
+    }
     &:hover {
       color: $yellow;
     }
@@ -33,7 +35,10 @@
     @include actay;
   }
   &__containers {
-    margin-top: 60px;
+    margin-top: 30px;
+    @include screen(laptop) {
+      margin-top: 60px;
+    }
   }
   &__container {
     display: none;
@@ -42,23 +47,32 @@
     }
   }
   &__question {
-    margin-top: 28px;
+    margin-top: 12px;
 
     border-bottom: 1px solid $neutral-200;
     &:first-child {
       margin-top: 0;
+    }
+    @include screen(laptop) {
+      margin-top: 28px;
     }
   }
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 12px 0;
     cursor: pointer;
+    @include screen(laptop) {
+      padding: 20px 0;
+    }
     svg {
       color: $icon-gray;
-
+      width: 20px;
       transition: transform $transition-default;
+      @include screen(laptop) {
+        width: 24px;
+      }
     }
     &.active {
       svg {
@@ -71,7 +85,10 @@
   }
   &__body {
     display: none;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
+    @include screen(laptop) {
+      padding-bottom: 20px;
+    }
     &.active {
       display: block;
     }

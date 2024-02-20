@@ -1,8 +1,12 @@
 .blog {
   &__wrapper {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    @include screen(tablet) {
+      grid-template-columns: 220px 1fr;
+      gap: 64px;
+    }
     @include screen(laptop) {
       grid-template-columns: 288px 1fr;
       gap: 128px;
@@ -10,10 +14,13 @@
   }
   &__aside {
     &__links {
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: flex-start;
       gap: 20px;
+      @include screen(tablet) {
+        display: flex;
+      }
     }
     &__link {
       display: flex;
@@ -77,11 +84,14 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
     margin-top: 20px;
+    @include screen(tablet) {
+      gap: 12px;
+    }
   }
   &__tag {
-    padding: 8px 20px;
+    padding: 7px 18px;
     border: 1px solid $neutral-200;
     border-radius: 100px;
 
@@ -133,7 +143,10 @@
       img {
         width: 100%;
         object-fit: cover;
-        height: 186px;
+        height: 169px;
+        @include screen(laptop) {
+          height: 186px;
+        }
         @include screen(laptop) {
           height: 337px;
         }
@@ -182,7 +195,10 @@
       grid-column: span 2 / span 2;
       .blog__article__image {
         img {
-          height: 186px;
+          height: 169px;
+          @include screen(laptop) {
+            height: 186px;
+          }
           @include screen(laptop) {
             height: 388px;
           }

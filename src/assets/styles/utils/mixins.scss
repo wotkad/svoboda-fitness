@@ -95,8 +95,6 @@
   font-size: 36px;
   line-height: 120%;
   @include actay;
-  @include screen(tablet) {
-  }
   @include screen(laptop) {
     font-size: 64px;
   }
@@ -159,6 +157,19 @@
   }
   @include screen(laptop) {
     font-size: 24px;
+  }
+}
+
+
+@mixin actay-faq {
+  font-size: 14px;
+  line-height: 150%;
+  @include actay;
+  @include screen(tablet) {
+    font-size: 16px;
+  }
+  @include screen(laptop) {
+    font-size: 28px;
   }
 }
 

@@ -2,8 +2,21 @@
   position: relative;
 
   overflow: hidden;
+  padding: 20px 0;
+  @include screen(tablet) {
+    padding: 0;
+  }
   &__slider {
     overflow: visible;
+    .swiper-slide {
+      transition: transform $transition-default;
+      &-active {
+        transform: scale(1.1);
+        @include screen(tablet) {
+          transform: scale(1);
+        }
+      }
+    }
   }
   &__title {
     height: 27px;
@@ -68,20 +81,28 @@
       li {
         position: relative;
 
-        padding-left: 16px;
+        padding-left: 12px;
         @include body-1;
+        @include screen(laptop) {
+          padding-left: 16px;
+        }
         &:before {
           content: "";
 
           position: absolute;
-          top: 8px;
           left: 0;
+          top: 6px;
 
-          width: 8px;
-          height: 8px;
+          width: 4px;
+          height: 4px;
 
           border-radius: 50%;
           background-color: $yellow;
+          @include screen(laptop) {
+            width: 8px;
+            top: 8px;
+            height: 8px;
+          }
         }
       }
     }
