@@ -1,20 +1,91 @@
 .schedule {
   overflow: hidden;
   &-filters {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    background-color: $neutral-400;
+    padding: 32px 0 140px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    transform: translateY(-100%);
+    z-index: 1000;
+    transition: transform $transition-default;
+    &.active {
+      transform: translateY(0);
+    }
+    @include screen(tablet) {
+      position: static;
+      justify-content: space-between;
+      background-color: transparent;
+      padding: 0;
+    }
+    @include screen(tablet) {
+      transition: 0s;
+      display: flex;
+      transform: translateY(0);
+    }
     @include screen(laptop) {
       gap: 24px;
     }
+    .wrapper {
+      @include screen(tablet) {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+    }
     &__wrapper {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      @include screen(laptop) {
-        gap: 24px;
+      gap: 24px;
+      align-items: flex-start;
+      flex-direction: column;
+      h6 {
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        @include h2;
+        @include screen(tablet) {
+          display: none;
+        }
       }
+      @include screen(tablet) {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+  }
+  &__mobfilter {
+    padding: 12px 24px;
+    display: flex;
+    border-radius: 100px;
+    border: 1px solid $neutral-200;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    @include screen(tablet) {
+      display: none;
+    }
+    p {
+      @include body-2;
+    }
+    span {
+      min-width: 24px;
+      min-height: 24px;
+      display: inline-block;
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+      border-radius: 50%;
+      color: $black;
+      @include body-caption;
+      &.hidden {
+        display: none;
+      }
+    }
+    svg {
+      position: absolute;
+      right: 24px;
     }
   }
   &__filter {
@@ -22,6 +93,10 @@
     border: 1px solid $text-caption;
     position: relative;
     min-width: 109px;
+    width: 100%;
+    @include screen(tablet) {
+      width: auto;
+    }
     @include screen(laptop) {
       min-width: 184px;
     }
@@ -63,27 +138,35 @@
     }
   }
   &__value {
-    @include body-1;
+    @include body-2;
+    @include screen(tablet) {
+      @include body-1;
+    }
   }
   &__selected {
     width: 100%;
-    padding: 7px 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
-
+    padding: 10px 20px;
     background-color: transparent;
 
     transition: color $transition-default;
     position: relative;
     svg {
       position: absolute;
-      right: 8px;
+      right: 20px;
       transition: transform $transition-default;
       color: $neutral-100;
+      @include screen(tablet) {
+        right: 8px;
+      }
       @include screen(laptop) {
         right: 20px;
       }
+    }
+    @include screen(tablet) {
+      padding: 7px 16px;
     }
     @include screen(laptop) {
       padding: 7px 20px;
@@ -91,9 +174,9 @@
   }
   &__list {
     position: absolute;
-    top: 44px;
-    background-color: $neutral-400;
+    top: 56px;
     width: 100%;
+    background-color: $neutral-300;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -103,6 +186,10 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity $transition-default, z-index $transition-default, visibility $transition-default;
+    @include screen(tablet) {
+      top: 44px;
+      background-color: $neutral-400;
+    }
     @include screen(laptop) {
       top: 50px;
     }
@@ -111,22 +198,53 @@
       color: $text-secondary;
       cursor: pointer;
       transition: color $transition-default;
-      @include body-caption;
+      @include body-2;
+      @include screen(tablet) {
+        @include body-caption;
+      }
       &:hover {
         color: $yellow;
       }
       @include screen(laptop) {
-        padding: 8px 12px;
+        padding: 8px 20px;
       }
     }
   }
   &__clear {
     padding: 8px 0;
+    margin: 20px auto 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     color: $neutral-100;
-    transition: color $transition-default;
-    @include body-1;
+    @include body-2;
+    @include screen(tablet) {
+      position: static;
+      margin: 0;
+      transform: translate(0);
+      @include body-1;
+    }
+    @include screen(laptop) {
+      transition: color $transition-default;
       &:hover {
         color: $white;
       }
+    }
+  }
+  &__close {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $white;
+    display: flex;
+    bottom: 32px;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    @include screen(tablet) {
+      display: none;
+    }
   }
 }

@@ -1,51 +1,85 @@
 import Swiper from "swiper";
-import { FreeMode, Mousewheel } from "swiper/modules";
+import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 export default function sliderSchedule() {
   let swiper = new Swiper('.swiper-schedule', {
-    modules: [ Mousewheel, FreeMode ],
+    modules: [ Mousewheel, FreeMode, Navigation ],
     speed: 800,
-    spaceBetween: 16,
-    slidesPerView: 3.1,
-    freeMode: true,
+    slidesPerView: 1,
     grabCursor: true,
     mousewheel: {
       forceToAxis: true,
     },
+    autoHeight: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
     breakpoints: {
+      767: {
+        autoHeight: false,
+        spaceBetween: 16,
+        slidesPerView: 3.1,
+      },
       769: {
+        spaceBetween: 16,
         slidesPerView: 3.67,
       }
     }
   });
 
-  let button = $('.schedule-table__button');
-  let training = $('.schedule-table__slider .swiper-slide .schedule-table__training');
-  let ids = [];
-  button.on('click', function() {
-    let buttonIndex = $(this).parent().index();
-    training.each(function() {
-      if (buttonIndex == $(this).index()) {
-        let slideId = $(this).closest('.swiper-slide').index();
-        if (slideId !== 0) {
-          ids.push(slideId);
-          swiper.slideTo(ids[0]);
+  function scheduleFunctional() {
+    let button = $('.schedule-table__button');
+    let training = $('.schedule-table__slider .swiper-slide .schedule-table__training');
+    let ids = [];
+    button.on('click', function() {
+      let buttonIndex = $(this).parent().index();
+      training.each(function() {
+        if (buttonIndex == $(this).index()) {
+          let slideId = $(this).closest('.swiper-slide').index();
+          if (slideId !== 0) {
+            ids.push(slideId);
+            swiper.slideTo(ids[0]);
+          }
         }
+      });
+      ids = [];
+    });
+    button.each(function() {
+      let that = $(this);
+      let buttonIndex = $(this).parent().index();
+      training.each(function() {
+        if (buttonIndex == $(this).index()) {
+          let slideId = $(this).closest('.swiper-slide').index();
+          if (slideId !== 0 && slideId > 0 && slideId < 4) {
+            that.hide();
+          }
+        }
+      });
+    });
+  }
+  scheduleFunctional();
+
+  function scheduleFiltersToggle() {
+    let button = $('.schedule__mobfilter');
+    let filters = $('.schedule-filters');
+    let close = $('.schedule__close');
+    button.on('click', function() {
+      filters.toggleClass('active');
+      disablePageScroll();
+    });
+    close.on('click', function() {
+      filters.removeClass('active');
+      enablePageScroll();
+    });
+    $(window).on('resize', function() {
+      if ($(window).width() > 768) {
+        enablePageScroll();
+        filters.removeClass('active');
       }
     });
-    ids = [];
-  });
-  button.each(function() {
-    let that = $(this);
-    let buttonIndex = $(this).parent().index();
-    training.each(function() {
-      if (buttonIndex == $(this).index()) {
-        let slideId = $(this).closest('.swiper-slide').index();
-        if (slideId !== 0 && slideId > 0 && slideId < 4) {
-          that.hide();
-        }
-      }
-    });
-  })
+  }
+  scheduleFiltersToggle();
 }
 sliderSchedule();

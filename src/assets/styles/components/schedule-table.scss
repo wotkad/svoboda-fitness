@@ -1,13 +1,15 @@
 .schedule-table {
-  margin-top: 60px;
   position: relative;
+  margin-top: 32px;
+  @include screen(tablet) {
+    margin-top: 60px;
+  }
   @include screen(laptop) {
     margin-top: 100px;
   }
   &__times {
-    display: flex;
+    display: none;
     position: absolute;
-    padding-right: 8px;
     left: 0;
     top: 0;
     padding-top: 91px;
@@ -16,6 +18,10 @@
     flex-direction: column;
     align-items: flex-start;
     z-index: 2;
+    @include screen(tablet) {
+      padding-right: 8px;
+      display: flex;
+    }
     @include screen(laptop) {
       padding-top: 114px;
     }
@@ -56,9 +62,11 @@
     }
   }
   &__slider {
-    overflow: visible;
-    max-width: calc(100% - 54px);
-    margin-left: 54px;
+    @include screen(tablet) {
+      overflow: visible;
+      max-width: calc(100% - 54px);
+      margin-left: 54px;
+    }
     @include screen(laptop) {
       max-width: calc(100% - 114px);
       margin-left: 114px;
@@ -71,6 +79,25 @@
           }
         }
       }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      z-index: 2;
+      cursor: pointer;
+      background-color: $black;
+      position: absolute;
+      top: 0px;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
+    .swiper-button-prev {
+      padding: 15px 16px 15px 0;
+
+    }
+    .swiper-button-next {
+      padding: 15px 0 15px 16px;
+      right: 0;
     }
   }
   &__slide {
@@ -97,9 +124,12 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 16px;
     gap: 10px;
-    margin-bottom: 55px;
     position: relative;
+    @include screen(tablet) {
+      margin-bottom: 55px;
+    }
     @include screen(laptop) {
       margin-bottom: 62px;
     }
@@ -110,6 +140,10 @@
       height: 100%;
       width: 1px;
       background-color: $neutral-300;
+      display: none;
+      @include screen(tablet) {
+        display: block;
+      }
     }
   }
   &__day {
@@ -120,11 +154,14 @@
     @include body-1;
   }
   &__inner {
-    background-color: $neutral-400;
-    border-radius: 8px;
     position: relative;
     width: 100%;
-    padding: 20px 16px;
+    padding: 20px 16px 20px 0;
+    @include screen(tablet) {
+      padding: 20px 16px;
+      border-radius: 8px;
+      background-color: $neutral-400;
+    }
     @include screen(laptop) {
       padding: 20px;
       transition: background-color $transition-default;
@@ -140,7 +177,7 @@
     border: 1px solid $neutral-300;
     border-radius: 100px;
     position: absolute;
-    display: flex;
+    display: none;
     cursor: pointer;
     align-items: center;
     justify-content: space-between;
@@ -149,6 +186,9 @@
     color: $text-secondary;
     padding: 10px 68px 10px 24px;
     @include body-1;
+    @include screen(laptop) {
+      display: flex;
+    }
     @include screen(laptop) {
       padding: 12px 104px 12px 24px;
       transition: color $transition-default;
@@ -174,15 +214,24 @@
   &__training {
     text-align: left;
     display: inline-flex;
-    align-items: flex-start;
-    min-height: 224px;
     justify-content: center;
-    flex-direction: column;
+    min-height: 212px;
     width: 100%;
     position: relative;
-    padding: 20px 0;
+    @include screen(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 224px;
+      padding: 20px 0;
+    }
     @include screen(laptop) {
       min-height: 292px;
+    }
+    &[name="scroll"] {
+      display: none;
+      @include screen(tablet) {
+        display: flex;
+      }
     }
     &-disabled {
       pointer-events: none;
@@ -196,7 +245,9 @@
       }
       .schedule-table__inner {
         pointer-events: none;
-        background-color: rgba($neutral-400, 0.6);
+        @include screen(tablet) {
+          background-color: rgba($neutral-400, 0.6);
+        }
       }
     }
     &.popup-trigger {
@@ -213,7 +264,7 @@
     }
     &-empty {
       text-align: left;
-      display: inline-flex;
+      display: none;
       align-items: flex-start;
       cursor: inherit;
       min-height: 224px;
@@ -222,6 +273,9 @@
       width: 100%;
       position: relative;
       padding: 20px 0;
+      @include screen(tablet) {
+        display: inline-flex;
+      }
       @include screen(laptop) {
         min-height: 292px;
       }
