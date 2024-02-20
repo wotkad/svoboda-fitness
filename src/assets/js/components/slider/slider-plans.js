@@ -12,7 +12,7 @@ export default function sliderPlans() {
       forceToAxis: true,
     },
     breakpoints: {
-      1240: {
+      1224: {
         spaceBetween: 24,
       }
     }

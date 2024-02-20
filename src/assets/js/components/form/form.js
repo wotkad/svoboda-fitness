@@ -123,7 +123,7 @@ export default function form() {
   });
 
   function sendPopupForm() {
-    let form = $('.footer__form');
+    let form = $('form');
     let button = $('.footer__button');
     button.on('click', function() {
       if (!policyInput.prop('checked')) {
@@ -139,6 +139,7 @@ export default function form() {
     });
     if (form) {
       form.on('submit', function(e) {
+        $(this).find('input.not-valid').trigger('focus');
         e.preventDefault();
         if (
           !$('input[name="name"]').hasClass('not-valid') &&

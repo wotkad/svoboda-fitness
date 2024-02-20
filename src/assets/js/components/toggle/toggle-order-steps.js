@@ -14,6 +14,13 @@ export default function toggleOrderSteps() {
       if (i == 0 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled')) {
         nextStep();
       }
+      Array.from($('.order__steps input')).forEach(function(input) {
+        if ($(input).val() == '') {
+          $(input).addClass('not-valid');
+        } else {
+          $(input).removeClass('not-valid');
+        }
+      });
       if (i == 1 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled') && !$(this).prevAll().find('.order__input-required[name="plan"]').val() == '') {
         nextStep();
       }

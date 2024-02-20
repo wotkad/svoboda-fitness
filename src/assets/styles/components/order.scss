@@ -1,6 +1,9 @@
 .order {
   &__wrapper {
-    padding-left: 53px;
+    padding-left: 34px;
+    @include screen(laptop) {
+      padding-left: 53px;
+    }
   }
   &__actions {
     display: inline-flex;
@@ -32,8 +35,12 @@
     }
   }
   &__steps {
-    margin-top: 64px;
-    max-width: 680px
+    margin-top: 40px;
+    max-width: 568px;
+    @include screen(laptop) {
+      margin-top: 64px;
+      max-width: 680px
+    }
   }
   &__step {
     display: none;
@@ -66,10 +73,15 @@
     }
   }
   &__form {
-    margin-top: 52px;
     display: grid;
+    margin-top: 34px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 48px;
+    column-gap: 48px;
+    row-gap: 34px;
+    @include screen(laptop) {
+      margin-top: 52px;
+      gap: 48px;
+    }
     &-wide {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       .order__label {
@@ -159,9 +171,8 @@
     @include body-caption;
   }
   &__button {
-    padding: 16px 80px;
     grid-column-start: 1;
-
+    padding: 12px;
     border-radius: 100px;
     background-color: $white;
     text-align: center;
@@ -170,6 +181,7 @@
     color: $text-black;
     @include button-medium;
     @include screen(laptop) {
+      padding: 16px;
       transition: background-color $transition-default;
       &:hover {
         background-color: $yellow;
@@ -185,6 +197,7 @@
       right: 0;
       transition: transform $transition-default;
       color: $neutral-100;
+      width: 20px;
     }
     .order__input {
       position: absolute;
@@ -282,6 +295,7 @@
       right: 0;
       transition: transform $transition-default;
       color: $neutral-100;
+      width: 20px;
     }
   }
   &__spinner {
@@ -343,7 +357,10 @@
   }
   &__header {
     display: flex;
-    gap: 220px;
+    gap: 132px;
+    @include screen(laptop) {
+      gap: 220px;
+    }
   }
   &__head {
     display: flex;
@@ -357,9 +374,14 @@
       position: absolute;
       height: 1px;
       background-color: $neutral-100;
-      width: 156px;
-      right: -188px;
-      top: 18px;
+      width: 100px;
+      top: 10px;
+      right: -116px;
+      @include screen(laptop) {
+        width: 156px;
+        right: -188px;
+        top: 18px;
+      }
     }
     @include h2-actay;
   }

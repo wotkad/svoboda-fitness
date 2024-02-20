@@ -6,16 +6,20 @@
     overflow: visible;
   }
   &__title {
+    height: 27px;
     span {
       margin-bottom: 4px;
-      padding: 8px;
-
+      padding: 6px;
       border-radius: 8px;
       background-color: $text-black;
 
       text-transform: uppercase;
       color: $yellow;
       @include label-extra-sm-bold;
+      @include screen(laptop) {
+        padding: 8px;
+        height: auto;
+      }
     }    
     @include h2-actay;
   }
