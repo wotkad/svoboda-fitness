@@ -7,7 +7,11 @@
     padding: 0;
   }
   &__slider {
+    margin-top: 48px;
     overflow: visible;
+    @include screen(tablet) {
+      margin-top: 0;
+    }
     .swiper-slide {
       transition: transform $transition-default;
       &-active {

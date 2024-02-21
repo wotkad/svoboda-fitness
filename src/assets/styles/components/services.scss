@@ -1,10 +1,9 @@
 .services {
   overflow: hidden;
   &__sliders {
-    grid-template-columns: 1fr;
-    display: grid;
-    align-items: center;
-    @include screen(laptop) {
+    @include screen(tablet) {
+      display: grid;
+      align-items: center;
       gap: 80px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -72,16 +71,20 @@
         }
         &:after {
           content: "";
+          right: 0;
+          width: 100%;
 
           position: absolute;
-          right: -9999px;
           bottom: 0;
           left: 0;
 
-          width: 9999px;
           height: 1px;
 
           background-color: $neutral-200;
+          @include screen(tablet) {
+            width: 9999px;
+            right: -9999px;
+          }
         }
       }
     }

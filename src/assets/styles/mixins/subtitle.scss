@@ -3,6 +3,12 @@
   align-items: flex-end;
   gap: 12px;
   text-transform: uppercase;
+  flex-wrap: wrap;
+  width: 100%;
+  @include screen(tablet) {
+    flex-wrap: nowrap;
+    width: auto;
+  }
   span {
     display: none;
     color: $neutral-200;
@@ -15,8 +21,23 @@
       margin-bottom: 12px;
     }
   }
-  p {
+  p,
+  div {
+    width: 100%;
     @include h1-actay;
+  }
+  div {
+    @include screen(tablet) {
+      gap: 12px;
+      display: inline-flex;
+    }
+  }
+  p {
+    text-align: right;
+    @include screen(tablet) {
+      text-align: left;
+      width: auto;
+    }
   }
   @include screen(laptop) {
     gap: 20px;

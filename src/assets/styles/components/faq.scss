@@ -1,14 +1,19 @@
 .faq {
   &__buttons {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 12px;
-
+    padding: 10px 12px;
     border-radius: 12px;
     background-color: $neutral-400;
+    @include screen(tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 12px;
+    }
   }
   &__button {
+    padding: 0 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,9 +27,9 @@
     @include actay-faq;
     @include screen(laptop) {
       padding: 8px 0 0;
-    }
-    &:hover {
-      color: $yellow;
+      &:hover {
+        color: $yellow;
+      }
     }
     &.active {
       color: $yellow;
@@ -35,7 +40,10 @@
     @include actay;
   }
   &__containers {
-    margin-top: 30px;
+    margin-top: 20px;
+    @include screen(laptop) {
+      margin-top: 30px;
+    }
     @include screen(laptop) {
       margin-top: 60px;
     }
@@ -69,9 +77,11 @@
     svg {
       color: $icon-gray;
       width: 20px;
+      min-width: 20px;
       transition: transform $transition-default;
       @include screen(laptop) {
         width: 24px;
+        min-width: 24px;
       }
     }
     &.active {
@@ -80,6 +90,10 @@
       }
     }
     h3 {
+      max-width: 90%;
+      @include screen(tablet) {
+        max-width: 100%;
+      }
       @include body-2;
     }
   }
@@ -93,7 +107,10 @@
       display: block;
     }
     p {
-      @include body-1;
+      @include body-caption;
+      @include screen(tablet) {
+        @include body-1;
+      }
     }
   }
 }

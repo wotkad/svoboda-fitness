@@ -15,6 +15,10 @@
         align-self: flex-end;
         color: $yellow;
       }
+      @include screen(tablet) {
+        gap: 16px;
+        flex-direction: row;
+      }
     }
     &-right {
       justify-content: flex-start;

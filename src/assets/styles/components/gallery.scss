@@ -4,8 +4,8 @@
     overflow: hidden;
     max-height: 192px;
     border-radius: 6px;
-    @include screen(laptop) {
-    border-radius: 12px;
+    @include screen(tablet) {
+      border-radius: 12px;
       max-height: 389px;
     }
     @include screen(laptop) {
@@ -40,7 +40,10 @@
 
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 12px;
+        @include screen(tablet) {
+          gap: 24px;
+        }
         &-bullet {
           position: relative;
 

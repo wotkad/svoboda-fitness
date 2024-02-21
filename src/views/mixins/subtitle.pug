@@ -2,8 +2,8 @@ mixin subtitle(number, subtitle, type = 'h1')
   if type == 'h1'
     h1.subtitle
       span= number
-      p= subtitle
+      div !{subtitle}
   else 
     h2.subtitle
       span= number
-      p= subtitle
+      div !{subtitle}
