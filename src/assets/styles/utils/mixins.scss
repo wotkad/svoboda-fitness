@@ -123,6 +123,17 @@
   }
 }
 
+@mixin h2-inter {
+  font-size: 18px;
+  line-height: 150%;
+  @include screen(tablet) {
+    font-size: 18px;
+  }
+  @include screen(laptop) {
+    font-size: 32px;
+  }
+}
+
 @mixin h2-bold-actay {
   font-size: 20px;
   line-height: 150%;

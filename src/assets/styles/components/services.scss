@@ -1,10 +1,13 @@
 .services {
   overflow: hidden;
   &__sliders {
+    grid-template-columns: 1fr;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
-    gap: 80px;
+    @include screen(laptop) {
+      gap: 80px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     @include screen(laptop) {
       gap: 128px;
     }
@@ -15,13 +18,16 @@
   &__images {
     max-height: 324px;
     overflow: hidden;
-
+    display: none;
     border-radius: 8px;
     user-select: none;
     .swiper {
       &-slide {
         transition: opacity 0.4s;
       }
+    }
+    @include screen(tablet) {
+      display: block;
     }
   }
   &__image {
@@ -51,10 +57,13 @@
         position: relative;
 
         text-transform: uppercase;
-        padding: 23px 0;
         transition: color $transition-default;
         cursor: pointer;
-        @include h2;
+        padding: 24px 0;
+        @include h2-inter;
+        @include screen(tablet) {
+          @include h2;
+        }
         @include screen(laptop) {
           padding: 32px 0;
         }
