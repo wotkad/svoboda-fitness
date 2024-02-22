@@ -28,9 +28,12 @@ body {
 }
 
 main {
-  padding-top: 125px;
+  padding-top: 112px;
   @include screen(laptop) {
     padding-top: 200px;
+  }
+  &.active {
+    filter: blur(10px);
   }
 }
 

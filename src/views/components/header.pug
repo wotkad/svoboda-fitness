@@ -1,17 +1,30 @@
 header.header
   .wrapper
     .header__wrapper
-      button(type="button").header__burger
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 8.5H21M3 15.5H21" stroke="#F7D90B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      button.header__burger(type="button")
+        svg(
+          fill="none"
+          viewBox="0 0 16 14"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="14"
+        )
+          rect(fill="#F7D90B" rx="1" width="16" height="2")
+          rect(fill="#F7D90B" rx="1" y="6" width="16" height="2")
+          path(
+            d="M0 13C0 12.4477 0.447715 12 1 12H15C15.5523 12 16 12.4477 16 13V13C16 13.5523 15.5523 14 15 14H1C0.447715 14 0 13.5523 0 13V13Z"
+            fill="#F7D90B"
+          )
         span Меню
       nav.header__menu
-        a.header__logo(href="/")
-          img(src="/assets/images/logo.svg" alt="logo")
-        a.header__link(href="/plans/") Абонементы
-        a.header__link(href="/coaches/") Тренеры
-        a.header__link(href="/schedule/") Расписание
-        a.header__link(href="/blog/") Блог
-        a.header__link(href="/contacts/") Контакты
+        .wrapper 
+          .header__inner
+            a.header__logo(href="/")
+              img(src="/assets/images/logo.svg" alt="logo")
+            a.header__link(href="/") Главная
+            a.header__link(href="/plans/") Абонементы
+            a.header__link(href="/coaches/") Тренеры
+            a.header__link(href="/schedule/") Расписание
+            a.header__link(href="/blog/") Блог
+            a.header__link(href="/contacts/") Контакты
       a.header__button(href="/plans/") Купить абонемент

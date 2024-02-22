@@ -4,12 +4,15 @@
     grid-template-columns: 1fr;
     gap: 32px;
     @include screen(tablet) {
-      grid-template-columns: 400px 1fr;
+      grid-template-columns: 400px 260px;
       gap: 40px;
     }
     @include screen(laptop) {
       grid-template-columns: 704px 1fr;
       gap: 76px;
+    }
+    @include screen(desktop) {
+      grid-template-columns: 1000px 1fr;
     }
   }
   &__map {
@@ -35,6 +38,9 @@
     }
     @include screen(laptop) {
       height: 580px;
+    }
+    @include screen(desktop) {
+      height: 653px;
     }
   }
   &__info {
@@ -62,6 +68,7 @@
       width: 100%;
     }
     @include screen(laptop) {
+      width: auto;
       gap: 12px;
     }
     h3 {

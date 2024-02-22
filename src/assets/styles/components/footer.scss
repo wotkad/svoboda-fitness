@@ -1,5 +1,8 @@
 .footer {
   background-color: $neutral-400;
+  &.active {
+    filter: blur(10px);
+  }
   &-top {
     padding: 32px 0;
     border-bottom: 1px solid $neutral-200;
@@ -12,6 +15,11 @@
     padding: 32px 0;
     @include screen(tablet) {
       padding: 60px 0 40px;
+    }
+    @include screen(desktop) {
+      .footer__wrapper {
+        grid-template-columns: 1fr;
+      }
     }
   }
   &__wrapper {
@@ -94,6 +102,9 @@
     @include screen(tablet) {
       @include body-2;
     }
+    @include screen(laptop) {
+      @include body-1;
+    }
     span {
       &:before {
         content: "";
@@ -110,9 +121,6 @@
         transition: border-color $transition-default;
         @include screen(tablet) {
           top: 2px;
-        }
-        @include screen(laptop) {
-          top: 7px;
         }
       }
       &:after {
@@ -132,9 +140,6 @@
         opacity: 0;
         @include screen(tablet) {
           top: 5px;
-        }
-        @include screen(laptop) {
-          top: 10px;
         }
       }
     }
@@ -189,6 +194,9 @@
       gap: 0;
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    @include screen(desktop) {
+      max-width: 826px;
+    }
   }
   &__links {
     display: flex;
@@ -204,6 +212,9 @@
     @include body-1;
     @include screen(tablet) {
       @include body-2;
+    }
+    @include screen(laptop) {
+      @include body-1;
     }
     br {
       display: block;

@@ -13,7 +13,7 @@
     }
   }
   &__button {
-    padding: 0 16px;
+    padding: 0 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,9 @@
 
     transition: color $transition-default;
     @include actay-faq;
+    @include screen(mobile) {
+      padding: 0 16px;
+    }
     @include screen(laptop) {
       padding: 8px 0 0;
       &:hover {

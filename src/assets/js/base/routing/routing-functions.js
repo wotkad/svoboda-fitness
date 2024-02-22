@@ -10,6 +10,7 @@ import toggleFaq from "../../components/toggle/toggle-faq";
 import togglePopup from "../../components/toggle/toggle-popup";
 import toggleOrderSteps from "../../components/toggle/toggle-order-steps";
 import toggleFilters from "../../components/toggle/toggle-filters";
+import toggleMobileMenu from "../../components/toggle/toggle-mobile-menu";
 import form from "../../components/form/form";
 import order from "../../components/form/order";
 import calendar from "../../components/form/calendar";

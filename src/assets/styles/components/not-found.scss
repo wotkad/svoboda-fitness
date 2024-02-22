@@ -51,5 +51,8 @@
         color: $yellow;
       }
     }
+    @include screen(desktop) {
+      padding: 11px 40px;
+    }
   }
 }
