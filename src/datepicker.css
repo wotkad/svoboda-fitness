@@ -152,12 +152,14 @@
   right: 12px;
   top: 16px;
   touch-action: manipulation;
+  transition: .3s;
 }
 
 .calendar>.header button.previous-button {
   position: absolute;
   right: 60px;
   top: 16px;
+  transition: .3s;
   touch-action: manipulation;
 }
 
@@ -230,17 +232,16 @@
   .container.amp-plugin {
     width: 343px;
     max-width: 343px;
-    padding: 16px 16px 8px;
-    background-color: #fff;
   }
   .container.amp-plugin main {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     box-shadow: none;
   }
   .calendar>.header button.previous-button,
   .calendar>.header button.next-button {
-    top: 32px;
+    transition: .3s;
+    top: 16px;
   }
   .calendar>.header button.previous-button {
     right: 85px;

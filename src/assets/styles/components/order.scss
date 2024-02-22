@@ -299,6 +299,7 @@
       width: 0;
       height: 0;
       opacity: 0;
+      visibility: hidden;
       &.active {
         & ~ .order__selected {
           border-color: $text-secondary;

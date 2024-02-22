@@ -18,9 +18,12 @@
     }
   }
   p {
-    margin-top: 20px;
+    margin-top: 12px;
 
     @include label-article-body;
+    @include screen(tablet) {
+      margin-top: 20px;
+    }
     &:first-child {
       margin-top: 0;
     }

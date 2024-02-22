@@ -7,6 +7,7 @@ export default function sliderPlans() {
     speed: 800,
     slidesPerView: 1.3,
     centeredSlides: true,
+    initialSlide: 1,
     spaceBetween: 40,
     grabCursor: true,
     mousewheel: {
@@ -14,6 +15,7 @@ export default function sliderPlans() {
     },
     breakpoints: {
       768: {
+        initialSlide: 0,
         spaceBetween: 20,
         centeredSlides: false,
         slidesPerView: 3,

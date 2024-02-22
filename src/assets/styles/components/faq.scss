@@ -74,6 +74,7 @@
     align-items: center;
     padding: 12px 0;
     cursor: pointer;
+    position: relative;
     @include screen(laptop) {
       padding: 20px 0;
     }
@@ -81,10 +82,14 @@
       color: $icon-gray;
       width: 20px;
       min-width: 20px;
+      position: absolute;
+      right: 0;
       transition: transform $transition-default;
+      top: 12px;
       @include screen(laptop) {
         width: 24px;
         min-width: 24px;
+        top: 23px;
       }
     }
     &.active {
