@@ -11,11 +11,16 @@
       grid-template-columns: 288px 1fr;
       gap: 128px;
     }
+    @include screen(desktop) {
+      grid-template-columns: 384px 1fr;
+      gap: 160px;
+    }
   }
   &__aside {
     &__links {
       display: none;
       flex-direction: column;
+      width: 100%;
       align-items: flex-start;
       gap: 20px;
       @include screen(tablet) {
@@ -23,13 +28,18 @@
       }
     }
     &__link {
+      width: 100%;
       display: flex;
       align-items: center;
       gap: 12px;
       padding: 12px 30px;
       border: 1px solid $neutral-200;
       border-radius: 100px;
+      justify-content: center;
       @include screen(laptop) {
+        padding: 20px 36px;
+      }
+      @include screen(desktop) {
         padding: 20px 36px;
       }
       span {
@@ -150,6 +160,9 @@
         @include screen(laptop) {
           height: 337px;
         }
+        @include screen(desktop) {
+          height: 358px;
+        }
       }
     }
     &__more {
@@ -201,6 +214,9 @@
           }
           @include screen(laptop) {
             height: 388px;
+          }
+          @include screen(desktop) {
+            height: 410px;
           }
         }
       }

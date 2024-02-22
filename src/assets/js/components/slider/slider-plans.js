@@ -22,6 +22,11 @@ export default function sliderPlans() {
         centeredSlides: false,
         spaceBetween: 24,
         slidesPerView: 3,
+      },
+      1536: {
+        centeredSlides: false,
+        spaceBetween: 24,
+        slidesPerView: 4,
       }
     }
   });

@@ -25,6 +25,10 @@ export default function sliderSchedule() {
       769: {
         spaceBetween: 16,
         slidesPerView: 3.67,
+      },
+      1536: {
+        spaceBetween: 16,
+        slidesPerView: 5,
       }
     }
   });

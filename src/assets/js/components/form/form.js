@@ -1,7 +1,6 @@
 import sendMail from "./form-send";
 
 export default function form() {
-  let inputs = $('input')
   let policyInput = $('input[name="policy"]')
 
   const validateName = (name) => {
@@ -131,11 +130,6 @@ export default function form() {
       } else {
         policyInput.removeClass('not-valid');
       }
-      Array.from(inputs).forEach(function(input) {
-        if (!$(input).val()) {
-          $(input).addClass('not-valid');
-        }
-      })
     });
     if (form) {
       form.on('submit', function(e) {

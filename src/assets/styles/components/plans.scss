@@ -37,6 +37,9 @@
         padding: 8px;
         height: auto;
       }
+      @include screen(desktop) {
+        @include label-12;
+      }
     }    
     @include h2-actay;
   }
@@ -53,6 +56,9 @@
     @include screen(laptop) {
       padding: 36px;
       min-height: 550px;
+    }
+    @include screen(desktop) {
+      padding: 32px;
     }
     &-annual {
       .plans__title {

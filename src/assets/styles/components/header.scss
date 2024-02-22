@@ -68,6 +68,9 @@
     @include screen(tablet) {
       display: block;
     }
+    @include screen(tablet) {
+      max-width: 50px;
+    }
   }
   &__inner {
     display: flex;

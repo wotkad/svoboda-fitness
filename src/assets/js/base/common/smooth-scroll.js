@@ -11,7 +11,7 @@ function smoothScroll() {
       offset = 100;
     }
     if (width > 1536) {
-      offset = 250;
+      offset = 160;
     }
   }
   checkWidth();

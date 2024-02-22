@@ -1,6 +1,6 @@
 @mixin screen($breakpoint) {
   @if $breakpoint == desktop {
-    @media only screen and (min-width: 1536px) {
+    @media only screen and (min-width: 1608px) {
       @content;
     }
   }
@@ -276,6 +276,12 @@
   font-weight: 500;
   @include screen(laptop) {
     font-size: 16px;
+  }
+}
+
+@mixin label-12 {
+  @include screen(desktop) {
+    font-size: 12px;
   }
 }
 

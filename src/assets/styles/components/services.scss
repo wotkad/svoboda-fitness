@@ -15,7 +15,7 @@
     grid-column: span 1 / span 1;
   }
   &__images {
-    max-height: 324px;
+    max-height: 222px;
     overflow: hidden;
     display: none;
     border-radius: 8px;
@@ -27,6 +27,12 @@
     }
     @include screen(tablet) {
       display: block;
+    }
+    @include screen(laptop) {
+      max-height: 324px;
+    }
+    @include screen(desktop) {
+      max-height: 400px;
     }
   }
   &__image {
@@ -42,6 +48,9 @@
       object-fit: cover;
       @include screen(laptop) {
         max-height: 324px;
+      }
+      @include screen(desktop) {
+        max-height: 400px;
       }
     }
   }

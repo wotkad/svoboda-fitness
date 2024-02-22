@@ -18,6 +18,10 @@ export default function sliderReviews() {
       1224: {
         slidesPerView: 2.5,
         spaceBetween: 24,
+      },
+      1536: {
+        slidesPerView: 3,
+        spaceBetween: 24,
       }
     }
   });

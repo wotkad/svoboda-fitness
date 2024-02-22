@@ -313,6 +313,9 @@
       gap: 16px;
       margin-top: 59px;
     }
+    @include screen(desktop) {
+      gap: 12px;
+    }
   }
   &__dot {
     width: 4px;
