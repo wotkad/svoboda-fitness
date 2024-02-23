@@ -12,8 +12,11 @@
       flex-direction: column;
       gap: 0;
       span {
-        align-self: flex-end;
+        align-self: flex-start;
         color: $yellow;
+        @include screen(tablet) {
+          justify-content: flex-end;
+        }
       }
       @include screen(tablet) {
         gap: 16px;

@@ -20,6 +20,9 @@
   }
   &__title {
     height: 27px;
+    @include screen(tablet) {
+      height: auto;
+    }
     span {
       margin-bottom: 4px;
       padding: 6px;
