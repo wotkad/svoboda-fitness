@@ -2,13 +2,16 @@
   position: relative;
 
   overflow: hidden;
-  margin-top: -125px;
+  margin-top: -112px;
 
   padding: 0;
   @include screen(laptop) {
     margin-top: -200px;
   }
   &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     img {
@@ -33,8 +36,7 @@
     }
   }
   &__wrapper {
-    position: absolute;
-    top: 0;
+    position: relative;
     height: 100vh;
     display: flex;
     padding-top: 100px;

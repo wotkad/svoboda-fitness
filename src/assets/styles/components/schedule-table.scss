@@ -164,7 +164,7 @@
   &__inner {
     position: relative;
     width: 100%;
-    padding: 20px 16px 20px 0;
+    padding: 28px 16px 28px 0;
     @include screen(tablet) {
       padding: 20px 16px;
       border-radius: 8px;
@@ -325,6 +325,19 @@
       gap: 12px;
     }
   }
+  &__more {
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1px solid $neutral-200;
+    padding: 8px 24px;
+    position: absolute;
+    right: 16px;
+    top: 28px;
+    @include label-12-m-medium;
+    @include screen(tablet) {
+      display: none;
+    }
+  }
   &__dot {
     width: 4px;
     height: 4px;
@@ -333,7 +346,9 @@
     border-radius: 50%;
     background-color: $neutral-300;
     &:nth-child(4) {
-      display: none;
+      @include screen(tablet) {
+        display: none;
+      }
     }
     @include screen(laptop) {
       width: 8px;
@@ -370,9 +385,11 @@
   &__avalibility {
     color: $text-secondary;
     @include body-1;
-    position: absolute;
-    top: 20px;
-    right: 16px;
+    @include screen(tablet) {
+      position: absolute;
+      top: 20px;
+      right: 16px;
+    }
     @include screen(laptop) {
       position: static;
     }

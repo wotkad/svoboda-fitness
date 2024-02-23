@@ -17,20 +17,23 @@
   }
   &__map {
     width: 100%;
-    overflow: hidden;
     height: 344px;
     border-radius: 8px;
+    overflow: hidden;
     background-color: $neutral-100;
     .ymap-container {
       position: relative;
 
       height: 100%;
-      overflow: hidden;
       #map-yandex {
         position: relative;
 
         width: 100%;
         height: 100%;
+        & > ymaps {
+          border-radius: 8px;
+          overflow: hidden;
+        }
       }
     }
     @include screen(tablet) {

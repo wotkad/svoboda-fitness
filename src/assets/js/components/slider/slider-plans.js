@@ -5,7 +5,7 @@ export default function sliderPlans() {
   new Swiper('.plans__slider', {
     modules: [ Mousewheel ],
     speed: 800,
-    slidesPerView: 1.3,
+    slidesPerView: 1.4,
     centeredSlides: true,
     initialSlide: 1,
     spaceBetween: 40,

@@ -31,9 +31,7 @@ export default function toggleMobileMenu() {
   });
   Array.from(items).forEach((item) => {
     $(item).on('click', function() {
-      setTimeout(function() {
-        closeMenu()
-      }, 300);
+      closeMenu()
     });
   });
 }
