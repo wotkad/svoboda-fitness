@@ -68,8 +68,8 @@ export default function calendar() {
     new easepick.create({
       element: startday,
       css: [
-        '../datepicker.min.css',
-        '../datepicker.css',
+        '/assets/styles/datepicker.min.css',
+        '/assets/styles/datepicker.css',
       ],
       plugins: [
         AmpPlugin,
