@@ -21,11 +21,13 @@ export default function sliderPlans() {
         slidesPerView: 3,
       },
       1224: {
+        initialSlide: 0,
         centeredSlides: false,
         spaceBetween: 24,
         slidesPerView: 3,
       },
       1536: {
+        initialSlide: 0,
         centeredSlides: false,
         spaceBetween: 24,
         slidesPerView: 4,

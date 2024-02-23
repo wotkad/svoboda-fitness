@@ -201,8 +201,9 @@ module.exports = (env) => {
           { from: "sitemap.xml" },
           { from: "assets/images", to: "assets/images" },
           { from: "assets/fonts", to: "assets/fonts" },
-          // { from: "assets/files", to: "assets/files" }
-          // { from: "assets/videos", to: "assets/videos" },
+          { from: "assets/styles/datepicker.min.css", to: "assets/styles/datepicker.min.css" },
+          { from: "assets/styles/datepicker.css", to: "assets/styles/datepicker.css" },
+          { from: "assets/files", to: "assets/files" }
         ],
       }),
 
