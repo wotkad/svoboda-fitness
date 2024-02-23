@@ -28,10 +28,10 @@ export default function calendar() {
   if (birthday) {
     new easepick.create({
       element: birthday,
-      // css: [
-      //   '../datepicker.min.css',
-      //   '../datepicker.css',
-      // ],
+      css: [
+        '/assets/styles/datepicker.min.css',
+        '/assets/styles/datepicker.css',
+      ],
       plugins: [AmpPlugin],
       format: "DD.MM.YYYY",
       lang: "ru-RU",
