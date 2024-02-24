@@ -24,7 +24,7 @@
   }
 
   @if $breakpoint == mobile {
-    @media only screen and (min-width: 375px) {
+    @media only screen and (min-width: 640px) {
       @content;
     }
   }
@@ -277,6 +277,10 @@
   @include screen(laptop) {
     font-size: 16px;
   }
+}
+
+@mixin font-sm {
+  font-size: 12px;
 }
 
 @mixin label-12 {

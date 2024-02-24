@@ -7,6 +7,8 @@
 
 // #################################
 
+import "./components/animation/DrawSVGPlugin";
+
 import "./base/routing/routing";
 
 import "./base/common/preloader";
@@ -34,5 +36,6 @@ import "./components/form/order";
 import "./components/form/calendar";
 
 import "./components/animation/animation-hero";
+import "./components/animation/animation-logo";
 
 import "./components/map";

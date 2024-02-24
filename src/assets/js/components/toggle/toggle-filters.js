@@ -1,3 +1,5 @@
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
+
 export default function toggleFilters() {
   let items = $('.schedule__list__item');
   let labels = $('.schedule__selected');
@@ -35,5 +37,33 @@ export default function toggleFilters() {
       $('.schedule__input').removeClass('active');
     }
   });
+  function scheduleFiltersToggle() {
+    let button = $('.schedule__mobfilter');
+    let filters = $('.schedule-filters-mob');
+    let close = $('.schedule__close');
+    let main = $('main');
+    let footer = $('footer');
+    button.on('click', function() {
+      filters.toggleClass('active');
+      main.addClass('active');
+      footer.addClass('active');
+      disablePageScroll();
+    });
+    close.on('click', function() {
+      filters.removeClass('active');
+      main.removeClass('active');
+      footer.removeClass('active');
+      enablePageScroll();
+    });
+    $(window).on('resize', function() {
+      if ($(window).width() > 768) {
+        enablePageScroll();
+        filters.removeClass('active');
+        main.removeClass('active');
+        footer.removeClass('active');
+      }
+    });
+  }
+  scheduleFiltersToggle();
 }
 toggleFilters();

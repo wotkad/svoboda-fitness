@@ -147,7 +147,7 @@
 
       color: $text-caption;
 
-      transition: transform $transition-default;
+      transition: transform $transition-default, font-size $transition-default;
       transform-origin: 0 0;
       pointer-events: none;
       user-select: none;
@@ -174,7 +174,8 @@
     &:focus {
       border-color: $text-secondary;
       & + p {
-        transform: translateY(-14px) scale(0.7);
+        transform: translateY(-18px);
+        @include font-sm;
       }
     }
     &:hover {
@@ -185,7 +186,8 @@
     }
     &.filled {
       & + p {
-        transform: translateY(-14px) scale(0.7);
+        transform: translateY(-18px);
+        @include font-sm;
       }
       &[type=date]::-webkit-datetime-edit {
         display: none;
@@ -267,7 +269,8 @@
       &.active {
         & ~ .order__selected {
           p {
-            transform: translateY(-18px) scale(0.7);
+            transform: translateY(-22px);
+            @include font-sm;
           }
         }
       }
@@ -282,7 +285,7 @@
       &.filled {
         & ~ .order__selected {
           p {
-            transform: translateY(-18px) scale(0.7);
+            transform: translateY(-18px);
           }
         }
       }
@@ -304,7 +307,8 @@
         & ~ .order__selected {
           border-color: $text-secondary;
           p {
-            transform: translateY(-18px) scale(0.7);
+            transform: translateY(-23px);
+            @include font-sm;
           }
           svg {
             transform: rotate(180deg);
@@ -322,7 +326,8 @@
       &.filled {
         & ~ .order__selected {
           p {
-            transform: translateY(-18px) scale(0.7);
+            transform: translateY(-23px);
+            @include font-sm;
           }
         }
       }

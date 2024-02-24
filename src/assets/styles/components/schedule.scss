@@ -10,6 +10,13 @@
     transform: translateY(-100%);
     z-index: 1000;
     transition: transform $transition-default;
+    &-mob {
+      display: block;
+      z-index: 1000;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
     &.active {
       transform: translateY(0);
     }

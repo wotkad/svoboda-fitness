@@ -1,6 +1,5 @@
 import Swiper from "swiper";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 export default function sliderSchedule() {
   let swiper = new Swiper('.swiper-schedule', {
@@ -64,26 +63,5 @@ export default function sliderSchedule() {
     });
   }
   scheduleFunctional();
-
-  function scheduleFiltersToggle() {
-    let button = $('.schedule__mobfilter');
-    let filters = $('.schedule-filters');
-    let close = $('.schedule__close');
-    button.on('click', function() {
-      filters.toggleClass('active');
-      disablePageScroll();
-    });
-    close.on('click', function() {
-      filters.removeClass('active');
-      enablePageScroll();
-    });
-    $(window).on('resize', function() {
-      if ($(window).width() > 768) {
-        enablePageScroll();
-        filters.removeClass('active');
-      }
-    });
-  }
-  scheduleFiltersToggle();
 }
 sliderSchedule();

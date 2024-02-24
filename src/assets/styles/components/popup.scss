@@ -56,10 +56,11 @@
     position: relative;
     z-index: 1500;
     width: 100%;
-    background-color: $neutral-400;
     transform: translateY(100%);
+    background-color: $black;
     padding-bottom: 80px;
     @include screen(tablet) {
+      background-color: $neutral-400;
       padding-bottom: 0;
     }
     @include screen(tablet) {
@@ -133,6 +134,19 @@
   &__container {
     position: relative;
     width: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 120px;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 100%);
+      left: 0;
+      z-index: 2;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
   }
   &__inner {
     width: 100%;
@@ -145,8 +159,8 @@
       position: absolute;
       bottom: -80px;
       height: 80px;
-      background-color: $neutral-400;
       width: 100%;
+      background-color: $black;
       left: 0;
       @include screen(tablet) {
         display: none;

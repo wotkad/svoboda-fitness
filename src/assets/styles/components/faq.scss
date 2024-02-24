@@ -40,7 +40,9 @@
     &:last-child {
       border-right: none;
     }
-    @include actay;
+    @include screen(laptop) {
+      @include label-h-numbering;
+    }
   }
   &__containers {
     margin-top: 20px;

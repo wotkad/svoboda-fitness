@@ -1,7 +1,20 @@
 .footer {
+  transition: filter $transition-default;
   background-color: $neutral-400;
   &.active {
     filter: blur(10px);
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    @include screen(tablet) {
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include screen(laptop) {
+      gap: 0;
+    }
   }
   &-top {
     padding: 32px 0;
@@ -9,6 +22,10 @@
     @include screen(tablet) {
       padding: 60px 0;
       border: none;
+    }
+    @include screen(desktop) {
+      gap: 0;
+      grid-template-columns: 1fr 792px;
     }
   }
   &-bottom {
@@ -20,15 +37,6 @@
       .footer__wrapper {
         grid-template-columns: 1fr;
       }
-    }
-  }
-  &__wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
-    @include screen(tablet) {
-      gap: 16px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   &__slogan {
@@ -68,7 +76,7 @@
     border-radius: 0;
     background-color: transparent;
 
-    text-transform: uppercase;
+    text-transform: capitalize;
 
     transition: color $transition-default, border-color $transition-default;
     @include body-1;
@@ -195,7 +203,9 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     @include screen(desktop) {
-      max-width: 826px;
+      max-width: 816px;
+      grid-template-columns: 160px 132px 76px 206px;
+      justify-content: space-between;
     }
   }
   &__links {

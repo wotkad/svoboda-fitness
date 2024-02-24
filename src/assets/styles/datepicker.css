@@ -15,14 +15,14 @@
 }
 
 .calendar>.header .month-name {
-  color: #fff;
+  color: #e6e6e6;
   font-size: 15px;
   font-weight: 400;
   line-height: 28px;
 }
 
 .calendar>.header .month-name--select {
-  background-color: #fff;
+  background-color: #e6e6e6;
 }
 
 .calendar>.header .month-name>span {
@@ -77,7 +77,7 @@
 }
 
 .calendar>.days-grid>.day {
-  color: #fff;
+  color: #e6e6e6;
   font-family: DM Sans, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -96,7 +96,7 @@
 .container.amp-plugin .calendars .calendar>.header .month-name select.month-name--dropdown,
 .container.amp-plugin .calendars .calendar>.header .month-name span,
 .container.amp-plugin .calendars .calendar>.header .month-name select {
-  color: #fff;
+  color: #e6e6e6;
   font-family: DM Sans, sans-serif;
   outline: none;
   font-size: 16px;
@@ -115,15 +115,15 @@
 .calendar>.days-grid>.day.selected {
   border-color: #f7d90b;
   background-color: transparent;
-  color: #fff;
+  color: #e6e6e6;
 }
 
 .calendar>.days-grid>.day.today {
-  color: #fff;
+  color: #e6e6e6;
 }
 
 .calendar>.days-grid>.day.today:hover {
-  color: #fff;
+  color: #e6e6e6;
 }
 
 .container.amp-plugin .calendars .calendar>.header .month-name {
@@ -135,7 +135,7 @@
   position: absolute;
   bottom: 12px;
   left: 50%;
-  color: #fff;
+  color: #e6e6e6;
   transform: translateX(-50%);
   width: 94px;
   height: 33px;
@@ -174,13 +174,13 @@
 .container.range-plugin .calendar>.days-grid>.day.start {
   background-color: transparent;
   border-color: #f7d90b;
-  color: #fff;
+  color: #e6e6e6;
 }
 
 .container.range-plugin .calendar>.days-grid>.day.in-range {
   background-color: transparent;
   border-color: #f7d90b;
-  color: #fff;
+  color: #e6e6e6;
 }
 
 .container.range-plugin .calendar>.days-grid>.day,
