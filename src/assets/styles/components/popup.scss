@@ -143,8 +143,14 @@
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 100%);
       left: 0;
       z-index: 2;
+      transition: opacity $transition-default;
       @include screen(tablet) {
         display: none;
+      }
+    }
+    &.no-fade {
+      &:before {
+        opacity: 0;
       }
     }
   }

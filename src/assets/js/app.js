@@ -7,8 +7,6 @@
 
 // #################################
 
-import "./components/animation/DrawSVGPlugin";
-
 import "./base/routing/routing";
 
 import "./base/common/preloader";
@@ -18,6 +16,7 @@ import "./base/common/scroll-reveal";
 import "./base/common/get-current-year";
 
 import "./components/scroll/scroll-header";
+import "./components/scroll/scroll-sidebar";
 
 import "./components/slider/slider-services";
 import "./components/slider/slider-plans";
@@ -35,6 +34,7 @@ import "./components/form/form";
 import "./components/form/order";
 import "./components/form/calendar";
 
+import "./components/animation/draw-svg-plugin";
 import "./components/animation/animation-hero";
 import "./components/animation/animation-logo";
 

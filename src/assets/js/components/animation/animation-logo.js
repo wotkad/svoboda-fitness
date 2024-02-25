@@ -1,9 +1,12 @@
-import gsap from 'gsap';
-import { DrawSVGPlugin } from './DrawSVGPlugin';
-gsap.registerPlugin(DrawSVGPlugin) 
-
-gsap.config({trialWarn: false});
 function animationLogo() {
-  gsap.from(".loader svg path", {delay: 0.5, duration:1, drawSVG: 0});
+  if ($(".loader").length > 0) {
+    let svg = $('.loader svg').drawsvg({
+      duration: 1000,
+      easing: 'easeInOutQuad'
+    });
+    setTimeout(function() {
+      svg.drawsvg('animate');
+    }, 200);
+  }
 }
 animationLogo();

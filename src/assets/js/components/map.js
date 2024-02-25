@@ -61,19 +61,12 @@ export default function yaMaps() {
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
   }
-  let ymap = function() {
-    if (!check_if_load) {
-      check_if_load = true;
-      loadScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1', function() {
-        ymaps.load(init);
-      });
-    }
-  };
-  $(function() {
-    if ($('.ymap-container').length > 0) {
-      ymap();
-    }
-  });
+  if (!check_if_load) {
+    check_if_load = true;
+    loadScript('https://api-maps.yandex.ru/2.1/?apikey=eef841e5-c60b-4c91-a933-d22090ea8fa7&lang=ru_RU', function() {
+      ymaps.load(init);
+    });
+  }
 }
 if ($('.ymap-container').length > 0) {
   yaMaps();

@@ -68,7 +68,7 @@
     @include screen(tablet) {
       display: block;
     }
-    @include screen(tablet) {
+    @include screen(laptop) {
       max-width: 50px;
     }
   }
