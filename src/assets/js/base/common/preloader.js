@@ -12,22 +12,22 @@ function renderPage() {
       }}
     )
     .delay(0.4);
-  if ($(".loader").length > 0) {
-    const loader = $(".loader");
-    if (localStorage.getItem('loader') !== undefined && localStorage.getItem('loader') !== 'false') {
+  if ($(".loading").length > 0) {
+    const loading = $(".loading");
+    if (localStorage.getItem('loading') !== undefined && localStorage.getItem('loading') !== 'false') {
       gsap
         .fromTo(
-          loader,
+          loading,
           0.5,
           { opacity: "1", zIndex: "99998" },
           { opacity: "0", zIndex: "-1", onComplete: () => {
-            loader.remove();
-            localStorage.setItem('loader', 'false');
+            loading.remove();
+            localStorage.setItem('loading', 'false');
           }}
         )
         .delay(1.5);
     } else {
-      loader.remove();
+      loading.remove();
     }
   }
 }
