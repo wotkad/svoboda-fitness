@@ -1,7 +1,6 @@
 import checkCurrentPage from "../checks/check-current-page";
 import currentYear from "../common/get-current-year";
 import scrollHeader from "../../components/scroll/scroll-header";
-import scrollSidebar from "../../components/scroll/scroll-sidebar";
 import sliderServices from "../../components/slider/slider-services";
 import sliderPlans from "../../components/slider/slider-plans";
 import sliderReviews from "../../components/slider/slider-reviews";
@@ -35,5 +34,4 @@ export default function routingFunctions() {
   calendar();
   toggleFilters();
   sliderSchedule();
-  scrollSidebar();
 }

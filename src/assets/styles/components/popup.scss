@@ -132,33 +132,28 @@
     }
   }
   &__container {
+    padding: 16px 0 0;
     position: relative;
     width: 100%;
     &:before {
       content: '';
       position: absolute;
-      bottom: 0;
-      height: 120px;
+      bottom: -1px;
+      height: 80px;
       width: 100%;
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 100%);
       left: 0;
       z-index: 2;
-      transition: opacity $transition-default;
       @include screen(tablet) {
         display: none;
-      }
-    }
-    &.no-fade {
-      &:before {
-        opacity: 0;
       }
     }
   }
   &__inner {
     width: 100%;
-    padding: 16px;
-    height: 100vh;
-    max-height: calc(100vh - 167px);
+    padding: 0 16px 64px;
+    height: calc(100vh - 223px);
+    max-height: calc(100vh - 223px);
     overflow-y: auto;
     &:before {
       content: '';

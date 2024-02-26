@@ -26,7 +26,7 @@ barba.init({
       name: "opacity-transition",
       sync: true,
       beforeLeave(data) {
-        $('body,html').animate({scrollTop: 0}, 0);
+        $('body, html').animate({scrollTop: 0}, 0);
         $(data.current.container).hide();
         gsap.to(data.current.container, {
           opacity: 0,

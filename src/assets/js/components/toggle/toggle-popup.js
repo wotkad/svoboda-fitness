@@ -4,6 +4,8 @@ import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from "scro
 export default function togglePopup() {
   const buttons = $('.popup-trigger');
   const popupWrappers = $('.popup__wrapper');
+  let main = $('main');
+  let header = $('.header');
 
   $(window).on('resize', function() {
     if ($(window).outerWidth() > 767) {
@@ -21,9 +23,13 @@ export default function togglePopup() {
       const bg = $('.popup__overlay');
       const wrapper = popup.find('.popup__wrapper');
       const close = $('.popup__close, .popup__button');
-      const scrollableElement = document.querySelectorAll('.popup__content')
+      const scrollableElement = document.querySelectorAll('.popup__inner, .popup__items')
       popup.addClass('active');
       bg.addClass('active');
+      main.addClass('active');
+      header.addClass('blurred');
+
+      $('.popup__inner').animate({scrollTop: 0}, 0);
 
       if (wrapper.length > 0) {
         if ($(window).outerWidth() > 767) {
@@ -50,6 +56,8 @@ export default function togglePopup() {
           }});
         }
         enablePageScroll();
+        main.removeClass('active');
+        header.removeClass('blured');
       });
 
       bg.off('click');
@@ -67,6 +75,8 @@ export default function togglePopup() {
         }
         if (!$('.header__burger').hasClass('active')) {
           enablePageScroll();
+          main.removeClass('active');
+          header.removeClass('blurred');
         }
       });
 
@@ -78,6 +88,8 @@ export default function togglePopup() {
                 bg.removeClass('active');
             }});
             enablePageScroll();
+            main.removeClass('active');
+            header.removeClass('blurred');
             $('.popup-select__button').find('.button__input').attr('data-selected', '');
             document.removeEventListener('keydown', handleKeyDown);
           }

@@ -16,7 +16,6 @@ import "./base/common/scroll-reveal";
 import "./base/common/get-current-year";
 
 import "./components/scroll/scroll-header";
-import "./components/scroll/scroll-sidebar";
 
 import "./components/slider/slider-services";
 import "./components/slider/slider-plans";
