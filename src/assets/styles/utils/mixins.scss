@@ -5,6 +5,12 @@
     }
   }
 
+  @if $breakpoint == laptop-default {
+    @media only screen and (min-width: $screen-laptop-base) {
+      @content;
+    }
+  }
+
   @if $breakpoint == laptop {
     @media only screen and (min-width: $screen-laptop) {
       @content;
@@ -285,8 +291,9 @@
 }
 
 @mixin label-12 {
+  font-size: 12px;
   @include screen(desktop) {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -367,11 +374,14 @@
   font-size: 8px;
   line-height: 150%;
   font-family: 'Inter', sans-serif;
+  @include screen(tablet) {
+    font-size: 10px;
+  }
+  @include screen(tablet-2x) {
+    font-size: 12px;
+  }
   @include screen(laptop) {
     font-size: 13px;
-  }
-  @include screen(laptop-default) {
-    font-size: 14px;
   }
 }
 

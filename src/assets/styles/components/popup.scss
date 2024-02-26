@@ -74,7 +74,7 @@
     @include screen(laptop) {
       display: flex;
       align-items: center;
-      padding: 0 108px 0 40px;
+      padding: 64px 108px 64px 40px;
     }
   }
   &__close {
@@ -101,6 +101,9 @@
       top: 0;
       right: 0;
     }
+    @include screen(laptop) {
+      top: 8px;
+    }
     svg {
       width: 24px;
       path {
@@ -113,12 +116,6 @@
           stroke-width: 1px;
           stroke: $white;
         }
-      }
-      @include screen(tablet) {
-        width: 14px;
-      }
-      @include screen(laptop) {
-        width: 24px;
       }
     }
     @include screen(laptop) {
@@ -139,7 +136,7 @@
       content: '';
       position: absolute;
       bottom: -1px;
-      height: 80px;
+      height: 64px;
       width: 100%;
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 100%);
       left: 0;
@@ -148,12 +145,13 @@
         display: none;
       }
     }
+    @include screen(tablet) {
+      padding: 0;
+    }
   }
   &__inner {
     width: 100%;
     padding: 0 16px 64px;
-    height: calc(100vh - 223px);
-    max-height: calc(100vh - 223px);
     overflow-y: auto;
     &:before {
       content: '';
@@ -173,7 +171,6 @@
       display: grid;
       grid-template-columns: 252px 1fr;
       gap: 32px;
-      max-height: calc(100vh - 156px);
     }
     @include screen(laptop) {
       gap: 60px;
@@ -202,7 +199,7 @@
       max-height: 600px;
     }
     @include screen(desktop) {
-      max-height: 980px;
+      max-height: 800px;
     }
     img {
       width: 100%;
@@ -248,7 +245,7 @@
       max-height: calc(100vh - 199px);
     }
     @include screen(laptop) {
-      max-height: calc(100vh - 335px);
+      max-height: calc(600px - 179px);
     }
   }
   &__item {
@@ -259,10 +256,11 @@
     padding: 16px 0;
     border-top: 1px solid $neutral-300;
     @include screen(tablet) {
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 260px 1fr;
     }
     @include screen(laptop) {
       padding: 32px 0;
+      grid-template-columns: 230px 1fr;
     }
     @include screen(desktop) {
       grid-template-columns: 260px 1fr;
@@ -308,6 +306,17 @@
     .popup__content {
       @include screen(tablet) {
         gap: 40px;
+      }
+    }
+    .popup__items {
+      @include screen(tablet) {
+        max-height: calc(600px - 210px);
+      }
+      @include screen(laptop) {
+        max-height: calc(600px - 230px);
+      }
+      @include screen(laptop-default) {
+        max-height: calc(600px - 200px);
       }
     }
   }

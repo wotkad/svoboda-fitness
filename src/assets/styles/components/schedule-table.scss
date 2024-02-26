@@ -368,6 +368,12 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
+    @include screen(laptop) {
+      @include body-caption;
+    }
+    @include screen(laptop-default) {
+      @include body-1;
+    }
     svg {
       width: 20px;
       height: 20px;
@@ -381,6 +387,12 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
+    @include screen(laptop) {
+      @include body-caption;
+    }
+    @include screen(laptop-default) {
+      @include body-1;
+    }
   }
   &__avalibility {
     color: $text-secondary;
@@ -392,6 +404,10 @@
     }
     @include screen(laptop) {
       position: static;
+      @include body-caption;
+    }
+    @include screen(laptop-default) {
+      @include body-1;
     }
   }
 }

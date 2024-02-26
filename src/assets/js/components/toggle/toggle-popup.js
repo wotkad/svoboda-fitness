@@ -47,12 +47,16 @@ export default function togglePopup() {
           gsap.to(wrapper, { x: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');
+            header.removeClass('blurred');
+            main.removeClass('active');
           }});
           clearQueueScrollLocks();
         } else {
           gsap.to(wrapper, { y: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');
+            header.removeClass('blurred');
+            main.removeClass('active');
           }});
         }
         enablePageScroll();

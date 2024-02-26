@@ -20,7 +20,7 @@ export default function sliderPlans() {
         centeredSlides: false,
         slidesPerView: 3,
       },
-      1224: {
+      1024: {
         initialSlide: 0,
         centeredSlides: false,
         spaceBetween: 24,
