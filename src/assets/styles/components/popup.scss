@@ -233,7 +233,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 24px;
     @include screen(tablet) {
