@@ -37,20 +37,6 @@ export default function form() {
     return false;
   }
 
-  const validatedSurname = function() {
-    const name = $(this).val();
-
-    if (validateName(name)) {
-      $(this).removeClass('not-valid').addClass('filled');
-    } else {
-      $(this).addClass('not-valid').addClass('filled');
-    }
-    if (name == '') {
-      $(this).removeClass('not-valid').removeClass('filled');
-    }
-    return false;
-  }
-
   const validatedEmail = function() {
     const email = $(this).val();
 
@@ -102,9 +88,6 @@ export default function form() {
   $('input[name="name"]').on('input', function() {
     validatedName.call(this);
   });
-  $('input[name="surname"]').on('input', function() {
-    validatedSurname.call(this);
-  });
   $('input[name="email"]').on('input', function() {
     validatedEmail.call(this);
   });
@@ -137,7 +120,6 @@ export default function form() {
         e.preventDefault();
         if (
           !$('input[name="name"]').hasClass('not-valid') &&
-          !$('input[name="surname"]').hasClass('not-valid') &&
           !$('input[name="email"]').hasClass('not-valid') &&
           !$('input[name="phone"]').hasClass('not-valid') &&
           !$('input[name="policy"]').hasClass('not-valid')) {

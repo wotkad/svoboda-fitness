@@ -11,9 +11,37 @@ export default function order() {
   });
   Array.from(labels).forEach(function(item) {
     $(item).on('click', function() {
-      $('.order__input').removeClass('active');
-      $(this).prevAll('.order__input').addClass('active');
+      $('.order__input').not($(this).prevAll('.order__input')).removeClass('active');
+      $(this).prevAll('.order__input').toggleClass('active');
+
+      $('.easepick-wrapper').toggleClass('active');
+
+      if (!$('.easepick-wrapper').hasClass('active')) {
+        if ($('.easepick-wrapper')[0] !== undefined) {
+
+          let easepickCalendar = $('.easepick-wrapper')[0].shadowRoot;
+          let easepickCalendarContainer = $(easepickCalendar).find('.container.amp-plugin');
+          easepickCalendarContainer.removeClass('show');
+        }
+      }
+
     });
+  });
+  $('.order__calendar').on('click', function() {
+    $(this).children('.order__input').toggleClass('active');
+
+    $('.easepick-wrapper').toggleClass('active');
+
+    if (!$('.easepick-wrapper').hasClass('active')) {
+      if ($('.easepick-wrapper')[0] !== undefined) {
+
+        let easepickCalendar = $('.easepick-wrapper')[0].shadowRoot;
+        let easepickCalendarContainer = $(easepickCalendar).find('.container.amp-plugin');
+        easepickCalendarContainer.removeClass('show');
+        $('.order__calendar').children('.order__input').removeClass('active');
+      }
+    }
+
   });
   $(document).on('mouseup', function(e) {
     if (!labels.is(e.target) && labels.has(e.target).length === 0) {
@@ -25,6 +53,7 @@ export default function order() {
     if ($('#startday-picker').val() == '') {
       $('#startday-picker').removeClass('selected');
     }
+    $('.order__calendar').children('.order__input').removeClass('active');
   });
   let buttons = $('.plans__button');
   Array.from(buttons).forEach(function(button) {

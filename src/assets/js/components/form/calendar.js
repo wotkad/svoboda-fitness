@@ -54,11 +54,18 @@ export default function calendar() {
         picker.on('select', () => {
           setTimeout(function() {
             $('.order__calendar .order__input').addClass('selected');
+            $('.order__calendar').children('.order__input').removeClass('active');
+            $('.order__input[name="birthday"] ~ .easepick-wrapper').removeClass('active');
           }, 0);
         });
         picker.on('clear', () => {
           setTimeout(function() {
-            $('.order__calendar .order__input').addClass('selected');
+            $('.order__calendar .order__input').removeClass('selected');
+            $('.order__calendar').children('.order__input').removeClass('active');
+            $('.order__input[name="birthday"] ~ .easepick-wrapper').removeClass('active');
+            let easepickCalendar = $('.order__input[name="birthday"] ~ .easepick-wrapper')[0].shadowRoot;
+            let easepickCalendarContainer = $(easepickCalendar).find('.container.amp-plugin');
+            easepickCalendarContainer.removeClass('show');
           }, 10);
         });
       },
@@ -96,15 +103,29 @@ export default function calendar() {
         picker.on('select', () => {
           setTimeout(function() {
             $('.order__calendar .order__input').addClass('selected');
+            $('.order__calendar').children('.order__input').removeClass('active');
+            $('.order__input[name="startday"] ~ .easepick-wrapper').removeClass('active');
           }, 0);
         });
         picker.on('clear', () => {
           setTimeout(function() {
-            $('.order__calendar .order__input').addClass('selected');
+            $('.order__calendar .order__input').removeClass('selected');
+            $('.order__calendar').children('.order__input').removeClass('active');
+            $('.order__input[name="startday"] ~ .easepick-wrapper').removeClass('active');
+            let easepickCalendar = $('.order__input[name="startday"] ~ .easepick-wrapper')[0].shadowRoot;
+            let easepickCalendarContainer = $(easepickCalendar).find('.container.amp-plugin');
+            easepickCalendarContainer.removeClass('show');
           }, 10);
         });
       },
     });
   }
+  $(document).mouseup(function(e) {
+    if (
+        !$('#datepicker').is(e.target)
+      ) {
+      $('.easepick-wrapper').removeClass('active');
+    }
+  });
 }
 calendar();

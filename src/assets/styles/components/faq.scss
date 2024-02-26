@@ -1,14 +1,39 @@
 .faq {
   &__buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 10px 12px;
     border-radius: 12px;
     background-color: $neutral-400;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(33% + 12px);
+      height: calc(100% - 20px);
+      width: 1px;
+      background-color: $text-caption;
+      @include screen(tablet) {
+        height: calc(100% - 24px);
+      }
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(33% + 12px);
+      height: calc(100% - 20px);
+      width: 1px;
+      background-color: $text-caption;
+      @include screen(tablet) {
+        height: calc(100% - 24px);
+      }
+    }
     @include screen(tablet) {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       padding: 12px;
     }
   }
@@ -17,8 +42,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border-right: 1px solid $text-caption;
 
     text-transform: uppercase;
     color: $text-caption;
@@ -36,9 +59,6 @@
     }
     &.active {
       color: $yellow;
-    }
-    &:last-child {
-      border-right: none;
     }
     @include screen(laptop) {
       @include label-h-numbering;

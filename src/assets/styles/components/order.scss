@@ -161,8 +161,6 @@
     border-radius: 0;
     background-color: transparent;
 
-    text-transform: uppercase;
-
     transition: color $transition-default, border-color $transition-default;
 
     &[type=date]::-webkit-datetime-edit {
@@ -252,12 +250,11 @@
       cursor: pointer;
       padding: 4px 0;
       width: 100%;
+      z-index: 3;
 
       border-bottom: 1px solid $neutral-200;
       border-radius: 0;
       background-color: transparent;
-
-      text-transform: uppercase;
 
       transition: color $transition-default, border-color $transition-default;
       &.active {
@@ -317,7 +314,7 @@
         & ~ .order__list {
           opacity: 1;
           visibility: visible;
-          z-index: 2;
+          z-index: 10;
         }
       }
       &.not-valid {

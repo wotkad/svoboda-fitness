@@ -69,6 +69,21 @@ main {
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $white-100;
+  -webkit-box-shadow: 0 0 0px 1000px $black inset;
+  transition: background-color 5000s ease-in-out 0s;
+  animation: autofill infinite linear;
+}
+
 .wrapper {
   margin: 0 auto;
   padding: 0 #{$container-padding};
@@ -78,6 +93,9 @@ main {
   }
   @include screen(tablet) {
     max-width: calc(#{$screen-tablet} + #{$container-padding * 2});
+  }
+  @include screen(tablet-2x) {
+    max-width: calc(#{$screen-tablet-2x} + #{$container-padding * 2});
   }
   @include screen(laptop) {
     max-width: calc(#{$screen-laptop} + #{$container-padding * 2});

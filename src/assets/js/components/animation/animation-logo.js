@@ -1,6 +1,6 @@
-function animationLogo() {
-  if ($(".loader").length > 0) {
-    let svg = $('.loader svg').drawsvg({
+export default function animationLogo() {
+  if ($(".loading").length > 0) {
+    let svg = $('.loading svg').drawsvg({
       duration: 1000,
       easing: 'easeInOutQuad'
     });

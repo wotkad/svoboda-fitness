@@ -14,7 +14,7 @@
       transform: translateY(0);
     }
     @include screen(tablet) {
-      position: static;
+      position: relative;
       justify-content: space-between;
       background-color: transparent;
       padding: 0;
@@ -184,6 +184,7 @@
     position: absolute;
     top: 56px;
     width: 100%;
+    min-width: 200px;
     background-color: $neutral-300;
     border-radius: 12px;
     display: flex;
