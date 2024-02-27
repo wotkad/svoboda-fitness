@@ -11,6 +11,7 @@ import togglePopup from "../../components/toggle/toggle-popup";
 import toggleOrderSteps from "../../components/toggle/toggle-order-steps";
 import toggleFilters from "../../components/toggle/toggle-filters";
 import form from "../../components/form/form";
+import order from "../../components/form/order";
 import calendar from "../../components/form/calendar";
 import animationHero from "../../components/animation/animation-hero";
 import yaMaps from "../../components/map";
@@ -32,4 +33,5 @@ export default function routingFunctions() {
   calendar();
   toggleFilters();
   sliderSchedule();
+  order();
 }

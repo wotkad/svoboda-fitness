@@ -15,13 +15,8 @@ export default function toggleFilters() {
   });
   Array.from(labels).forEach(function(item) {
     $(item).on('click', function() {
-      let input = $(this).prev();
-      if (input.hasClass('active')) {
-        input.removeClass('active');
-      } else {
-        $('.schedule__input').removeClass('active');
-        input.addClass('active');
-      }
+      $('.schedule__input').not($(this).prevAll('.schedule__input')).removeClass('active');
+      $(this).prevAll('.schedule__input').toggleClass('active');
     });
   });
   clear.on('click', function() {
@@ -33,7 +28,7 @@ export default function toggleFilters() {
     });
   });
   $(document).on('mouseup', function(e) {
-    if (!labels.is(e.target) && labels.has(e.target).length === 0) {
+    if (!labels.is(e.target) && labels.has(e.target).length === 0 && $('.schedule__filter').has(e.target).length === 0) {
       $('.schedule__input').removeClass('active');
     }
   });

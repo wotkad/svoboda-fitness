@@ -35,6 +35,10 @@
       @include screen(tablet) {
         padding: 8px;
         height: auto;
+        font-size: 9px;
+      }
+      @include screen(laptop) {
+        @include label-extra-sm-bold;
       }
     }    
     @include h2-actay;

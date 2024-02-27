@@ -57,9 +57,6 @@ barba.init({
           opacity: 0,
           duration: .4
         });
-      },
-      afterEnter() {
-
       }
     },
   ],
