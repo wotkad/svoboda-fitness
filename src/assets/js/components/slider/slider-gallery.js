@@ -5,6 +5,7 @@ export default function sliderGallery() {
   new Swiper('.gallery__slider', {
     modules: [Pagination, Autoplay, EffectFade],
     speed: 1000,
+    grabCursor: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true
