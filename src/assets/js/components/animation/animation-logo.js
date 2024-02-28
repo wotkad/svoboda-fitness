@@ -1,4 +1,4 @@
-export default function animationLogo() {
+function animationLogo() {
   if ($(".loading").length > 0) {
     let svg = $('.loading svg').drawsvg({
       duration: 1000,
