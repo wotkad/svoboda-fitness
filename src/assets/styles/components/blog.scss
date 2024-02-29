@@ -120,6 +120,9 @@
         color: $yellow;
       }
     }
+    &.active {
+      color: $yellow;
+    }
   }
   &__articles {
     display: grid;
