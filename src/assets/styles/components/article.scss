@@ -75,6 +75,8 @@
     margin-top: 24px;
     object-fit: cover;
     max-height: 388px;
+    border-radius: 8px;
+    overflow: hidden;
     &:first-child {
       margin-top: 0;
     }
@@ -86,6 +88,8 @@
     width: 100%;
     margin-top: 24px;
     max-height: 388px;
+    border-radius: 8px;
+    overflow: hidden;
     object-fit: cover;
     &:first-child {
       margin-top: 0;
