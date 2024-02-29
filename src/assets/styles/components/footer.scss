@@ -130,6 +130,9 @@
         @include screen(tablet) {
           top: 2px;
         }
+        @include screen(laptop) {
+          top: 3px;
+        }
       }
       &:after {
         content: "";
@@ -148,6 +151,9 @@
         opacity: 0;
         @include screen(tablet) {
           top: 5px;
+        }
+        @include screen(laptop) {
+          top: 6px;
         }
       }
     }
