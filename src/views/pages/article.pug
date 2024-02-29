@@ -1,11 +1,11 @@
 extends ../layouts/master
 
 block title
-  title Свобода фитнес | Запись в блоге
+  title Свобода фитнес | Статья в блоге
 
 block basicSeo
-  meta(content="Запись в блоге" name="description")
-  meta(content="Запись в блоге" name="keywords")
+  meta(content="Статья в блоге" name="description")
+  meta(content="Статья в блоге" name="keywords")
 
 block manifestBrowserconfigFiles
   link(href="../manifest.json" rel="manifest" crossorigin)
@@ -17,7 +17,7 @@ block content
       .barba-container(data-barba="container" data-barba-namespace="article")
         .wrapper
           .headline
-            +breadcrumbs([ { title: 'Блог', href: '/blog/' }, { title: 'Запись', href: '' } ])
-            +subtitle('01.', 'Запись')
+            +breadcrumbs([ { title: 'Блог', href: '/blog/' }, { title: 'Статья', href: '' } ])
+            +subtitle('01.', 'Статья')
         .pusher
           include ../components/article
