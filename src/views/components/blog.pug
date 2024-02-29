@@ -7,10 +7,10 @@ section.blog
             .blog__subtitle КАТЕГОРИИ
             .blog__tags
               a.blog__tag(href="/blog/") Все статьи
-              a.blog__tag(href="/blog/") Советы
-              a.blog__tag(href="/blog/") Тренировки
-              a.blog__tag(href="/blog/") Питание
-              a.blog__tag(href="/blog/") Силовые упражнения
+              a.blog__tag(href="#") Советы
+              a.blog__tag(href="#") Тренировки
+              a.blog__tag(href="#") Питание
+              a.blog__tag(href="#") Силовые упражнения
           .blog__aside__links
             a.blog__aside__link(href="#")
               svg(width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -30,7 +30,19 @@ section.blog
                 )
               span SVOBODAFITNESS
       .blog__articles
-        article.blog__article.blog__article-wide
+        article.blog__article
+          a.blog__article__link(href="/article/")
+            .blog__article__header
+              .blog__article__title Что такое дневник тренировок и зачем его вести?
+              .blog__article__text Рассматриваем плюсы и минусы дневника тренировок и объясняется, почему следует его вести.
+            .blog__article__body
+              .blog__article__image
+                img(src="/assets/images/article.png" alt="article")
+                .blog__article__more Читать
+            .blog__article__footer
+              time.blog__article__time 12.01.2024
+              .blog__article__category Советы
+        article.blog__article
           a.blog__article__link(href="/article/")
             .blog__article__header
               .blog__article__title Что такое дневник тренировок и зачем его вести?
@@ -66,7 +78,19 @@ section.blog
             .blog__article__footer
               time.blog__article__time 12.01.2024
               .blog__article__category Советы
-        article.blog__article.blog__article-wide
+        article.blog__article
+          a.blog__article__link(href="/article/")
+            .blog__article__header
+              .blog__article__title Что такое дневник тренировок и зачем его вести?
+              .blog__article__text Рассматриваем плюсы и минусы дневника тренировок и объясняется, почему следует его вести.
+            .blog__article__body
+              .blog__article__image
+                img(src="/assets/images/article.png" alt="article")
+                .blog__article__more Читать
+            .blog__article__footer
+              time.blog__article__time 12.01.2024
+              .blog__article__category Советы
+        article.blog__article
           a.blog__article__link(href="/article/")
             .blog__article__header
               .blog__article__title Что такое дневник тренировок и зачем его вести?
@@ -102,18 +126,6 @@ section.blog
             .blog__article__footer
               time.blog__article__time 12.01.2024
               .blog__article__category Советы
-        article.blog__article.blog__article-wide
-          a.blog__article__link(href="/article/")
-            .blog__article__header
-              .blog__article__title Что такое дневник тренировок и зачем его вести?
-              .blog__article__text Рассматриваем плюсы и минусы дневника тренировок и объясняется, почему следует его вести.
-            .blog__article__body
-              .blog__article__image
-                img(src="/assets/images/article.png" alt="article")
-                .blog__article__more Читать
-            .blog__article__footer
-              time.blog__article__time 12.01.2024
-              .blog__article__category Советы
         article.blog__article
           a.blog__article__link(href="/article/")
             .blog__article__header
@@ -126,15 +138,6 @@ section.blog
             .blog__article__footer
               time.blog__article__time 12.01.2024
               .blog__article__category Советы
-        article.blog__article
-          a.blog__article__link(href="/article/")
-            .blog__article__header
-              .blog__article__title Что такое дневник тренировок и зачем его вести?
-              .blog__article__text Рассматриваем плюсы и минусы дневника тренировок и объясняется, почему следует его вести.
-            .blog__article__body
-              .blog__article__image
-                img(src="/assets/images/article.png" alt="article")
-                .blog__article__more Читать
-            .blog__article__footer
-              time.blog__article__time 12.01.2024
-              .blog__article__category Советы
+        .blog__button 
+          button(type="button").blog__more
+            span Показать ещё
