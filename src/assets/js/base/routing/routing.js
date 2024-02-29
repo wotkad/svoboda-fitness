@@ -1,4 +1,5 @@
 import barba from "@barba/core";
+window.barba = barba;
 import barbaPrefetch from "@barba/core";
 import gsap from "gsap";
 import routingFunctions from "./routing-functions";
@@ -61,3 +62,7 @@ barba.init({
     },
   ],
 });
+
+if (window.loadAfterBundleLoadsFunctions) {
+  window.loadAfterBundleLoadsFunctions();
+}
