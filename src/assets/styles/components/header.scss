@@ -92,6 +92,51 @@
     @include screen(laptop) {
       gap: 48px;
     }
+    a {
+      transition: color $transition-default;
+      text-transform: uppercase;
+      position: relative;
+      transition: padding-left $transition-default;
+      @include h2-actay;
+      @include screen(tablet) {
+        text-transform: none;
+        @include body-2;
+        @include inter;
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: $yellow;
+        border-radius: 50%;
+        left: 0;
+        top: 8px;
+        transition: opacity $transition-default;
+        opacity: 0;
+        @include screen(tablet) {
+          display: none;
+        }
+      }
+      &.active {
+        padding-left: 20px;
+        color: $yellow;
+        &:before {
+          opacity: 1;
+        }
+        @include screen(tablet) {
+          padding-left: 0;
+        }
+      }
+      @include screen(laptop) {
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
   }
   &__menu {
     position: fixed;
@@ -121,51 +166,6 @@
       z-index: 10;
       visibility: visible;
       opacity: 1;
-    }
-  }
-  &__link {
-    transition: color $transition-default;
-    text-transform: uppercase;
-    position: relative;
-    transition: padding-left $transition-default;
-    @include h2-actay;
-    @include screen(tablet) {
-      text-transform: none;
-      @include body-2;
-      @include inter;
-      &:nth-child(2) {
-        display: none;
-      }
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: $yellow;
-      border-radius: 50%;
-      left: 0;
-      top: 8px;
-      transition: opacity $transition-default;
-      opacity: 0;
-      @include screen(tablet) {
-        display: none;
-      }
-    }
-    &.active {
-      padding-left: 20px;
-      color: $yellow;
-      &:before {
-        opacity: 1;
-      }
-      @include screen(tablet) {
-        padding-left: 0;
-      }
-    }
-    @include screen(laptop) {
-      &:hover {
-        color: $yellow;
-      }
     }
   }
   &__button {
