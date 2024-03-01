@@ -79,7 +79,10 @@
     text-transform: capitalize;
 
     transition: color $transition-default, border-color $transition-default;
-    @include body-1;
+    @include body-2;
+    @include screen(laptop) {
+      @include body-1;
+    }
     &:active,
     &:focus {
       border-color: $text-secondary;

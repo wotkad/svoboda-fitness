@@ -159,10 +159,14 @@
 
     border-bottom: 1px solid $neutral-200;
     border-radius: 0;
+    height: 33px;
     background-color: transparent;
 
     transition: color $transition-default, border-color $transition-default;
-
+    @include body-2;
+    @include screen(laptop) {
+      @include body-1;
+    }
     &[type=date]::-webkit-datetime-edit {
       display: none;
     }
@@ -252,7 +256,7 @@
       width: 100%;
       z-index: 3;
 
-      border-bottom: 1px solid $neutral-200;
+      border-bottom: none;
       border-radius: 0;
       background-color: transparent;
 
@@ -275,9 +279,6 @@
         & + .order__selected {
           border-color: $text-secondary;
         }
-      }
-      &.not-valid {
-        border-color: $error;
       }
       &.filled {
         & ~ .order__selected {

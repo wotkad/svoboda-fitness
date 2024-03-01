@@ -113,10 +113,16 @@ export default function form() {
       } else {
         policyInput.removeClass('not-valid');
       }
+      Array.from($('.footer input')).forEach(function(input) {
+        if ($(input).val() == '') {
+          $(input).addClass('not-valid');
+        } else {
+          $(input).removeClass('not-valid');
+        }
+      });
     });
     if (form) {
       form.on('submit', function(e) {
-        $(this).find('input.not-valid').trigger('focus');
         e.preventDefault();
         if (
           !$('input[name="name"]').hasClass('not-valid') &&
@@ -124,7 +130,8 @@ export default function form() {
           !$('input[name="phone"]').hasClass('not-valid') &&
           !$('input[name="policy"]').hasClass('not-valid')) {
           sendMail(form).then(function() {
-            form.get(0).reset();
+            button.parent().get(0).reset();
+            policyInput.prop('checked', false);
             $('input').removeClass('not-valid');
           });
         }
