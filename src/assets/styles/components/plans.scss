@@ -8,8 +8,12 @@
   }
   &__slider {
     overflow: visible;
+    .swiper-wrapper {
+      align-items: stretch;
+    }
     .swiper-slide {
       transition: transform $transition-default;
+      height: auto;
       &-active {
         transform: scale(1.1);
         @include screen(tablet) {
@@ -48,7 +52,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 16px;
-    min-height: 318px;
+    min-height: 331px;
+    height: 100%;
     gap: 50px;
 
     border-radius: 8px;
