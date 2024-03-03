@@ -49,6 +49,7 @@
     }
   }
   &__title {
+    text-transform: uppercase;
     @include label-name-actay-bold;
   }
   &__text {
