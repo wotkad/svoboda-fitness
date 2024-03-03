@@ -8,7 +8,7 @@ function smoothScroll() {
       offset = 140;
     }
     if (width > 1224) {
-      offset = 100;
+      offset = 120;
     }
     if (width > 1536) {
       offset = 160;

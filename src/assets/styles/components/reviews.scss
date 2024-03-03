@@ -72,9 +72,11 @@
 
     color: $yellow;
     span {
-      margin-bottom: 5px;
-
+      margin-bottom: 2px;
       @include label-12-m-medium;
+      @include screen(laptop) {
+        margin-bottom: 5px;
+      }
     }
     p {
       @include label-h-numberin-semibold;
