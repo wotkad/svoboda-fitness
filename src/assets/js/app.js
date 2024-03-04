@@ -36,5 +36,3 @@ import "./components/form/calendar";
 import "./components/animation/draw-svg-plugin";
 import "./components/animation/animation-hero";
 import "./components/animation/animation-logo";
-
-import "./components/map";

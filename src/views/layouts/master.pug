@@ -68,6 +68,30 @@ html(lang="ru")
       if (window.addEventListener) window.addEventListener("load", autorun, false);
       else window.onload = autorun;
 
+    script(src="https://api-maps.yandex.ru/v3/?apikey=7a5c4165-0520-40cb-82e7-515d4b0ff65c&lang=ru_RU")
+    script.
+      window.initMap = initMap()
+      async function initMap() {
+        await ymaps3.ready;
+
+        const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+        const map = new YMap(
+            document.getElementById('map-yandex'),
+            {
+                location: {
+                    center: [37.447432, 55.849432],
+                    zoom: 16,
+                    controls: ['zoomControl'],
+                }
+            }
+        );
+        map.addChild(new YMapDefaultSchemeLayer({
+          theme: "dark", customization: []
+        }));
+      }
+      initMap();
+
   body
     .render
     .loading
