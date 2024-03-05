@@ -107,13 +107,14 @@ export default function form() {
   function sendPopupForm() {
     let form = $('form');
     let button = $('.footer__button');
+    let timer = 0;
     button.on('click', function() {
       if (!policyInput.prop('checked')) {
         policyInput.addClass('not-valid');
       } else {
         policyInput.removeClass('not-valid');
       }
-      Array.from($('.footer input')).forEach(function(input) {
+      Array.from($('.footer input').not('input[name="policy"]')).forEach(function(input) {
         if ($(input).val() == '') {
           $(input).addClass('not-valid');
         } else {
@@ -133,6 +134,12 @@ export default function form() {
             button.parent().get(0).reset();
             policyInput.prop('checked', false);
             $('input').removeClass('not-valid');
+            $('input').removeClass('filled');
+            $('.footer__button').text('Отправлено!')
+            timer = setTimeout(function() {
+              $('.footer__button').text('Отправить')
+              clearTimeout(timer);
+            }, 2000);
           });
         }
       });
