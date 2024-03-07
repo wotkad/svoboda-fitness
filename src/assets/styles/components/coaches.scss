@@ -23,10 +23,10 @@
     gap: 20px;
   }
   &__more {
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
 
     display: flex;
     justify-content: center;
@@ -37,9 +37,10 @@
 
     text-transform: uppercase;
     color: $yellow;
-    opacity: 0;
     @include h2-actay;
     @include screen(laptop) {
+      opacity: 0;
+      z-index: -1;
       background-color: rgba(0, 0, 0, 0.7);
       transition: opacity $transition-default, z-index $transition-default;
     }
