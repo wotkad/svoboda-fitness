@@ -106,13 +106,15 @@
 
           position: absolute;
           left: 0;
-          top: 6px;
-
+          top: 8px;
           width: 4px;
           height: 4px;
 
-          border-radius: 50%;
           background-color: $yellow;
+          border-radius: 50%;
+          @include screen(tablet) {
+            top: 6px;
+          }
           @include screen(laptop) {
             width: 8px;
             top: 8px;
