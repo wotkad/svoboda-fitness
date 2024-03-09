@@ -186,7 +186,8 @@
   &__image {
     overflow: hidden;
     border-radius: 8px;
-    max-height: 438px;
+    max-height: 428px;
+    min-height: 428px;
     max-width: 344px;
     margin: 0 auto;
     width: 100%;
@@ -199,14 +200,76 @@
     }
     @include screen(laptop) {
       max-height: 600px;
+      min-height: 567px;
     }
     @include screen(desktop) {
       max-height: 800px;
+      min-height: 750px;
     }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+  &__noimage {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    max-height: 428px;
+    min-height: 428px;
+    max-width: 344px;
+    margin: 0 auto 20px;
+    width: 100%;
+    @include screen(tablet) {
+      margin-bottom: 0;
+      max-height: 320px;
+      min-height: 320px;
+      max-width: 100%;
+    }
+    @include screen(laptop) {
+      max-height: 600px;
+      min-height: 567px;
+    }
+    @include screen(desktop) {
+      max-height: 800px;
+      min-height: 750px;
+    }
+    img {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      max-height: 428px;
+      min-height: 428px;
+      max-width: 344px;
+      margin: 0 auto 20px;
+      width: 100%;
+      @include screen(tablet) {
+        margin-bottom: 0;
+        max-height: 320px;
+        min-height: 320px;
+        max-width: 100%;
+      }
+      @include screen(laptop) {
+        max-height: 600px;
+        min-height: 567px;
+      }
+      @include screen(desktop) {
+        max-height: 800px;
+        min-height: 750px;
+      }
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      aspect-ratio: inherit;
+      border-radius: 0;
+      object-fit: none;
     }
   }
   &__title {
