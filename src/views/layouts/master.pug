@@ -74,24 +74,83 @@ html(lang="ru")
       async function initMap() {
         await ymaps3.ready;
 
-        const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-
-        const map = new YMap(
-            document.getElementById('map-yandex'),
+        const {
+            YMap,
+            YMapDefaultSchemeLayer,
+            YMapDefaultFeaturesLayer,
+            YMapFeature,
+            YMapMarker
+          } = ymaps3;
+        
+        const map = new YMap(document.getElementById('map-yandex'),
             {
                 location: {
-                    center: [37.447432, 55.849432],
-                    zoom: 16,
-                    controls: ['zoomControl'],
+                    center: [37.454346, 55.847763],
+                    zoom: 17,
                 }
-            }
-        );
-        map.addChild(new YMapDefaultSchemeLayer({
-          theme: "dark", customization: []
-        }));
-      }
-      initMap();
+            },
 
+            [
+                // Add a map scheme layer
+                new YMapDefaultSchemeLayer({}),
+                // Add a layer of geo objects to display the line
+                new YMapDefaultFeaturesLayer({})
+            ]
+        );
+
+        map.addChild(new YMapDefaultSchemeLayer({
+            theme: "dark", customization: []
+        }));
+
+        // State with line coordinates
+        const lineCoordinates = [
+            [37.440788, 55.849199],
+            [37.440833, 55.849388],
+            [37.451895, 55.850584],
+            [37.452904, 55.847586],
+            [37.454346, 55.847763]
+        ]
+
+        // Create a line object, set its coordinates and styles, and add it to the map
+        const line = new YMapFeature({
+          geometry: {
+            type: 'LineString',
+            coordinates: lineCoordinates
+          },
+          style: {
+            stroke: [{color: '#000000', width: 3, dash: [8, 8]}]
+          }
+        });
+        const line2 = new YMapFeature({
+            geometry: {
+              type: 'LineString',
+              coordinates: lineCoordinates
+            },
+            style: {
+              stroke: [{color: '#F7D90B', width: 6}]
+            }
+          });
+        map.addChild(line);
+        map.addChild(line2);
+        
+        const markerElement = document.createElement('img');
+              markerElement.className = 'icon-marker';
+              markerElement.src = '/assets/images/marker.svg';
+              map.addChild(new YMapMarker({coordinates: [37.454346, 55.847763]}, markerElement));
+        
+      }
+      if (document.querySelector('.ymap-container') !== null) {
+          initMap();
+      }
+    style.
+      .icon-marker {
+        min-width: 48px;
+        min-height: 48px;
+        border-radius: 50%;
+        background-color: #000;
+        position: relative;
+        transform: translate(-50%, -50%);
+      }
   body
     .render
     .loading
