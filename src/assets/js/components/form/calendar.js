@@ -39,7 +39,7 @@ export default function calendar() {
         resetButton: true,
         dropdown: {
           years: true,
-          minYear: 1930,
+          minYear: 1950,
         },
         locale: {
           resetButton: 'Очистить'
