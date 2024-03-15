@@ -193,6 +193,14 @@
     left: 0;
     color: $text-secondary;
     padding: 10px 68px 10px 24px;
+    &.no-trainings {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 10px 24px;
+      pointer-events: none;
+      color: $yellow;
+    }
     @include body-1;
     @include screen(laptop) {
       display: flex;

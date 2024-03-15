@@ -60,14 +60,25 @@ export default function sliderSchedule() {
     button.each(function() {
       let that = $(this);
       let buttonIndex = $(this).parent().index();
+      let hasTrainings = false;
+      let hasVisibleTrainings = false;
       training.each(function() {
         if (buttonIndex == $(this).index()) {
           let slideId = $(this).closest('.swiper-slide').index();
-          if (slideId !== 0 && slideId > 0 && slideId < 4) {
-            that.hide();
+          if (slideId > 0) {
+            hasTrainings = true;
+          }
+          if (slideId > 0 && slideId < 4) {
+            hasVisibleTrainings = true;
           }
         }
       });
+      if (hasVisibleTrainings) {
+        that.hide();
+      }
+      if (!hasTrainings) {
+        that.addClass('no-trainings').text('В это время занятий нет')
+      }
     });
   }
   scheduleFunctional();
