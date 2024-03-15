@@ -2,6 +2,7 @@ import Swiper from "swiper";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 
 export default function sliderSchedule() {
+  let currentDay = new Date().getDay() - 1;
   let swiper = new Swiper('.swiper-schedule', {
     modules: [ Mousewheel, FreeMode, Navigation ],
     speed: 800,
@@ -20,17 +21,22 @@ export default function sliderSchedule() {
         autoHeight: false,
         spaceBetween: 16,
         slidesPerView: 3.1,
+        autoHeight: false
       },
       769: {
         spaceBetween: 16,
         slidesPerView: 3.67,
+        autoHeight: false
       },
       1536: {
         spaceBetween: 16,
         slidesPerView: 5,
+        autoHeight: false
       }
     }
   });
+
+  swiper.slideTo(currentDay, 0);
 
   function scheduleFunctional() {
     let button = $('.schedule-table__button');
