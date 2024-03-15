@@ -36,7 +36,9 @@ export default function sliderSchedule() {
     }
   });
 
-  swiper.slideTo(currentDay, 0);
+  if ($('.swiper-schedule').length > 0) {
+    swiper.slideTo(currentDay, 0);
+  }
 
   function scheduleFunctional() {
     let button = $('.schedule-table__button');
