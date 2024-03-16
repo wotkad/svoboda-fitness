@@ -41,6 +41,10 @@
   }
   &__slogan {
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     @include label-footer-h;
   }
   &__form {
@@ -222,6 +226,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    &:last-child {
+      @include screen(tablet) {
+        align-items: flex-end;
+      }
+    }
+    iframe {
+      transform: scale(0.8);
+      transform-origin: top left;
+      @include screen(tablet) {
+        transform-origin: top right;
+        transform: scale(1);
+      }
+    }
   }
   &__link {
     display: inline-block;
