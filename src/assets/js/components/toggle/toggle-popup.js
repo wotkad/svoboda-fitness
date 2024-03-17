@@ -103,17 +103,6 @@ export default function togglePopup() {
     }
     openPopup();
   });
-
-  function scrollContentPopup() {
-    $('.popup__items').on('scroll', function() {
-      if ($(this).scrollTop() > 0) {
-        $(this).parent().addClass('scrolled');
-      } else {
-        $(this).parent().removeClass('scrolled');
-      }
-    });
-  }
-  scrollContentPopup();
 }
 
 togglePopup();
