@@ -2,7 +2,11 @@ import Swiper from "swiper";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 
 export default function sliderSchedule() {
-  let currentDay = new Date().getDay() - 1;
+  let currentDay = new Date().getDay();
+  if (currentDay === 0) {
+    currentDay = 7;
+  }
+  currentDay--;
   let swiper = new Swiper('.swiper-schedule', {
     modules: [ Mousewheel, FreeMode, Navigation ],
     speed: 800,

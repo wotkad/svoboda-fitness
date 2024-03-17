@@ -70,7 +70,9 @@ html(lang="ru")
 
     script(src="https://api-maps.yandex.ru/v3/?apikey=7a5c4165-0520-40cb-82e7-515d4b0ff65c&lang=ru_RU")
     script.
-      window.initMap = initMap()
+      if (document.querySelector('.ymap-container') !== null) {
+          window.initMap = initMap()
+      }
       async function initMap() {
         await ymaps3.ready;
 
