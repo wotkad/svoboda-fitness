@@ -293,6 +293,32 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 24px;
+    position: relative;
+    &.scrolled {
+      &:before {
+        opacity: 0;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      transition: opacity $transition-default;
+      background: linear-gradient(0deg, $neutral-400 30%, transparent);
+      left: 0;
+      z-index: 2;
+      display: none;
+      @include screen(tablet) {
+        bottom: 83px;
+        display: block;
+      }
+      @include screen(laptop) {
+        height: 40px;
+        background: linear-gradient(0deg, $neutral-400 10%, transparent);
+        bottom: 99px;
+      }
+    }
     @include screen(tablet) {
       gap: 40px;
     }
@@ -307,10 +333,10 @@
     width: 100%;
     @include screen(tablet) {
       overflow-y: auto;
-      max-height: calc(100vh - 199px);
+      max-height: calc(100vh - 200px);
     }
     @include screen(laptop) {
-      max-height: calc(600px - 179px);
+      max-height: calc(600px - 180px);
     }
   }
   &__item {
@@ -376,13 +402,10 @@
     }
     .popup__items {
       @include screen(tablet) {
-        max-height: calc(600px - 210px);
+        max-height: 200px;
       }
       @include screen(laptop) {
-        max-height: calc(600px - 230px);
-      }
-      @include screen(laptop-default) {
-        max-height: calc(600px - 200px);
+        max-height: 270px;
       }
     }
   }
@@ -395,7 +418,6 @@
     @include label-inter-accent;
   }
   &__button {
-    margin-top: 32px;
     border: 1px solid $white;
     border-radius: 100px;
     padding: 10px 24px;
