@@ -4,7 +4,7 @@ import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from "scro
 export default function togglePopup() {
   const buttons = $('.popup-trigger');
   const popupWrappers = $('.popup__wrapper');
-  let main = $('main');
+  let section = $('.schedule, .coaches, .headline');
   let header = $('.header');
 
   $(window).on('resize', function() {
@@ -26,7 +26,7 @@ export default function togglePopup() {
       const scrollableElement = document.querySelectorAll('.popup__inner, .popup__items')
       popup.addClass('active');
       bg.addClass('active');
-      main.addClass('active');
+      section.addClass('active');
       header.addClass('blurred');
 
       $('.popup__inner').animate({scrollTop: 0}, 0);
@@ -48,7 +48,7 @@ export default function togglePopup() {
             popup.removeClass('active');
             bg.removeClass('active');
             header.removeClass('blurred');
-            main.removeClass('active');
+            section.removeClass('active');
           }});
           clearQueueScrollLocks();
         } else {
@@ -56,11 +56,11 @@ export default function togglePopup() {
             popup.removeClass('active');
             bg.removeClass('active');
             header.removeClass('blurred');
-            main.removeClass('active');
+            section.removeClass('active');
           }});
         }
         enablePageScroll();
-        main.removeClass('active');
+        section.removeClass('active');
         header.removeClass('blured');
       });
 
@@ -79,7 +79,7 @@ export default function togglePopup() {
         }
         if (!$('.header__burger').hasClass('active')) {
           enablePageScroll();
-          main.removeClass('active');
+          section.removeClass('active');
           header.removeClass('blurred');
         }
       });
@@ -92,7 +92,7 @@ export default function togglePopup() {
                 bg.removeClass('active');
             }});
             enablePageScroll();
-            main.removeClass('active');
+            section.removeClass('active');
             header.removeClass('blurred');
             $('.popup-select__button').find('.button__input').attr('data-selected', '');
             document.removeEventListener('keydown', handleKeyDown);

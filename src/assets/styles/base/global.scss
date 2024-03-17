@@ -29,12 +29,8 @@ body {
 
 main {
   padding-top: 112px;
-  transition: filter $transition-default;
   @include screen(laptop) {
     padding-top: 200px;
-  }
-  &.active {
-    filter: blur(10px);
   }
 }
 

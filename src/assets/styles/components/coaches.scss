@@ -1,4 +1,8 @@
 .coaches {
+  transition: filter $transition-default;
+  &.active {
+    filter: blur(10px);
+  }
   &__wrapper {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     display: grid;

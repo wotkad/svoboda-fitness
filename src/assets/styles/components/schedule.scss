@@ -1,5 +1,9 @@
 .schedule {
+  transition: filter $transition-default;
   overflow: hidden;
+  &.active {
+    filter: blur(10px);
+  }
   &-filters {
     background-color: $neutral-400;
     padding: 32px 0 140px;
