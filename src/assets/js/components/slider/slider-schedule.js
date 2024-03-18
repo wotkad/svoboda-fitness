@@ -39,9 +39,26 @@ export default function sliderSchedule() {
       }
     }
   });
-
   if ($('.swiper-schedule').length > 0) {
-    swiper.slideTo(currentDay, 0);
+    if (currentDay > 3) {
+      swiper.slideTo(6, 0);
+    }
+    $(window).on('resize', function() {
+      if ($(window).width() < 768) {
+        swiper.slideTo(currentDay, 0);
+      } else if (currentDay > 3) {
+        swiper.slideTo(6, 0);
+      } else {
+        swiper.slideTo(0, 0);
+      }
+    });
+    if ($(window).width() < 768) {
+      swiper.slideTo(currentDay, 0);
+    } else if (currentDay > 3) {
+      swiper.slideTo(6, 0);
+    } else {
+      swiper.slideTo(0, 0);
+    }
   }
 
   function scheduleFunctional() {
