@@ -170,7 +170,7 @@
       overflow: hidden;
       padding: 0;
       display: grid;
-      grid-template-columns: 252  px 1fr;
+      grid-template-columns: 252px 1fr;
       gap: 32px;
       max-height: 100%;
     }
@@ -243,6 +243,7 @@
       max-height: 428px;
       min-height: 428px;
       max-width: 344px;
+      object-fit: cover;
       margin: 0 auto 20px;
       width: 100%;
       @include screen(tablet) {
@@ -273,7 +274,10 @@
     }
   }
   &__title {
-    @include h3-md-inter;
+    font-size: 56px;
+    @include screen(laptop) {
+      @include h3-md-inter;
+    }
   }
   &__description {
     margin-top: 4px;
