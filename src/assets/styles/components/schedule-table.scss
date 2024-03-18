@@ -313,7 +313,10 @@
   }
   &__name {
     @include label-class-name;
-    @include screen(laptop) {
+    @include screen(tablet) {
+      font-size: 13px;
+    }
+    @include screen(tablet-2x) {
       @include body-2;
     }
   }
