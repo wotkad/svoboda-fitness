@@ -217,7 +217,7 @@
     }
     @include screen(desktop) {
       max-width: 816px;
-      grid-template-columns: 160px 132px 76px 206px;
+      grid-template-columns: 132px 132px 210px 150px;
       justify-content: space-between;
     }
   }
