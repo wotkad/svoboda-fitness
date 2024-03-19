@@ -105,17 +105,20 @@
       top: 8px;
     }
     svg {
-      width: 24px;
+      width: 20px;
       path {
         stroke-width: 2px;
         stroke: $text-black;
-        @include screen(laptop) {
-          transition: stroke $transition-default;
-        }
         @include screen(tablet) {
           stroke-width: 1px;
           stroke: $white;
         }
+        @include screen(laptop) {
+          transition: stroke $transition-default;
+        }
+      }
+      @include screen(laptop) {
+        width: 24px;
       }
     }
     @include screen(laptop) {
