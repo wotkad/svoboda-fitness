@@ -274,10 +274,7 @@
     }
   }
   &__title {
-    font-size: 56px;
-    @include screen(laptop) {
-      @include h3-md-inter;
-    }
+    @include h3-md-inter;
   }
   &__description {
     margin-top: 4px;
@@ -371,6 +368,13 @@
   &-coach-booking {
     .popup__title {
       @include h1-actay;
+      padding-right: 32px;
+      @include screen(tablet) {
+        font-size: 56px;
+      }
+      @include screen(laptop) {
+        @include h1-actay;
+      }
     }
     .popup__content {
       @include screen(tablet) {
