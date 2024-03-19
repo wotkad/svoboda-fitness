@@ -60,6 +60,7 @@
     position: relative;
     margin-bottom: 28px;
     margin-top: 48px;
+    font-size: 16px;
     &:first-child {
       margin-top: 0;
     }
@@ -78,7 +79,9 @@
       height: 1px;
       background-color: $neutral-200;
     }
-    @include h2;
+    @media screen and (min-width: 375px) {
+      @include h2;
+    }
     @include screen(tablet) {
       margin-top: 44px;
     }
