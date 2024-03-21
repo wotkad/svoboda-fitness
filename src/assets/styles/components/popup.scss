@@ -370,14 +370,8 @@
   }
   &-coach-booking {
     .popup__title {
-      @include h1-actay;
       padding-right: 32px;
-      @include screen(tablet) {
-        font-size: 56px;
-      }
-      @include screen(laptop) {
-        @include h1-actay;
-      }
+      @include h1-actay;
     }
     .popup__content {
       @include screen(tablet) {
@@ -395,11 +389,12 @@
   }
   &__date {
     margin-top: 20px;
-    @include body-2;
+    @include label-inter-accent;
   }
   &__time {
     margin-top: 12px;
-    @include label-inter-accent;
+    color: $text-caption;
+    @include body-2;
   }
   &__button {
     border: 1px solid $white;

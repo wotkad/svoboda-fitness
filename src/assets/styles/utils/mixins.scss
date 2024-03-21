@@ -99,11 +99,14 @@
 }
 
 @mixin h1-actay {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 120%;
   @include actay;
+  @include screen(tablet) {
+    font-size: 48px;
+  }
   @include screen(laptop) {
-    font-size: 64px;
+    font-size: 48px;
   }
 }
 
@@ -224,14 +227,14 @@
 }
 
 @mixin label-inter-accent {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
   @include screen(tablet) {
     font-size: 20px;
     line-height: 100%;
   }
   @include screen(laptop) {
-    font-size: 40px;
+    font-size: 24px;
     line-height: 130%;
   }
 }
