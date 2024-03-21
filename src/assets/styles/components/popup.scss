@@ -389,12 +389,11 @@
   }
   &__date {
     margin-top: 20px;
-    @include label-inter-accent;
+    @include body-2;
   }
   &__time {
     margin-top: 12px;
-    color: $text-caption;
-    @include body-2;
+    @include label-footer-h;
   }
   &__button {
     border: 1px solid $white;
