@@ -4,8 +4,6 @@ import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from "scro
 export default function togglePopup() {
   const buttons = $('.popup-trigger');
   const popupWrappers = $('.popup__wrapper');
-  let section = $('.schedule, .coaches, .headline');
-  let header = $('.header');
 
   $(window).on('resize', function() {
     if ($(window).outerWidth() > 767) {
@@ -26,8 +24,6 @@ export default function togglePopup() {
       const scrollableElement = document.querySelectorAll('.popup__inner, .popup__items')
       popup.addClass('active');
       bg.addClass('active');
-      section.addClass('active');
-      header.addClass('blurred');
 
       $('.popup__inner').animate({scrollTop: 0}, 0);
 
@@ -47,21 +43,15 @@ export default function togglePopup() {
           gsap.to(wrapper, { x: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');
-            header.removeClass('blurred');
-            section.removeClass('active');
           }});
           clearQueueScrollLocks();
         } else {
           gsap.to(wrapper, { y: '100%', duration: 0.4, ease: "power2.out", onComplete: () => {
             popup.removeClass('active');
             bg.removeClass('active');
-            header.removeClass('blurred');
-            section.removeClass('active');
           }});
         }
         enablePageScroll();
-        section.removeClass('active');
-        header.removeClass('blured');
       });
 
       bg.off('click');
@@ -79,8 +69,6 @@ export default function togglePopup() {
         }
         if (!$('.header__burger').hasClass('active')) {
           enablePageScroll();
-          section.removeClass('active');
-          header.removeClass('blurred');
         }
       });
 
@@ -92,8 +80,6 @@ export default function togglePopup() {
                 bg.removeClass('active');
             }});
             enablePageScroll();
-            section.removeClass('active');
-            header.removeClass('blurred');
             $('.popup-select__button').find('.button__input').attr('data-selected', '');
             document.removeEventListener('keydown', handleKeyDown);
           }

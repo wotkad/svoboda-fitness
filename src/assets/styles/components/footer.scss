@@ -1,9 +1,6 @@
 .footer {
   transition: filter $transition-default;
   background-color: $neutral-400;
-  &.active {
-    filter: blur(10px);
-  }
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
