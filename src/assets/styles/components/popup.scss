@@ -380,10 +380,10 @@
     }
     .popup__items {
       @include screen(tablet) {
-        max-height: 200px;
+        max-height: 230px;
       }
       @include screen(laptop) {
-        max-height: 270px;
+        max-height: 314px;
       }
     }
   }
