@@ -314,7 +314,10 @@
       max-height: calc(100vh - 200px);
     }
     @include screen(laptop) {
-      max-height: calc(600px - 180px);
+      max-height: 420px;
+    }
+    @include screen(desktop) {
+      max-height: 597px;
     }
   }
   &__item {
