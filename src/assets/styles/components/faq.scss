@@ -120,7 +120,10 @@
       }
     }
     h3 {
-      max-width: 75%;
+      max-width: 90%;
+      @include screen(tablet) {
+        max-width: 75%;
+      }
       @include body-2;
     }
   }
