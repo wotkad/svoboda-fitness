@@ -122,6 +122,12 @@ button {
   user-select: none;
 }
 
+.text__tip {
+  margin-top: 24px;
+  color: $neutral-100;
+  @include body-1;
+}
+
 .pusher {
   display: flex;
   flex-direction: column;
