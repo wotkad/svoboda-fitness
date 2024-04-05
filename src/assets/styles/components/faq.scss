@@ -137,10 +137,18 @@
       display: block;
     }
     p {
+      margin-top: 8px;
       max-width: 90%;
       @include body-caption;
+      &:first-child {
+        margin-top: 0;
+      }
       @include screen(tablet) {
+        margin-top: 16px;
         max-width: 80%;
+        &:first-child {
+          margin-top: 0;
+        }
         @include body-1;
       }
       span {
@@ -148,6 +156,21 @@
       }
       a {
         color: $yellow;
+      }
+    }
+    ul {
+      margin-top: 16px;
+      margin-left: 16px;
+      list-style: disc;
+      li {
+        margin-top: 8px;
+        @include body-caption;
+        @include screen(tablet) {
+          @include body-1;
+        }
+        &::marker {
+          color: $yellow;
+        }
       }
     }
   }
