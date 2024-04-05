@@ -140,8 +140,19 @@
       max-width: 90%;
       @include body-caption;
       @include screen(tablet) {
-        max-width: 75%;
+        max-width: 80%;
         @include body-1;
+      }
+      span {
+        color: $yellow;
+      }
+      a {
+        @include screen(laptop) {
+          transition: color $transition-default;
+          &:hover {
+            color: $yellow;
+          }
+        }
       }
     }
   }
