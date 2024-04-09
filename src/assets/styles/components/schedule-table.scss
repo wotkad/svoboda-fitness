@@ -370,9 +370,7 @@
       height: 8px;
       min-width: 8px;
       min-height: 8px;
-      &:nth-child(4) {
-        display: block;
-      }
+      display: block;
       transition: background-color $transition-default;
     }
   }
@@ -383,12 +381,12 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
-    @include screen(tablet) {
+    @include screen(laptop) {
       font-size: 15px;
     }
     svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       @include screen(laptop) {
         width: 24px;
         height: 24px;
@@ -399,7 +397,7 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
-    @include screen(tablet) {
+    @include screen(laptop) {
       font-size: 15px;
     }
   }
@@ -410,14 +408,10 @@
       position: absolute;
       top: 20px;
       right: 16px;
-      font-size: 15px;
     }
     @include screen(laptop) {
       position: static;
-      @include body-caption;
-    }
-    @include screen(laptop-default) {
-      @include body-1;
+      font-size: 15px;
     }
   }
 }
