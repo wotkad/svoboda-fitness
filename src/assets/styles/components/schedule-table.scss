@@ -362,10 +362,8 @@
     min-height: 4px;
     border-radius: 50%;
     background-color: $neutral-300;
-    &:nth-child(4) {
-      @include screen(tablet) {
-        display: none;
-      }
+    @include screen(tablet) {
+      display: none;
     }
     @include screen(laptop) {
       width: 8px;
@@ -385,11 +383,8 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
-    @include screen(laptop) {
-      @include body-caption;
-    }
-    @include screen(laptop-default) {
-      @include body-1;
+    @include screen(tablet) {
+      font-size: 15px;
     }
     svg {
       width: 20px;
@@ -404,11 +399,8 @@
     color: $text-secondary;
     position: relative;
     @include body-1;
-    @include screen(laptop) {
-      @include body-caption;
-    }
-    @include screen(laptop-default) {
-      @include body-1;
+    @include screen(tablet) {
+      font-size: 15px;
     }
   }
   &__avalibility {
@@ -418,6 +410,7 @@
       position: absolute;
       top: 20px;
       right: 16px;
+      font-size: 15px;
     }
     @include screen(laptop) {
       position: static;
