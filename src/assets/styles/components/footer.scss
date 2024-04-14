@@ -267,6 +267,11 @@
       }
     }
   }
+  &__item {
+    @include screen(tablet) {
+      text-align: right;
+    }
+  }
   &__copy {
     display: grid;
     grid-template-columns: 1fr;

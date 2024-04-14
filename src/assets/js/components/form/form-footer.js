@@ -1,0 +1,140 @@
+import sendMail from "./form-send";
+
+export default function formBooking() {
+  let policyInput = $('input[name="policy"]')
+
+  const validateName = (name) => {
+    if (name.length >= 2 && name.length < 50) {
+      return name.match(
+        /^[а-яА-Яa-zA-Z]/
+      );
+    }
+  }
+
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+
+  const validatePhone = (phone) => {
+    return phone.match(
+      /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/
+    );
+  }
+
+  const validatedName = function() {
+    const name = $(this).val();
+
+    if (validateName(name)) {
+      $(this).removeClass('not-valid').addClass('filled');
+    } else {
+      $(this).addClass('not-valid').addClass('filled');
+    }
+    if (name == '') {
+      $(this).removeClass('not-valid').removeClass('filled');
+    }
+    return false;
+  }
+
+  const validatedEmail = function() {
+    const email = $(this).val();
+
+    if (validateEmail(email)) {
+      $(this).removeClass('not-valid');
+      $(this).addClass('filled');
+    } else {
+      $(this).addClass('filled');
+      $(this).addClass('not-valid');
+    }
+    if (email == '') {
+      $(this).removeClass('not-valid').removeClass('filled');
+    }
+    return false;
+  }
+
+  const validatedPhone = function() {
+    const phone = $(this).val();
+
+    if (validatePhone(phone) && phone.length > 0) {
+      $(this).removeClass('not-valid');
+      $(this).addClass('filled');
+    } else {
+      $(this).addClass('filled');
+      $(this).addClass('not-valid');
+    }
+    if (phone == '') {
+      $(this).removeClass('not-valid').removeClass('filled');
+    }
+    return false;
+  }
+
+  $('input[name="name"]').on('input', function() {
+    validatedName.call(this);
+  });
+  $('input[name="email"]').on('input', function() {
+    validatedEmail.call(this);
+  });
+  $('input[name="phone"]').on('input', function() {
+    validatedPhone.call(this);
+  });
+
+  policyInput.on('input', function() {
+    if ($(this).prop('checked')) {
+      $(this).removeClass('not-valid');
+    }
+  });
+
+  function sendFooterForm() {
+    let form = $('.footer__form');
+    let button = $('.footer__button');
+    let timer = 0;
+    button.on('click', function() {
+      if (!policyInput.prop('checked')) {
+        policyInput.addClass('not-valid');
+      } else {
+        policyInput.removeClass('not-valid');
+      }
+      Array.from($('.footer input').not('input[name="policy"]')).forEach(function(input) {
+        if ($(input).val() == '') {
+          $(input).addClass('not-valid');
+        } else {
+          $(input).removeClass('not-valid');
+        }
+      });
+    });
+    if (form) {
+      form.on('submit', function(e) {
+        e.preventDefault();
+        if (
+          !$('input[name="name"]').hasClass('not-valid') &&
+          !$('input[name="email"]').hasClass('not-valid') &&
+          !$('input[name="phone"]').hasClass('not-valid') &&
+          !$('input[name="policy"]').hasClass('not-valid')) {
+          sendMail(form).then(function() {
+            button.parent().get(0).reset();
+            policyInput.prop('checked', false);
+            $('input').removeClass('not-valid');
+            $('input').removeClass('filled');
+            $('.footer__button').text('Отправлено!')
+            timer = setTimeout(function() {
+              $('.footer__button').text('Отправить')
+              clearTimeout(timer);
+            }, 2000);
+          });
+        }
+      });
+    }
+  }
+  sendFooterForm();
+
+  $('input[type="tel"]').on('keydown', function(e) {
+    if (e.key !== undefined) {
+      if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
+        return false;
+      }
+    }
+  });
+
+}
+formBooking();

@@ -1,4 +1,5 @@
-.order {
+.order,
+.booking {
   padding-bottom: 30px;
   @include screen(tablet) {
     padding-bottom: 0;
@@ -66,7 +67,8 @@
       display: block;
     }
   }
-  &__promocode {
+  &__promocode,
+  &__code {
     span { 
       opacity: 0;
       visibility: hidden;
@@ -152,6 +154,11 @@
       pointer-events: none;
       user-select: none;
     }
+    &-code {
+      &-hidden {
+        opacity: 0;
+      }
+    }
   }
   &__input {
     padding: 4px 0;
@@ -221,6 +228,7 @@
 
     text-transform: uppercase;
     color: $text-black;
+    transition: background-color $transition-default, filter $transition-default, opacity $transition-default;
     @include button-medium;
     @include screen(tablet) {
       width: auto;
@@ -228,10 +236,38 @@
     }
     @include screen(laptop) {
       padding: 16px;
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+    &-disabled {
+      pointer-events: none;
+      filter: blur(4px);
+      opacity: 0.5;
+    }
+  }
+  &__getcode {
+    position: absolute;
+    right: 0;
+    background-color: $white;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    justify-content: center;
+    span {
+      color: $black;
+      display: inline-block;
+      @include font-sm;
+    }
+    @include screen(laptop) {
       transition: background-color $transition-default;
       &:hover {
         background-color: $yellow;
       }
+    }
+    &-hidden {
+      display: none;
     }
   }
   &__calendar {

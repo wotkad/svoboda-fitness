@@ -1,4 +1,4 @@
-section.order.order-booking
+section.order.order-booking.booking
   .wrapper
     .order__wrapper
       .order__header
@@ -19,10 +19,15 @@ section.order.order-booking
             label.order__label
               input.order__input.order__input-required(type="tel" name="phone" required)
               p Телефон *
+              button(type="button").order__getcode.order__getcode-hidden
+                span Получить код
             label.order__label
               input.order__input.order__input-required(type="email" name="email" required)
               p Email *
-            button(type="submit" data-id="2").order__button Записаться
+            label.order__label.order__label-code.order__label-code-hidden
+              input.order__input.order__input-required(type="text" name="code" required)
+              p Введите код
+            button(type="submit" data-id="2").order__button.order__button-disabled Записаться
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
         .order__step(data-id="2")
           .order__spinner

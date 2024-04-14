@@ -11,16 +11,16 @@ export default function toggleOrderSteps() {
       let block = $('.order__step[data-id="' + id + '"]');
       button.removeClass('active');
       $(this).addClass('active');
-      if (i == 0 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled')) {
-        nextStep();
-      }
       Array.from($('.order__step[data-id="1"] input')).forEach(function(input) {
-        if ($(input).val() == '') {
+        if (!$(input).hasClass('filled') && $(input).val() == '') {
           $(input).addClass('not-valid');
         } else {
           $(input).removeClass('not-valid');
         }
       });
+      if (i == 0 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled')) {
+        nextStep();
+      }
       if (i == 1 && !$(this).prevAll().find('.order__input-required').hasClass('not-valid') && $(this).prevAll().find('.order__input-required').hasClass('filled') && !$(this).prevAll().find('.order__input-required[name="plan"]').val() == '') {
         nextStep();
       }
@@ -36,7 +36,7 @@ export default function toggleOrderSteps() {
       }
     });
   }
-  $('input[name="promocode"]').on('keydown', function(e) {
+  $('input[name="code"]').on('keydown', function(e) {
     if (e.key !== undefined) {
     if (e.key.length == 1 && e.key.match(/[^0-9a-zA-Z'".]/)) {
       return false;

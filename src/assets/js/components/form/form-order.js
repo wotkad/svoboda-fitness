@@ -1,7 +1,6 @@
 import sendMail from "./form-send";
 
-export default function form() {
-  let policyInput = $('input[name="policy"]')
+export default function formBooking() {
 
   const validateName = (name) => {
     if (name.length >= 2 && name.length < 50) {
@@ -98,54 +97,52 @@ export default function form() {
     validatedPromocode.call(this);
   });
 
-  policyInput.on('input', function() {
-    if ($(this).prop('checked')) {
-      $(this).removeClass('not-valid');
+  // Селекторы для нужных полей ввода
+  let inputSelectors = '.order input[name="name"], .order input[name="email"], .order input[name="phone"]';
+
+  $(inputSelectors).on('input', function() {
+    // Создаем переменную, чтобы отслеживать наличие класса not-valid у всех элементов
+    var allInputsValid = true;
+
+    // Проходимся по всем выбранным элементам
+    $(inputSelectors).each(function() {
+      // Проверяем, есть ли у текущего элемента класс not-valid или значение пустое
+      if ($(this).hasClass('not-valid') || $(this).val() == '') {
+        // Если есть, устанавливаем переменную allInputsValid в false
+        allInputsValid = false;
+        return false; // Прерываем цикл, если найден невалидный элемент
+      }
+    });
+
+    // После прохождения по всем элементам, проверяем значение переменной allInputsValid
+    if (allInputsValid) {
+      // Если все элементы валидны, удаляем класс у кнопки
+      $('.order .order__button').removeClass('order__button-disabled');
+    } else {
+      // Иначе добавляем класс кнопке
+      $('.order .order__button').addClass('order__button-disabled');
     }
   });
 
-  function sendPopupForm() {
-    let form = $('form');
-    let button = $('.footer__button');
-    let timer = 0;
-    button.on('click', function() {
-      if (!policyInput.prop('checked')) {
-        policyInput.addClass('not-valid');
-      } else {
-        policyInput.removeClass('not-valid');
-      }
-      Array.from($('.footer input').not('input[name="policy"]')).forEach(function(input) {
-        if ($(input).val() == '') {
-          $(input).addClass('not-valid');
-        } else {
-          $(input).removeClass('not-valid');
-        }
-      });
-    });
+  function sendOrderForm() {
+    let form = $('.order__steps');
     if (form) {
       form.on('submit', function(e) {
         e.preventDefault();
         if (
           !$('input[name="name"]').hasClass('not-valid') &&
           !$('input[name="email"]').hasClass('not-valid') &&
-          !$('input[name="phone"]').hasClass('not-valid') &&
-          !$('input[name="policy"]').hasClass('not-valid')) {
+          !$('input[name="phone"]').hasClass('not-valid')) {
           sendMail(form).then(function() {
-            button.parent().get(0).reset();
-            policyInput.prop('checked', false);
+            form.get(0).reset();
             $('input').removeClass('not-valid');
             $('input').removeClass('filled');
-            $('.footer__button').text('Отправлено!')
-            timer = setTimeout(function() {
-              $('.footer__button').text('Отправить')
-              clearTimeout(timer);
-            }, 2000);
           });
         }
       });
     }
   }
-  sendPopupForm();
+  sendOrderForm();
 
   $('input[type="tel"]').on('keydown', function(e) {
     if (e.key !== undefined) {
@@ -156,4 +153,4 @@ export default function form() {
   });
 
 }
-form();
+formBooking();

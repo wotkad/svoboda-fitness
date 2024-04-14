@@ -29,8 +29,9 @@ import "./components/toggle/toggle-order-steps";
 import "./components/toggle/toggle-filters";
 import "./components/toggle/toggle-mobile-menu";
 
-import "./components/form/form";
-import "./components/form/order";
+import "./components/form/form-order";
+import "./components/form/form-booking";
+import "./components/form/form-footer";
 import "./components/form/calendar";
 
 import "./components/animation/draw-svg-plugin";
