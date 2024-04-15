@@ -132,7 +132,7 @@ export default function formBooking() {
             timer = setTimeout(updateButtonText, 1000);
         } else {
             $('.order__getcode span').text('Отправить код');
-            $('.order__getcode').css('pointer-events', 'none');
+            $('.order__getcode').css('pointer-events', 'all');
             clearTimeout(timer);
         }
     }

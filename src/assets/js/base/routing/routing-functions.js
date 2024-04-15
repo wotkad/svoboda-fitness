@@ -8,7 +8,6 @@ import sliderGallery from "../../components/slider/slider-gallery";
 import sliderSchedule from "../../components/slider/slider-schedule";
 import toggleFaq from "../../components/toggle/toggle-faq";
 import togglePopup from "../../components/toggle/toggle-popup";
-import toggleOrderSteps from "../../components/toggle/toggle-order-steps";
 import toggleFilters from "../../components/toggle/toggle-filters";
 import formOrder from "../../components/form/form-order";
 import formBooking from "../../components/form/form-booking";
@@ -32,7 +31,6 @@ export default function routingFunctions() {
   formFooter();
   animationHero();
   togglePopup();
-  toggleOrderSteps();
   calendar();
   toggleFilters();
   sliderSchedule();
