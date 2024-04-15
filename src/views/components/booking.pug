@@ -9,7 +9,7 @@ section.order.order-booking.booking
           .order__date Понедельник, 29 января
           .order__time Начало в 12:00
       form(action="#").order__steps
-        .order__step.active(data-id="1")
+        .order__step.active(data-id="1" style="opacity: 1;")
           h2.order__title ВАШИ ДАННЫЕ
           .order__text * Поля обязательные для заполнения
           .order__form
@@ -27,6 +27,7 @@ section.order.order-booking.booking
             label.order__label.order__label-code.order__label-code-hidden
               input.order__input.order__input-required(type="text" name="code" required)
               p Введите код
+              span Ошибка
             button(type="submit" data-id="2").order__button.order__button-disabled Записаться
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
         .order__step(data-id="2")
