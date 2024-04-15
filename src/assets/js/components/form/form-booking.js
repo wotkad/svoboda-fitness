@@ -132,6 +132,7 @@ export default function formBooking() {
             timer = setTimeout(updateButtonText, 1000);
         } else {
             $('.order__getcode span').text('Отправить код');
+            $('.order__getcode').css('pointer-events', 'none');
             clearTimeout(timer);
         }
     }
@@ -142,6 +143,7 @@ export default function formBooking() {
         $('.order__label-code').removeClass('order__label-code-hidden');
         count = 60; // сброс счетчика времени
         updateButtonText();
+        $(this).css('pointer-events', 'none');
     });
     
     $('.order__input[name="phone"]').on('input', function() {
