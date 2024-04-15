@@ -159,26 +159,6 @@ export default function formBooking() {
   }
   getCode();
 
-  function sendBookingForm() {
-    let form = $('.order__steps');
-    if (form) {
-      form.on('submit', function(e) {
-        e.preventDefault();
-        if (
-          !$('input[name="name"]').hasClass('not-valid') &&
-          !$('input[name="email"]').hasClass('not-valid') &&
-          !$('input[name="phone"]').hasClass('not-valid')) {
-          sendMail(form).then(function() {
-            form.get(0).reset();
-            $('input').removeClass('not-valid');
-            $('input').removeClass('filled');
-          });
-        }
-      });
-    }
-  }
-  sendBookingForm();
-
   $('input[type="tel"]').on('keydown', function(e) {
     if (e.key !== undefined) {
       if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
