@@ -97,33 +97,9 @@ export default function formBooking() {
     validatedCode.call(this);
   });
 
-  $('.booking .order__input').on('input', function() {
-    // Создаем переменную, чтобы отслеживать наличие класса not-valid у всех элементов
-    var allInputsValid = true;
-    
-    // Проходимся по всем элементам с классом order__input
-    $('.booking .order__input').each(function() {
-      // Проверяем, есть ли у текущего элемента класс not-valid или значение пустое
-      if ($(this).hasClass('not-valid') || $(this).val() == '') {
-        // Если есть, устанавливаем переменную allInputsValid в false
-        allInputsValid = false;
-        return false; // Прерываем цикл, если найден невалидный элемент
-      }
-    });
-    
-    // После прохождения по всем элементам, проверяем значение переменной allInputsValid
-    if (allInputsValid) {
-      // Если все элементы валидны, удаляем класс у кнопки
-      $('.booking .order__button').removeClass('order__button-disabled');
-    } else {
-      // Иначе добавляем класс кнопке
-      $('.booking .order__button').addClass('order__button-disabled');
-    }
-  });
-
   function getCode() {
     let timer = 0;
-    let count = 60; // начальное значение счетчика времени
+    let count = 60;
     
     function updateButtonText() {
         if (count > 0) {
@@ -141,7 +117,7 @@ export default function formBooking() {
         $('input[name="code"]').val('');
         $('input[name="code"]').removeClass('filled');
         $('.order__label-code').removeClass('order__label-code-hidden');
-        count = 60; // сброс счетчика времени
+        count = 60;
         updateButtonText();
         $(this).css('pointer-events', 'none');
     });

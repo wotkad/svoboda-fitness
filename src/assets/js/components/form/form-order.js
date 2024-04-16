@@ -1,5 +1,3 @@
-import sendMail from "./form-send";
-
 export default function formBooking() {
 
   const validateName = (name) => {
@@ -95,33 +93,6 @@ export default function formBooking() {
   });
   $('input[name="promocode"]').on('input', function() {
     validatedPromocode.call(this);
-  });
-
-  // Селекторы для нужных полей ввода
-  let inputSelectors = '.order input[name="name"], .order input[name="email"], .order input[name="phone"]';
-
-  $(inputSelectors).on('input', function() {
-    // Создаем переменную, чтобы отслеживать наличие класса not-valid у всех элементов
-    var allInputsValid = true;
-
-    // Проходимся по всем выбранным элементам
-    $(inputSelectors).each(function() {
-      // Проверяем, есть ли у текущего элемента класс not-valid или значение пустое
-      if ($(this).hasClass('not-valid') || $(this).val() == '') {
-        // Если есть, устанавливаем переменную allInputsValid в false
-        allInputsValid = false;
-        return false; // Прерываем цикл, если найден невалидный элемент
-      }
-    });
-
-    // После прохождения по всем элементам, проверяем значение переменной allInputsValid
-    if (allInputsValid) {
-      // Если все элементы валидны, удаляем класс у кнопки
-      $('.order .order__button').removeClass('order__button-disabled');
-    } else {
-      // Иначе добавляем класс кнопке
-      $('.order .order__button').addClass('order__button-disabled');
-    }
   });
 
   $('input[type="tel"]').on('keydown', function(e) {

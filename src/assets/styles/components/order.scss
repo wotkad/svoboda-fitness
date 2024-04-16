@@ -259,11 +259,6 @@
         background-color: $yellow;
       }
     }
-    &-disabled {
-      pointer-events: none;
-      filter: blur(4px);
-      opacity: 0.5;
-    }
   }
   &__getcode {
     position: absolute;
