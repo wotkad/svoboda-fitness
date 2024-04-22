@@ -125,7 +125,10 @@ button {
 .text__tip {
   margin-top: 24px;
   color: $neutral-100;
-  @include body-1;
+  @include body-caption;
+  span {
+    color: $yellow;
+  }
 }
 
 .pusher {

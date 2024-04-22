@@ -235,6 +235,14 @@
     @include screen(tablet) {
       order: unset;
     }
+    a {
+      @include screen(laptop) {
+        transition: color $transition-default;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
   }
   &__button {
     grid-column-start: 1;
