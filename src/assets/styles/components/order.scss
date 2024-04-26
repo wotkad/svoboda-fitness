@@ -53,11 +53,11 @@
   }
   &__steps {
     max-width: 568px;
+    margin-top: 24px;
     @include screen(tablet) {
       margin-top: 40px;
     }
     @include screen(laptop) {
-      margin-top: 40px;
       max-width: 680px
     }
   }
@@ -485,10 +485,8 @@
   }
   &__header {
     display: inline-flex;
-    margin-bottom: 32px;
     flex-direction: column;
     @include screen(tablet) {
-      margin-bottom: 0;
       flex-direction: row;
       gap: 132px;
     }
