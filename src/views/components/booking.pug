@@ -8,6 +8,7 @@ section.order.order-booking.booking
         .order__head
           .order__date Понедельник, 29 января
           .order__time Начало в 12:00
+      .text__tip Все занятия доступны к бесплатному посещению при наличии абонемента. <br>При отсутствии абонемента стоимость занятия - <span>2.500 руб</span>.
       form(action="#").order__steps
         .order__step.active(data-id="1" style="opacity: 1;")
           h2.order__title ВАШИ ДАННЫЕ
@@ -30,7 +31,6 @@ section.order.order-booking.booking
               span Ошибка
             button(type="submit" data-id="2").order__button Записаться
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с <a href="/privacy-policy/">политикой конфиденциальности</a>
-          .text__tip Все занятия доступны к бесплатному посещению при наличии абонемента. <br>При отсутствии абонемента стоимость занятия - <span>2.500 руб</span>.
         .order__step(data-id="2")
           .order__spinner
             img(src="/assets/images/spinner.svg", alt="spinner")
