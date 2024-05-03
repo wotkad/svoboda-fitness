@@ -64,8 +64,6 @@
       }
       @include screen(laptop) {
         transition: border-color $transition-default;
-      }
-      @include screen(laptop) {
         &:hover {
           border-color: $yellow;
           span {
@@ -94,13 +92,8 @@
     text-transform: uppercase;
     @include body-2;
     @include screen(laptop) {
-      transition: color $transition-default;
       padding: 20px 64px;
-    }
-    @include screen(laptop) {
-      transition: border-color $transition-default;
-    }
-    @include screen(laptop) {
+      transition: border-color $transition-default, color $transition-default;
       &:hover {
         border-color: $yellow;
         color: $yellow;
@@ -191,11 +184,8 @@
       img {
         width: 100%;
         object-fit: cover;
-        height: 169px;
-        @include screen(laptop) {
-          height: 186px;
-        }
-        @include screen(laptop) {
+        height: 200px;
+        @include screen(tablet) {
           height: 337px;
         }
         @include screen(desktop) {
@@ -224,11 +214,13 @@
       opacity: 0;
       @include h2-actay;
     }
-    &:hover {
-      .blog__article__more {
-        opacity: 1;
+    @include screen(laptop) {
+      &:hover {
+        .blog__article__more {
+          opacity: 1;
 
-        z-index: 10;
+          z-index: 10;
+        }
       }
     }
     &__footer {
@@ -246,12 +238,9 @@
       grid-column: span 2 / span 2;
       .blog__article__image {
         img {
-          height: 169px;
-          @include screen(laptop) {
-            height: 186px;
-          }
-          @include screen(laptop) {
-            height: 388px;
+          height: 200px;
+          @include screen(tablet) {
+            height: 337px;
           }
           @include screen(desktop) {
             height: 410px;

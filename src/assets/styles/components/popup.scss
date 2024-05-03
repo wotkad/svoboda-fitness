@@ -203,11 +203,11 @@
     }
     @include screen(laptop) {
       max-height: 600px;
-      min-height: 567px;
+      min-height: 600px;
     }
     @include screen(desktop) {
       max-height: 800px;
-      min-height: 750px;
+      min-height: 800px;
     }
     img {
       width: 100%;
@@ -257,11 +257,11 @@
       }
       @include screen(laptop) {
         max-height: 600px;
-        min-height: 567px;
+        min-height: 600px;
       }
       @include screen(desktop) {
         max-height: 800px;
-        min-height: 750px;
+        min-height: 800px;
       }
     }
   }
@@ -314,7 +314,7 @@
       max-height: calc(100vh - 200px);
     }
     @include screen(laptop) {
-      max-height: 420px;
+      max-height: 400px;
     }
     @include screen(desktop) {
       max-height: 597px;

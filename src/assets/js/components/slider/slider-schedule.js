@@ -43,15 +43,22 @@ export default function sliderSchedule() {
     if (currentDay > 3) {
       swiper.slideTo(6, 0);
     }
-    $(window).on('resize', function() {
-      if ($(window).width() < 768) {
-        swiper.slideTo(currentDay, 0);
-      } else if (currentDay > 3) {
-        swiper.slideTo(6, 0);
-      } else {
-        swiper.slideTo(0, 0);
-      }
-    });
+    let prevWidth = window.width;
+    let observer = new ResizeObserver(function(entries) {
+        const width = entries[0].borderBoxSize?.[0].inlineSize;
+        if (typeof width === 'number' && width !== prevWidth ) {
+            prevWidth = width;
+            if (width < 768) {
+              swiper.slideTo(currentDay, 0);
+            } else if (currentDay > 3) {
+              swiper.slideTo(6, 0);
+            } else {
+              swiper.slideTo(0, 0);
+            }
+        }
+    })
+    observer.observe(window.document.body);
+
     if ($(window).width() < 768) {
       swiper.slideTo(currentDay, 0);
     } else if (currentDay > 3) {
