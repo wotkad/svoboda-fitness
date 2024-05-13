@@ -117,6 +117,7 @@ export default function formBooking() {
         $('input[name="code"]').val('');
         $('input[name="code"]').removeClass('filled');
         $('.order__label-code').removeClass('order__label-code-hidden');
+        $('.order__tip').removeClass('order__label-code-hidden');
         count = 60;
         updateButtonText();
         $(this).css('pointer-events', 'none');
@@ -128,8 +129,12 @@ export default function formBooking() {
       } else {
         $('.order__getcode').addClass('order__getcode-hidden');
         $('.order__label-code').addClass('order__label-code-hidden');
-        $('.order__getcode span').text('Отправить код');
-        clearTimeout(timer);
+        $('.order__tip').addClass('order__label-code-hidden');
+        if (count == 0) {
+          $('.order__getcode span').text('Отправить код');
+          $('.order__getcode').css('pointer-events', 'all');
+          clearTimeout(timer);
+        }
       }
     });
   }

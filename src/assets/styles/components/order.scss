@@ -52,13 +52,13 @@
     }
   }
   &__steps {
-    max-width: 568px;
+    max-width: 852px;
     margin-top: 24px;
     @include screen(tablet) {
       margin-top: 40px;
     }
     @include screen(laptop) {
-      max-width: 680px
+      max-width: 1020px
     }
   }
   &__step {
@@ -105,7 +105,7 @@
     row-gap: 34px;
     @include screen(tablet) {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       column-gap: 48px;
     }
     @include screen(laptop) {
@@ -134,12 +134,37 @@
     color: $neutral-100;
     @include body-1;
   }
+  &__tip {
+    margin: -16px 0;
+    // color: $neutral-100;
+    order: 2;
+    @include body-caption;
+    @include screen(tablet) {
+      order: 0;
+      margin: 0 0 0 -24px;
+    }
+    &-mob {
+      display: inline;
+      @include screen(tablet) {
+        display: none;
+      }
+    }
+    &-pc {
+      display: none;
+      @include screen(tablet) {
+        display: inline;
+      }
+    }
+  }
   &__label {
     order: 1;
     position: relative;
     max-height: 33px;
     display: block;
     width: 100%;
+    &-email {
+      grid-column-start: 1;
+    }
     @include screen(tablet) {
       order: unset;
     }
@@ -160,6 +185,7 @@
       &-hidden {
         pointer-events: none;
         opacity: 0;
+        display: none;
       }
       span {
         opacity: 0;
