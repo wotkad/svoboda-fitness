@@ -77,8 +77,6 @@
     border-radius: 0;
     background-color: transparent;
 
-    text-transform: capitalize;
-
     transition: color $transition-default, border-color $transition-default;
     @include body-2;
     @include screen(laptop) {
@@ -93,6 +91,9 @@
     }
     &:hover {
       border-color: $text-secondary;
+    }
+    &[name="name"] {
+      text-transform: capitalize;
     }
     &.not-valid {
       border-color: $error;
