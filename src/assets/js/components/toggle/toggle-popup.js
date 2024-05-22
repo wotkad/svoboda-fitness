@@ -6,10 +6,12 @@ export default function togglePopup() {
   const popupWrappers = $('.popup__wrapper');
 
   $(window).on('resize', function() {
-    if ($(window).outerWidth() > 767) {
-      gsap.to(popupWrappers, { y: 0, duration: 0});
-    } else {
-      gsap.to(popupWrappers, { x: 0, duration: 0});
+    if (popupWrappers.length > 0) {
+      if ($(window).outerWidth() > 767) {
+        gsap.to(popupWrappers, { y: 0, duration: 0});
+      } else {
+        gsap.to(popupWrappers, { x: 0, duration: 0});
+      }
     }
   });
 

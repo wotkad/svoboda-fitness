@@ -1,5 +1,3 @@
-import sendMail from "./form-send";
-
 export default function formBooking() {
 
   const validateName = (name) => {
@@ -139,14 +137,6 @@ export default function formBooking() {
     });
   }
   getCode();
-
-  $('input[type="tel"]').on('keydown', function(e) {
-    if (e.key !== undefined) {
-      if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
-        return false;
-      }
-    }
-  });
 
 }
 formBooking();

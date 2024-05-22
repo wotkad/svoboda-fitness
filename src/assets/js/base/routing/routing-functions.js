@@ -16,6 +16,7 @@ import order from "../../components/form/order";
 import calendar from "../../components/form/calendar";
 import animationHero from "../../components/animation/animation-hero";
 import toggleTrainingDate from "../../components/toggle/toggle-training-date";
+import checkInput from "../../components/form/check-input";
 
 export default function routingFunctions() {
   checkCurrentPage();
@@ -36,4 +37,5 @@ export default function routingFunctions() {
   sliderSchedule();
   order();
   toggleTrainingDate();
+  checkInput();
 }

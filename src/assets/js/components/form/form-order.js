@@ -95,13 +95,5 @@ export default function formBooking() {
     validatedPromocode.call(this);
   });
 
-  $('input[type="tel"]').on('keydown', function(e) {
-    if (e.key !== undefined) {
-      if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
-        return false;
-      }
-    }
-  });
-
 }
 formBooking();

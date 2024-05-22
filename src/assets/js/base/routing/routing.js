@@ -3,6 +3,7 @@ window.barba = barba;
 import barbaPrefetch from "@barba/core";
 import gsap from "gsap";
 import routingFunctions from "./routing-functions";
+import SmoothScroll from "smooth-scroll";
 
 barba.use(barbaPrefetch);
 
@@ -54,10 +55,30 @@ barba.init({
         $('head').find(headTags).remove();
         $newPageHead.find(headTags).appendTo('head');
         routingFunctions();
+
         return gsap.from(data.next.container, {
           opacity: 0,
           duration: .4
         });
+      },
+      afterEnter(data) {
+        let offset;
+        function checkWidth() {
+          let width = $(window).width();
+          if (width > 768) {
+            offset = 140;
+          }
+          if (width > 1224) {
+            offset = 120;
+          }
+          if (width > 1536) {
+            offset = 160;
+          }
+        }
+        checkWidth();
+        if (data.next.url.hash) {
+          $('body, html').animate({scrollTop: $('#' + data.next.url.hash).offset().top - offset}, 2000, 'easeOutExpo');
+        }
       }
     },
   ],

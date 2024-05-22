@@ -32,6 +32,7 @@ import "./components/form/form-order";
 import "./components/form/form-booking";
 import "./components/form/form-footer";
 import "./components/form/calendar";
+import "./components/form/check-input";
 
 import "./components/animation/draw-svg-plugin";
 import "./components/animation/animation-hero";

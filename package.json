@@ -88,6 +88,7 @@
     "gsap": "^3.9.1",
     "inputmask": "^5.0.8",
     "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.3",
     "scroll-lock": "^2.1.5",
     "scrollreveal": "^4.0.9",
     "smooth-scroll": "^16.1.3",

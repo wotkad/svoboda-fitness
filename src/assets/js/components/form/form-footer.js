@@ -1,7 +1,4 @@
-import sendMail from "./form-send";
-
 export default function formBooking() {
-  let policyInput = $('input[name="policy"]')
 
   const validateName = (name) => {
     if (name.length >= 2 && name.length < 50) {
@@ -78,63 +75,6 @@ export default function formBooking() {
   $('input[name="phone"]').on('input', function() {
     validatedPhone.call(this);
   });
-
-  policyInput.on('input', function() {
-    if ($(this).prop('checked')) {
-      $(this).removeClass('not-valid');
-    }
-  });
-
-  function sendFooterForm() {
-    let form = $('.footer__form');
-    let button = $('.footer__button');
-    let timer = 0;
-    button.on('click', function() {
-      if (!policyInput.prop('checked')) {
-        policyInput.addClass('not-valid');
-      } else {
-        policyInput.removeClass('not-valid');
-      }
-      Array.from($('.footer input').not('input[name="policy"]')).forEach(function(input) {
-        if ($(input).val() == '') {
-          $(input).addClass('not-valid');
-        } else {
-          $(input).removeClass('not-valid');
-        }
-      });
-    });
-    if (form) {
-      form.on('submit', function(e) {
-        e.preventDefault();
-        if (
-          !$('input[name="name"]').hasClass('not-valid') &&
-          !$('input[name="email"]').hasClass('not-valid') &&
-          !$('input[name="phone"]').hasClass('not-valid') &&
-          !$('input[name="policy"]').hasClass('not-valid')) {
-          sendMail(form).then(function() {
-            button.parent().get(0).reset();
-            policyInput.prop('checked', false);
-            $('input').removeClass('not-valid');
-            $('input').removeClass('filled');
-            $('.footer__button').text('Отправлено!')
-            timer = setTimeout(function() {
-              $('.footer__button').text('Отправить')
-              clearTimeout(timer);
-            }, 2000);
-          });
-        }
-      });
-    }
-  }
-  sendFooterForm();
-
-  $('input[type="tel"], input[name="code"]').on('keydown', function(e) {
-    if (e.key !== undefined) {
-      if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
-        return false;
-      }
-    }
-  });
-
+  
 }
 formBooking();
