@@ -230,6 +230,7 @@
     iframe {
       transform: scale(0.8);
       transform-origin: top left;
+      margin-bottom: 24px;
       @include screen(tablet) {
         transform-origin: top right;
         transform: scale(1);
@@ -311,6 +312,13 @@
           }
         }
       }
+    }
+  }
+  &__data {
+    color: $text-caption;
+    @include body-caption;
+    @include screen(tablet) {
+      text-align: right;
     }
   }
 }
