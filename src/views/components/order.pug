@@ -5,8 +5,8 @@ section.order
         .order__action.active(data-id="1") Данные владельца
         .order__action(data-id="2") Абонемент
         .order__action(data-id="3") Оплата
-      form(action="#").order__steps
-        .order__step.active(data-id="1")
+      form(action="#").order__steps.order__steps-payment
+        .order__step.active(data-id="1" style="opacity:1; display: block;")
           h2.order__title ВАШИ ДАННЫЕ
           .order__text * Поля обязательные для заполнения
           .order__form
@@ -78,12 +78,13 @@ section.order
               .order__list
                 .order__list__item(data-plan-id="4" data-price="7500") 1 МЕСЯЦ - 7500 ₽
                 .order__list__item(data-plan-id="1" data-price="13000") 3 МЕСЯЦA - 13 000 ₽
-                .order__list__item(data-plan-id="3" data-price="16000") 6 МЕСЯЦЕВ - 16 000 ₽
-                .order__list__item(data-plan-id="2" data-price="22000") ГОДОВОЙ - 22 000 ₽
-            label.order__label.order__promocode
-              input.order__input(type="text" name="promocode")
-              p Промокод
-              span Промокод не действителен или не существует.
+                .order__list__item(data-plan-id="3" data-price="16000") 6 МЕСЯЦЕВ - 17 000 ₽
+                .order__list__item(data-plan-id="5" data-price="16000") 6 МЕСЯЦЕВ - 21 000 ₽
+                .order__list__item(data-plan-id="2" data-price="22000") ГОДОВОЙ - 24 000 ₽
+            //- label.order__label.order__promocode
+            //-   input.order__input(type="text" name="promocode")
+            //-   p Промокод
+            //-   span Промокод не действителен или не существует.
             button(type="submit" data-id="3").order__button К оплате
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
         .order__step(data-id="3")

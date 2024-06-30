@@ -39,3 +39,4 @@ import "./components/animation/animation-hero";
 import "./components/animation/animation-logo";
 
 import "./components/toggle/toggle-training-date";
+import "./components/toggle/toggle-order-steps";
