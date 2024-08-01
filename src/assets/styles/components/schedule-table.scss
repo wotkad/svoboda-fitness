@@ -236,6 +236,19 @@
     min-height: 212px;
     width: 100%;
     position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 1px;
+      width: calc(100% + 100px);
+      left: 0;
+      top: 0;
+      background-color: $neutral-300;
+      @include screen(laptop) {
+        left: -100px;
+      }
+    }
     @include screen(tablet) {
       flex-direction: column;
       align-items: flex-start;
@@ -271,15 +284,6 @@
     &.popup-trigger {
       cursor: pointer;
     }
-    &:before {
-      content: '';
-      position: absolute;
-      width: 6000px;
-      height: 1px;
-      left: -3000px;
-      top: 0;
-      background-color: $neutral-300;
-    }
     &-empty {
       text-align: left;
       display: none;
@@ -291,6 +295,19 @@
       width: 100%;
       position: relative;
       padding: 20px 0;
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 1px;
+        width: calc(100% + 100px);
+        left: 0;
+        top: 0;
+        background-color: $neutral-300;
+        @include screen(laptop) {
+          left: -100px;
+        }
+      }
       @include screen(tablet) {
         display: inline-flex;
       }
