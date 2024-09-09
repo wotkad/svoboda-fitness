@@ -2,11 +2,11 @@ import Swiper from "swiper";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 
 export default function sliderSchedule() {
-  let currentDay = new Date().getDay();
-  if (currentDay === 0) {
-    currentDay = 7;
-  }
-  currentDay--;
+  // let currentDay = new Date().getDay();
+  // if (currentDay === 0) {
+  //   currentDay = 7;
+  // }
+  // currentDay--;
   let swiper = new Swiper('.swiper-schedule', {
     modules: [ Mousewheel, FreeMode, Navigation ],
     speed: 800,
@@ -39,34 +39,34 @@ export default function sliderSchedule() {
       }
     }
   });
-  if ($('.swiper-schedule').length > 0) {
-    if (currentDay > 3) {
-      swiper.slideTo(6, 0);
-    }
-    let prevWidth = window.width;
-    let observer = new ResizeObserver(function(entries) {
-        const width = entries[0].borderBoxSize?.[0].inlineSize;
-        if (typeof width === 'number' && width !== prevWidth ) {
-            prevWidth = width;
-            if (width < 768) {
-              swiper.slideTo(currentDay, 0);
-            } else if (currentDay > 3) {
-              swiper.slideTo(6, 0);
-            } else {
-              swiper.slideTo(0, 0);
-            }
-        }
-    })
-    observer.observe(window.document.body);
+  // if ($('.swiper-schedule').length > 0) {
+  //   if (currentDay > 3) {
+  //     swiper.slideTo(6, 0);
+  //   }
+  //   let prevWidth = window.width;
+  //   let observer = new ResizeObserver(function(entries) {
+  //       const width = entries[0].borderBoxSize?.[0].inlineSize;
+  //       if (typeof width === 'number' && width !== prevWidth ) {
+  //           prevWidth = width;
+  //           if (width < 768) {
+  //             swiper.slideTo(currentDay, 0);
+  //           } else if (currentDay > 3) {
+  //             swiper.slideTo(6, 0);
+  //           } else {
+  //             swiper.slideTo(0, 0);
+  //           }
+  //       }
+  //   })
+  //   observer.observe(window.document.body);
 
-    if ($(window).width() < 768) {
-      swiper.slideTo(currentDay, 0);
-    } else if (currentDay > 3) {
-      swiper.slideTo(6, 0);
-    } else {
-      swiper.slideTo(0, 0);
-    }
-  }
+  //   if ($(window).width() < 768) {
+  //     swiper.slideTo(currentDay, 0);
+  //   } else if (currentDay > 3) {
+  //     swiper.slideTo(6, 0);
+  //   } else {
+  //     swiper.slideTo(0, 0);
+  //   }
+  // }
 
   function scheduleFunctional() {
     let button = $('.schedule-table__button');
