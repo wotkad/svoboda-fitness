@@ -45,7 +45,7 @@ export default function toggleOrderSteps() {
           let sex = $('input[name="sex"]').val() ? $('input[name="sex"]').val() : 'Не указано';
           let experience = $('input[name="experience"]').val() ? $('input[name="experience"]').val() : 'Не указано';
           let birthday = $('#birthday-picker').val() ? $('#birthday-picker').val() : 'Не указано';
-          link.attr('href', `https://wa.me/79032006300/?text=Здравствуйте, меня зовут ${name}, интересует абонемент ${plan}, готов(а) приступить к занятиям с ${dateStart}. Информация обо мне: Телефон: ${phone}, Email: ${email}, Пол: ${sex}, Опыт в фитнесе: ${experience}, Дата рождения: ${birthday}.`);
+          link.attr('href', `https://wa.me/79939155099/?text=Здравствуйте, меня зовут ${name}, интересует абонемент ${plan}, готов(а) приступить к занятиям с ${dateStart}. Информация обо мне: Телефон: ${phone}, Email: ${email}, Пол: ${sex}, Опыт в фитнесе: ${experience}, Дата рождения: ${birthday}.`);
         });
         link.on('click', function() {
           gsap.to($('.order__step'), {opacity: 0, duration: 0.3, onComplete: () => {
