@@ -1,4 +1,6 @@
-export default function formBooking() {
+import gsap from "gsap";
+
+export default function formOrder() {
 
   const validateName = (name) => {
     if (name.length >= 2 && name.length < 50) {
@@ -66,21 +68,21 @@ export default function formBooking() {
     return false;
   }
 
-  const validatedPromocode = function() {
-    const promocode = $(this).val();
+  // const validatedPromocode = function() {
+  //   const promocode = $(this).val();
 
-    if (promocode.length > 0) {
-      $(this).removeClass('not-valid');
-      $(this).addClass('filled');
-    } else {
-      $(this).addClass('filled');
-      $(this).addClass('not-valid');
-    }
-    if (promocode == '') {
-      $(this).removeClass('not-valid').removeClass('filled');
-    }
-    return false;
-  }
+  //   if (promocode.length > 0) {
+  //     $(this).removeClass('not-valid');
+  //     $(this).addClass('filled');
+  //   } else {
+  //     $(this).addClass('filled');
+  //     $(this).addClass('not-valid');
+  //   }
+  //   if (promocode == '') {
+  //     $(this).removeClass('not-valid').removeClass('filled');
+  //   }
+  //   return false;
+  // }
 
   $('input[name="name"]').on('input', function() {
     validatedName.call(this);
@@ -91,9 +93,8 @@ export default function formBooking() {
   $('input[name="phone"]').on('input', function() {
     validatedPhone.call(this);
   });
-  $('input[name="promocode"]').on('input', function() {
-    validatedPromocode.call(this);
-  });
-
+  // $('input[name="promocode"]').on('input', function() {
+  //   validatedPromocode.call(this);
+  // });
 }
-formBooking();
+formOrder();

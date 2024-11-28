@@ -4,8 +4,8 @@ section.order
       .order__actions
         .order__action.active(data-id="1") Данные владельца
         .order__action(data-id="2") Абонемент
-        .order__action(data-id="3") Оплата
-      form(action="#").order__steps.order__steps-payment
+        .order__action(data-id="3") Запись
+      .order__steps.order__steps-payment
         .order__step.active(data-id="1" style="opacity:1; display: block;")
           h2.order__title ВАШИ ДАННЫЕ
           .order__text * Поля обязательные для заполнения
@@ -85,15 +85,12 @@ section.order
             //-   input.order__input(type="text" name="promocode")
             //-   p Промокод
             //-   span Промокод не действителен или не существует.
-            button(type="submit" data-id="3").order__button К оплате
+            a(href="https://wa.me/79032006300" target="_blank").order__button.order__send К оплате
             .order__policy Нажимая на кнопку, вы соглашаетесь <br> с политикой конфиденциальности
         .order__step(data-id="3")
           .order__spinner
             img(src="/assets/images/spinner.svg", alt="spinner")
-            h2.order__title Ожидаем оплату
+            h2.order__title Начинаем чат
           .order__alert.order__alert-success
-            .order__subtitle ОПЛАТА ПРОШЛА УСПЕШНО
-            .order__subtext Ждем вас на занятии!
-          .order__alert.order__alert-error
-            .order__subtitle ОШИБКА ОПЛАТЫ
-            .order__subtext Введены неверные данные карты или недостаточно средств
+            .order__subtitle УСПЕШНО
+            .order__subtext Вам только осталось отправить готовое сообщение в WhatsApp нашему менеджеру 🙌

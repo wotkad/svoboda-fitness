@@ -1,4 +1,4 @@
-export default function formBooking() {
+export default function formFooter() {
 
   const validateName = (name) => {
     if (name.length >= 2 && name.length < 50) {
@@ -77,4 +77,4 @@ export default function formBooking() {
   });
   
 }
-formBooking();
+formFooter();

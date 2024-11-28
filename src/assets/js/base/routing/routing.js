@@ -3,7 +3,6 @@ window.barba = barba;
 import barbaPrefetch from "@barba/core";
 import gsap from "gsap";
 import routingFunctions from "./routing-functions";
-import SmoothScroll from "smooth-scroll";
 
 barba.use(barbaPrefetch);
 
