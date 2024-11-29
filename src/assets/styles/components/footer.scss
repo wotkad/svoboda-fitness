@@ -314,11 +314,32 @@
       }
     }
   }
+  &__policy {
+    a {
+      @include screen(laptop) {
+        transition: color $transition-default;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
   &__data {
     color: $text-caption;
     @include body-caption;
     @include screen(tablet) {
       text-align: right;
+    }
+    p {
+      a {
+        display: inline-block;
+        @include screen(laptop) {
+          transition: color $transition-default;
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
     }
   }
 }
