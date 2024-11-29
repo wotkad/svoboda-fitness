@@ -35,6 +35,12 @@
     }
   }
 
+  @if $breakpoint == mobile-sm {
+    @media only screen and (min-width: $screen-mobile-sm) {
+      @content;
+    }
+  }
+
 }
 
 @mixin actay-wide {
