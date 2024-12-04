@@ -3,6 +3,7 @@
   font-style: normal;
   font-family: "Actay";
   src: url("../fonts/Actay-Regular.otf");
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   font-style: normal;
   font-family: "Actay";
   src: url("../fonts/ActayWide-Bold.otf");
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,7 @@
     url("../fonts/Inter-Regular.woff2") format("woff2"),
     url("../fonts/Inter-Regular.woff") format("woff"),
     url("../fonts/Inter-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
@@ -34,6 +37,7 @@
     url("../fonts/Inter-SemiBold.woff2") format("woff2"),
     url("../fonts/Inter-SemiBold.woff") format("woff"),
     url("../fonts/Inter-SemiBold.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
@@ -46,6 +50,7 @@
     url("../fonts/Inter-Bold.woff2") format("woff2"),
     url("../fonts/Inter-Bold.woff") format("woff"),
     url("../fonts/Inter-Bold.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
@@ -58,4 +63,5 @@
     url("../fonts/Inter-Medium.woff2") format("woff2"),
     url("../fonts/Inter-Medium.woff") format("woff"),
     url("../fonts/Inter-Medium.ttf") format("truetype");
+    font-display: swap;
 }
